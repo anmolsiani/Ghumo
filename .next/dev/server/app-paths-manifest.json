@@ -1,0 +1,12 @@
+{
+  "/blog/upload/page": "app/blog/upload/page.js",
+  "/cart/page": "app/cart/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/destinations/[state]/page": "app/destinations/[state]/page.js",
+  "/destinations/page": "app/destinations/page.js",
+  "/gallery/page": "app/gallery/page.js",
+  "/packages/[id]/page": "app/packages/[id]/page.js",
+  "/packages/page": "app/packages/page.js",
+  "/page": "app/page.js",
+  "/start-journey/page": "app/start-journey/page.js"
+}

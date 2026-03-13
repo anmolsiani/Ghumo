@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-primary: #FAFAFA;
+  --color-bg-secondary: #F5F5F5;
+  --color-bg-card: #FFFFFF;
+  
+  --color-text-primary: #1A1A1A;
+  --color-text-secondary: #6B6B6B;
+  --color-text-muted: #9CA3AF;
+  
+  --color-accent-earth: #8B7355;
+  --color-accent-gold: #D4AF37;
+  --color-accent-teal: #2C5F5D;
+  --color-accent-sunset: #E07A5F;
+  --color-accent-sage: #9CAF88;
+
+  --font-heading: "Oxanium", "Inter", sans-serif;
+  --font-body: "Inter", -apple-system, sans-serif;
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
+
+@layer base {
+  :root {
+    --bg-primary: #FAFAFA;
+    --bg-secondary: #F5F5F5;
+    --bg-card: #FFFFFF;
+    
+    --text-primary: #1A1A1A;
+    --text-secondary: #6B6B6B;
+    --text-muted: #9CA3AF;
+    
+    --accent-earth: #8B7355;
+    --accent-gold: #D4AF37;
+    --accent-teal: #2C5F5D;
+    --accent-sunset: #E07A5F;
+    --accent-sage: #9CAF88;
+    
+    --glass-bg: rgba(255, 255, 255, 0.75);
+    --glass-border: rgba(255, 255, 255, 0.3);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+
+    --text-hero: clamp(56px, 9vw, 120px);
+    --text-xl: clamp(40px, 6vw, 80px);
+    --text-lg: clamp(32px, 4vw, 56px);
+    --text-md: clamp(24px, 2.5vw, 40px);
+    --text-base: clamp(16px, 1.2vw, 20px);
+    --text-sm: clamp(14px, 1vw, 16px);
+    
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-xl: 32px;
+    
+    --ease-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --ease-snap: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-gray-200;
+  }
+  body {
+    @apply bg-[var(--bg-primary)] text-[var(--text-primary)] font-body;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+}
