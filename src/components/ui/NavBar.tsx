@@ -40,7 +40,7 @@ export function NavBar() {
           <Link href="/destinations" className="hover:text-[var(--accent-earth)] transition-colors text-sm uppercase tracking-widest font-bold">Destinations</Link>
           <Link href="/gallery" className="hover:text-[var(--accent-earth)] transition-colors text-sm uppercase tracking-widest font-bold">Gallery</Link>
           <Link href="/start-journey" className="hover:text-[var(--accent-earth)] transition-colors text-sm uppercase tracking-widest font-bold text-[var(--accent-teal)]">Start Journey</Link>
-          <Link href="/blog/upload" className="hover:text-[var(--accent-earth)] transition-colors text-sm uppercase tracking-widest font-bold">Blog</Link>
+          <Link href="/blog" className="hover:text-[var(--accent-earth)] transition-colors text-sm uppercase tracking-widest font-bold">Blog</Link>
         </nav>
 
         <div className="flex items-center gap-4">

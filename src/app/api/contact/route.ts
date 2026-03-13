@@ -4,9 +4,9 @@ import nodemailer from 'nodemailer';
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, email, phone, subject, message } = body;
+    const { name, email, phone, subject, message, travelDates, travelers } = body;
 
-    if (!name || !email || !phone || !subject || !message) {
+    if (!name || !email || !phone || !message) {
       return NextResponse.json({ success: false, error: "Missing required fields" }, { status: 400 });
     }
 
@@ -24,16 +24,23 @@ export async function POST(request: Request) {
       from: process.env.EMAIL_FROM || `"Ghumo Holidays Contact" <${process.env.EMAIL_SERVER_USER}>`,
       to: process.env.ADMIN_EMAIL || 'hello@ghumoholidays.com',
       subject: `New Inquiry: ${subject || 'General Inquiry'}`,
-      text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`,
+      text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nTravel Dates: ${travelDates || 'N/A'}\nTravelers: ${travelers || 'N/A'}\n\nMessage:\n${message}`,
       html: `
-        <h3>New Inquiry from Ghumo Holidays</h3>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone}</p>
-        <p><strong>Subject:</strong> ${subject}</p>
-        <hr/>
-        <p><strong>Message:</strong></p>
-        <p>${message.replace(/\n/g, '<br/>')}</p>
+        <div style="font-family: sans-serif; max-width: 600px; border: 1px solid #eee; padding: 30px; border-radius: 20px;">
+          <h2 style="color: #8B7355; margin-bottom: 30px;">New Trip Inquiry</h2>
+          <table style="width: 100%; border-collapse: collapse;">
+            <tr><td style="padding: 10px 0; border-bottom: 1px solid #f9f9f9;"><strong>Name:</strong></td><td style="padding: 10px 0; border-bottom: 1px solid #f9f9f9;">${name}</td></tr>
+            <tr><td style="padding: 10px 0; border-bottom: 1px solid #f9f9f9;"><strong>Email:</strong></td><td style="padding: 10px 0; border-bottom: 1px solid #f9f9f9;">${email}</td></tr>
+            <tr><td style="padding: 10px 0; border-bottom: 1px solid #f9f9f9;"><strong>Phone:</strong></td><td style="padding: 10px 0; border-bottom: 1px solid #f9f9f9;">${phone}</td></tr>
+            <tr><td style="padding: 10px 0; border-bottom: 1px solid #f9f9f9;"><strong>Travel Dates:</strong></td><td style="padding: 10px 0; border-bottom: 1px solid #f9f9f9;">${travelDates || 'Not specified'}</td></tr>
+            <tr><td style="padding: 10px 0; border-bottom: 1px solid #f9f9f9;"><strong>Group Size:</strong></td><td style="padding: 10px 0; border-bottom: 1px solid #f9f9f9;">${travelers || 'Not specified'}</td></tr>
+            <tr><td style="padding: 10px 0; border-bottom: 1px solid #f9f9f9;"><strong>Subject:</strong></td><td style="padding: 10px 0; border-bottom: 1px solid #f9f9f9;">${subject || 'General Inquiry'}</td></tr>
+          </table>
+          <div style="margin-top: 30px; padding: 20px; background: #fcfcfc; border-radius: 10px;">
+            <strong>Message:</strong><br/>
+            <p style="white-space: pre-line;">${message}</p>
+          </div>
+        </div>
       `,
     };
 

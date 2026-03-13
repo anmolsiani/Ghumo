@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react'
 import { Button } from '@/components/ui/Button'
 import { useCartStore } from '@/store/cartStore'
 import { Check } from 'lucide-react'
+import { useRouter } from 'next/navigation'
 
 interface AddToCartButtonProps {
   packageData: {
@@ -19,6 +20,7 @@ export function AddToCartButton({ packageData }: AddToCartButtonProps) {
   const [mounted, setMounted] = useState(false)
   const { addItem, items } = useCartStore()
   const [added, setAdded] = useState(false)
+  const router = useRouter()
 
   useEffect(() => {
     setMounted(true)
@@ -31,6 +33,7 @@ export function AddToCartButton({ packageData }: AddToCartButtonProps) {
   const handleAdd = () => {
     if (isAlreadyInCart) return
     addItem(packageData)
+    router.refresh()
     setAdded(true)
     setTimeout(() => setAdded(false), 2000)
   }

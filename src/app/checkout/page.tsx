@@ -7,12 +7,14 @@ import { useCartStore } from '@/store/cartStore'
 import { Button } from '@/components/ui/Button'
 import { CheckCircle, ShieldCheck, CreditCard, Send } from 'lucide-react'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 export default function CheckoutPage() {
   const [mounted, setMounted] = useState(false)
   const { items, total, clearCart } = useCartStore()
   const [loading, setLoading] = useState(false)
   const [completed, setCompleted] = useState(false)
+  const router = useRouter()
 
   useEffect(() => {
     setMounted(true)
@@ -21,10 +23,34 @@ export default function CheckoutPage() {
   const handleCheckout = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
-    // Simulate payment/booking process
-    await new Promise(resolve => setTimeout(resolve, 2000))
-    setCompleted(true)
-    clearCart()
+    
+    try {
+      const response = await fetch('/api/checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          items,
+          total,
+          customer: {
+            name: `${(e.target as any).elements[0].value} ${(e.target as any).elements[1].value}`,
+            email: (e.target as any).elements[2].value,
+            phone: (e.target as any).elements[3].value,
+          }
+        })
+      })
+
+      if (response.ok) {
+        setCompleted(true)
+        clearCart()
+        router.refresh()
+      } else {
+        console.error('Checkout failed')
+      }
+    } catch (error) {
+      console.error('Checkout error:', error)
+    } finally {
+      setLoading(false)
+    }
   }
 
   if (!mounted) return null
@@ -44,7 +70,7 @@ export default function CheckoutPage() {
           Your premium travel experience is being prepared. We have sent a confirmation email with all the details.
         </p>
         <Link href="/">
-          <Button variant="primary" magnetic>Return to Home</Button>
+          <Button variant="primary" magnetic as="div">Return to Home</Button>
         </Link>
       </div>
     )
@@ -55,7 +81,7 @@ export default function CheckoutPage() {
       <div className="min-h-screen pt-40 pb-20 px-6 flex flex-col items-center justify-center text-center">
         <h1 className="text-4xl font-black mb-4">No items to checkout</h1>
         <Link href="/destinations">
-          <Button variant="primary">Explore Packages</Button>
+          <Button variant="primary" as="div">Explore Packages</Button>
         </Link>
       </div>
     )

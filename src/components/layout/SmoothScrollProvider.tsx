@@ -23,15 +23,18 @@ export function SmoothScrollProvider({ children }: { children: ReactNode }) {
 
     lenisRef.current = lenis
 
+    let rfId: number
+
     function raf(time: number) {
       lenis.raf(time)
-      requestAnimationFrame(raf)
+      rfId = requestAnimationFrame(raf)
     }
 
-    requestAnimationFrame(raf)
+    rfId = requestAnimationFrame(raf)
 
     return () => {
       lenis.destroy()
+      cancelAnimationFrame(rfId)
     }
   }, [mounted])
 

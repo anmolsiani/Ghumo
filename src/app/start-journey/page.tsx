@@ -116,38 +116,63 @@ export default function StartAJourneyPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 onClick={() => setSelectedStep(idx)}
-                className={`cursor-pointer transition-all duration-500 rounded-[2rem] p-8 ${
+                whileHover={{ 
+                  scale: 1.02, 
+                  y: -5,
+                  transition: { duration: 0.3 }
+                }}
+                className={`group relative cursor-pointer transition-all duration-500 rounded-[2.5rem] p-10 overflow-hidden ${
                   selectedStep === idx
-                    ? 'bg-white shadow-2xl border-2 border-[var(--accent-earth)]'
-                    : 'bg-white/50 shadow-lg border border-white/50 hover:shadow-xl'
+                    ? 'bg-white shadow-[0_20px_50px_rgba(139,115,85,0.15)] border-2 border-[var(--accent-earth)]'
+                    : 'bg-white/60 shadow-lg border border-white/50 hover:bg-white hover:shadow-2xl'
                 }`}
               >
-                <div className="mb-6">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[var(--accent-earth)] to-[var(--accent-teal)] flex items-center justify-center text-white mb-4">
-                    <Icon className="w-8 h-8" />
+                {/* Hover Glow Effect */}
+                <div className="absolute -top-24 -right-24 w-48 h-48 bg-[var(--accent-earth)]/5 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                
+                <div className="relative z-10">
+                  <div className="mb-8">
+                    <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br from-[var(--accent-earth)] to-[var(--accent-teal)] flex items-center justify-center text-white mb-6 transform group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 shadow-lg`}>
+                      <Icon className="w-10 h-10" />
+                    </div>
+                    <div className="flex items-center gap-3 mb-2">
+                       <span className="px-3 py-1 rounded-full bg-[var(--accent-earth)]/10 text-[10px] font-black uppercase tracking-widest text-[var(--accent-earth)]">Step {step.step}</span>
+                       <div className="h-[1px] flex-1 bg-gradient-to-r from-[var(--accent-earth)]/20 to-transparent"></div>
+                    </div>
+                    <h3 className="text-3xl font-black tracking-tight">{step.title}</h3>
                   </div>
-                  <span className="text-xs font-bold uppercase tracking-widest text-[var(--accent-earth)]">Step {step.step}</span>
-                  <h3 className="text-2xl font-black mt-3">{step.title}</h3>
+  
+                  <p className="text-base text-[var(--text-secondary)] leading-relaxed mb-8">
+                    {step.description}
+                  </p>
+  
+                  <div className="overflow-hidden">
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ 
+                        height: selectedStep === idx ? 'auto' : 0, 
+                        opacity: selectedStep === idx ? 1 : 0 
+                      }}
+                      whileHover={selectedStep !== idx ? { height: 'auto', opacity: 1 } : {}}
+                      transition={{ duration: 0.4, ease: "circOut" }}
+                      className="space-y-3 pt-6 border-t border-black/5"
+                    >
+                      <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[var(--text-muted)] mb-4">Highlights</p>
+                      {step.highlights.map((highlight, hidx) => (
+                        <p key={hidx} className="text-sm font-bold text-[var(--text-primary)] flex items-center gap-3 group/item">
+                          <span className="w-2 h-2 bg-[var(--accent-earth)] rounded-full group-hover/item:scale-150 transition-transform"></span>
+                          {highlight}
+                        </p>
+                      ))}
+                      
+                      {selectedStep !== idx && (
+                        <p className="text-xs font-black text-[var(--accent-earth)] pt-4 flex items-center gap-2 animate-pulse">
+                          Click to select <ArrowRight className="w-3 h-3" />
+                        </p>
+                      )}
+                    </motion.div>
+                  </div>
                 </div>
-
-                <p className="text-sm text-[var(--text-secondary)] mb-6">
-                  {step.description}
-                </p>
-
-                {selectedStep === idx && (
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    className="space-y-2 pt-6 border-t border-black/10"
-                  >
-                    {step.highlights.map((highlight, hidx) => (
-                      <p key={hidx} className="text-sm font-semibold text-[var(--accent-teal)] flex items-center gap-2">
-                        <span className="w-1.5 h-1.5 bg-[var(--accent-earth)] rounded-full"></span>
-                        {highlight}
-                      </p>
-                    ))}
-                  </motion.div>
-                )}
               </motion.div>
             )
           })}

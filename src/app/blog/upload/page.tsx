@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/Button'
 import { Camera, Send, CheckCircle, Image as ImageIcon } from 'lucide-react'
+import { useRouter } from 'next/navigation'
 
 export default function BlogUploadPage() {
   const [formData, setFormData] = useState({
@@ -14,6 +15,7 @@ export default function BlogUploadPage() {
   })
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+  const router = useRouter()
 
   const handleChange = (e: any) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -25,6 +27,7 @@ export default function BlogUploadPage() {
     
     // Simulate API call for blog upload
     setTimeout(() => {
+      router.refresh()
       setSubmitted(true)
       setLoading(false)
       setFormData({ title: '', author: '', location: '', content: '' })

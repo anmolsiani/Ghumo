@@ -2,6 +2,7 @@
 
 import React from 'react'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/Button'
 import Link from 'next/link'
 
@@ -16,23 +17,34 @@ export function GalleryPreview() {
   ]
 
   return (
-    <section className="py-32 bg-[var(--bg-primary)] overflow-hidden">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-20 text-center space-y-8 mb-16">
+    <section className="py-32 bg-[var(--bg-primary)] overflow-hidden perspective-container">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-20 text-center space-y-8 mb-16 preserve-3d">
         <span className="text-xs font-bold uppercase tracking-[0.3em] text-[var(--accent-earth)]">Visual Journey</span>
         <h2 className="text-[var(--text-lg)] font-black leading-tight">The Ghumo Gallery</h2>
+        <h3 className="text-sm font-bold uppercase tracking-widest text-[var(--text-muted)]">Experience India Through Our Lens</h3>
       </div>
 
-      <div className="flex gap-4 animate-scroll-x hover:pause">
+      <div className="flex gap-8 animate-scroll-x hover:pause preserve-3d py-10">
         {[...images, ...images].map((img, i) => (
-          <div key={i} className="relative flex-shrink-0 w-80 aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-white/20">
+          <motion.div 
+            key={i} 
+            whileHover={{ 
+              rotateX: 10, 
+              rotateY: -10, 
+              z: 50,
+              scale: 1.05
+            }}
+            className="relative flex-shrink-0 w-80 aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border border-white/20 preserve-3d cursor-pointer"
+          >
              <Image src={img} fill className="object-cover" alt="Gallery preview" />
-          </div>
+             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          </motion.div>
         ))}
       </div>
 
-      <div className="mt-20 text-center">
+      <div className="mt-20 text-center preserve-3d">
         <Link href="/gallery">
-          <Button variant="secondary" magnetic>Explore Full Gallery</Button>
+          <Button variant="secondary" magnetic as="div">Explore Full Gallery</Button>
         </Link>
       </div>
     </section>

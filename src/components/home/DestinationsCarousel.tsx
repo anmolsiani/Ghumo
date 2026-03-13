@@ -1,11 +1,13 @@
 "use client"
 
-import React, { useRef, useEffect, useState } from 'react'
+import React, { useRef, useEffect, useLayoutEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ArrowRight } from 'lucide-react'
+
+import { motion } from 'framer-motion'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -26,48 +28,49 @@ export function DestinationsCarousel() {
   const [progress, setProgress] = useState(0)
   const [currentIndex, setCurrentIndex] = useState(1)
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!trackRef.current) return
 
-    const track = trackRef.current
-    const cards = track.querySelectorAll('.state-card')
-    
-    // Horizontal scroll animation
-    const tl = gsap.to(track, {
-      x: () => -(track.scrollWidth - window.innerWidth + 160),
-      ease: "none",
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top top",
-        end: () => `+=${track.scrollWidth}`,
-        scrub: 1,
-        pin: true,
-        onUpdate: (self) => {
-          setProgress(self.progress * 100)
-          
-          // Logic for current card index
-          const index = Math.round(self.progress * (DESTINATIONS.length - 1)) + 1
-          setCurrentIndex(index)
+    const ctx = gsap.context(() => {
+      const track = trackRef.current
+      if (!track) return
+
+      // Horizontal scroll animation
+      gsap.to(track, {
+        x: () => -(track.scrollWidth - window.innerWidth + 160),
+        ease: "none",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top top",
+          end: () => `+=${track.scrollWidth}`,
+          scrub: 1,
+          pin: true,
+          onUpdate: (self) => {
+            setProgress(self.progress * 100)
+            
+            // Logic for current card index
+            const index = Math.round(self.progress * (DESTINATIONS.length - 1)) + 1
+            setCurrentIndex(index)
+          }
         }
-      }
-    })
+      })
+    }, sectionRef)
 
     return () => {
-      tl.kill()
-      ScrollTrigger.getAll().forEach(t => t.kill())
+      ctx.revert()
     }
   }, [])
 
   return (
-    <section ref={sectionRef} className="destinations-section relative bg-[var(--bg-secondary)] overflow-hidden py-32 min-h-screen flex flex-col justify-center">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-20 mb-16">
+    <section ref={sectionRef} className="destinations-section relative bg-[var(--bg-secondary)] overflow-hidden py-32 min-h-screen flex flex-col justify-center perspective-container">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-20 mb-16 preserve-3d">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div className="space-y-4">
              <span className="text-xs font-bold uppercase tracking-[0.3em] text-[var(--accent-earth)]">Explore Destinations</span>
              <h2 className="text-[var(--text-lg)] font-black leading-tight max-w-xl">Where would you like to go?</h2>
           </div>
           <div className="flex items-center gap-6">
-            <div className="relative w-24 h-24">
+            <div className="relative w-24 h-24" style={{ transform: 'translateZ(30px)' }}>
                <svg className="w-full h-full -rotate-90" viewBox="0 0 100 100">
                   <circle 
                     cx="50" cy="50" r="45" 
@@ -94,49 +97,53 @@ export function DestinationsCarousel() {
         </div>
       </div>
 
-      <div className="carousel-container relative overflow-visible">
-        <div ref={trackRef} className="carousel-track flex gap-8 px-6 lg:px-20 pb-20">
+      <div className="carousel-container relative overflow-visible preserve-3d">
+        <div ref={trackRef} className="carousel-track flex gap-8 px-6 lg:px-20 pb-20 preserve-3d">
           {DESTINATIONS.map((state) => (
-            <article key={state.id} className="state-card flex-shrink-0 w-[450px] group">
-              <div className="relative h-[550px] rounded-[2rem] overflow-hidden shadow-xl glass border-white/40">
-                {/* Background Image Placeholder (Actual will be fetched or randomized) */}
-                <div className="absolute inset-0">
+            <motion.article 
+              key={state.id} 
+              whileHover={{ rotateY: 10, z: 50, scale: 1.02 }}
+              className="state-card flex-shrink-0 w-[450px] group preserve-3d"
+            >
+              <div className="relative h-[550px] rounded-[2rem] overflow-hidden shadow-2xl glass border-white/40 preserve-3d">
+                {/* Background Image */}
+                <div className="absolute inset-0 preserve-3d">
                    <Image 
                      src={`https://images.unsplash.com/photo-1506461883276-594a12b11cf3?auto=format&fit=crop&w=800&q=80&sig=${state.id}`} 
                      fill
                      className="object-cover transition-transform duration-700 group-hover:scale-110"
                      alt={state.name}
                    />
-                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
                 </div>
 
-                <div className="absolute top-8 right-8 glass px-4 py-2 rounded-full flex items-center gap-2">
+                <div className="absolute top-8 right-8 glass px-4 py-2 rounded-full flex items-center gap-2" style={{ transform: 'translateZ(40px)' }}>
                    <span>{state.icon}</span>
-                   <span className="text-xs font-bold text-white tracking-widest uppercase">{state.tag}</span>
+                   <h4 className="text-xs font-bold text-white tracking-widest uppercase">{state.tag}</h4>
                 </div>
 
-                <div className="absolute bottom-0 left-0 right-0 p-10 text-white space-y-4">
-                  <div className="flex justify-between items-end border-b border-white/20 pb-6 mb-6">
+                <div className="absolute bottom-0 left-0 right-0 p-10 text-white space-y-4 preserve-3d">
+                  <div className="flex justify-between items-end border-b border-white/20 pb-6 mb-6" style={{ transform: 'translateZ(30px)' }}>
                     <div>
-                      <span className="text-xs font-medium opacity-60 uppercase tracking-widest block mb-2">{state.packages} Packages</span>
+                      <h4 className="text-xs font-medium opacity-60 uppercase tracking-widest block mb-2">{state.packages} Packages</h4>
                       <h3 className="text-3xl font-black font-heading">{state.name}</h3>
                     </div>
                   </div>
                   
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between" style={{ transform: 'translateZ(50px)' }}>
                     <div>
-                      <p className="text-[10px] uppercase tracking-widest opacity-60 mb-1">Starting from</p>
-                      <p className="text-2xl font-black">₹{state.price.toLocaleString()}/-</p>
+                      <h4 className="text-[10px] uppercase tracking-widest opacity-60 mb-1 font-normal">Starting from</h4>
+                      <h3 className="text-2xl font-black">₹{state.price.toLocaleString()}/-</h3>
                     </div>
                     <Link href={`/destinations/${state.id}`}>
-                      <button className="w-14 h-14 rounded-full bg-white text-black flex items-center justify-center hover:bg-[var(--accent-earth)] hover:text-white transition-colors">
+                      <div className="w-14 h-14 rounded-full bg-white text-black flex items-center justify-center hover:bg-[var(--accent-earth)] hover:text-white transition-colors cursor-pointer shadow-xl">
                         <ArrowRight />
-                      </button>
+                      </div>
                     </Link>
                   </div>
                 </div>
               </div>
-            </article>
+            </motion.article>
           ))}
         </div>
       </div>

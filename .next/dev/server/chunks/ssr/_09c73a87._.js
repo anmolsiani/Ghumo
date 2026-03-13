@@ -290,87 +290,170 @@ function StartAJourneyPage() {
                                     delay: idx * 0.1
                                 },
                                 onClick: ()=>setSelectedStep(idx),
-                                className: `cursor-pointer transition-all duration-500 rounded-[2rem] p-8 ${selectedStep === idx ? 'bg-white shadow-2xl border-2 border-[var(--accent-earth)]' : 'bg-white/50 shadow-lg border border-white/50 hover:shadow-xl'}`,
+                                whileHover: {
+                                    scale: 1.02,
+                                    y: -5,
+                                    transition: {
+                                        duration: 0.3
+                                    }
+                                },
+                                className: `group relative cursor-pointer transition-all duration-500 rounded-[2.5rem] p-10 overflow-hidden ${selectedStep === idx ? 'bg-white shadow-[0_20px_50px_rgba(139,115,85,0.15)] border-2 border-[var(--accent-earth)]' : 'bg-white/60 shadow-lg border border-white/50 hover:bg-white hover:shadow-2xl'}`,
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "mb-6",
+                                        className: "absolute -top-24 -right-24 w-48 h-48 bg-[var(--accent-earth)]/5 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/app/start-journey/page.tsx",
+                                        lineNumber: 131,
+                                        columnNumber: 17
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "relative z-10",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "w-16 h-16 rounded-full bg-gradient-to-br from-[var(--accent-earth)] to-[var(--accent-teal)] flex items-center justify-center text-white mb-4",
-                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Icon, {
-                                                    className: "w-8 h-8"
-                                                }, void 0, false, {
+                                                className: "mb-8",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: `w-20 h-20 rounded-2xl bg-gradient-to-br from-[var(--accent-earth)] to-[var(--accent-teal)] flex items-center justify-center text-white mb-6 transform group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 shadow-lg`,
+                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Icon, {
+                                                            className: "w-10 h-10"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/src/app/start-journey/page.tsx",
+                                                            lineNumber: 136,
+                                                            columnNumber: 23
+                                                        }, this)
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/app/start-journey/page.tsx",
+                                                        lineNumber: 135,
+                                                        columnNumber: 21
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "flex items-center gap-3 mb-2",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                className: "px-3 py-1 rounded-full bg-[var(--accent-earth)]/10 text-[10px] font-black uppercase tracking-widest text-[var(--accent-earth)]",
+                                                                children: [
+                                                                    "Step ",
+                                                                    step.step
+                                                                ]
+                                                            }, void 0, true, {
+                                                                fileName: "[project]/src/app/start-journey/page.tsx",
+                                                                lineNumber: 139,
+                                                                columnNumber: 24
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                className: "h-[1px] flex-1 bg-gradient-to-r from-[var(--accent-earth)]/20 to-transparent"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/src/app/start-journey/page.tsx",
+                                                                lineNumber: 140,
+                                                                columnNumber: 24
+                                                            }, this)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/src/app/start-journey/page.tsx",
+                                                        lineNumber: 138,
+                                                        columnNumber: 21
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                        className: "text-3xl font-black tracking-tight",
+                                                        children: step.title
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/src/app/start-journey/page.tsx",
+                                                        lineNumber: 142,
+                                                        columnNumber: 21
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/src/app/start-journey/page.tsx",
+                                                lineNumber: 134,
+                                                columnNumber: 19
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                className: "text-base text-[var(--text-secondary)] leading-relaxed mb-8",
+                                                children: step.description
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/app/start-journey/page.tsx",
+                                                lineNumber: 145,
+                                                columnNumber: 19
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "overflow-hidden",
+                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
+                                                    initial: {
+                                                        height: 0,
+                                                        opacity: 0
+                                                    },
+                                                    animate: {
+                                                        height: selectedStep === idx ? 'auto' : 0,
+                                                        opacity: selectedStep === idx ? 1 : 0
+                                                    },
+                                                    whileHover: selectedStep !== idx ? {
+                                                        height: 'auto',
+                                                        opacity: 1
+                                                    } : {},
+                                                    transition: {
+                                                        duration: 0.4,
+                                                        ease: "circOut"
+                                                    },
+                                                    className: "space-y-3 pt-6 border-t border-black/5",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                            className: "text-[10px] font-black uppercase tracking-[0.2em] text-[var(--text-muted)] mb-4",
+                                                            children: "Highlights"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/src/app/start-journey/page.tsx",
+                                                            lineNumber: 160,
+                                                            columnNumber: 23
+                                                        }, this),
+                                                        step.highlights.map((highlight, hidx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                className: "text-sm font-bold text-[var(--text-primary)] flex items-center gap-3 group/item",
+                                                                children: [
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                        className: "w-2 h-2 bg-[var(--accent-earth)] rounded-full group-hover/item:scale-150 transition-transform"
+                                                                    }, void 0, false, {
+                                                                        fileName: "[project]/src/app/start-journey/page.tsx",
+                                                                        lineNumber: 163,
+                                                                        columnNumber: 27
+                                                                    }, this),
+                                                                    highlight
+                                                                ]
+                                                            }, hidx, true, {
+                                                                fileName: "[project]/src/app/start-journey/page.tsx",
+                                                                lineNumber: 162,
+                                                                columnNumber: 25
+                                                            }, this)),
+                                                        selectedStep !== idx && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                            className: "text-xs font-black text-[var(--accent-earth)] pt-4 flex items-center gap-2 animate-pulse",
+                                                            children: [
+                                                                "Click to select ",
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
+                                                                    className: "w-3 h-3"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/src/app/start-journey/page.tsx",
+                                                                    lineNumber: 170,
+                                                                    columnNumber: 43
+                                                                }, this)
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/src/app/start-journey/page.tsx",
+                                                            lineNumber: 169,
+                                                            columnNumber: 25
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
                                                     fileName: "[project]/src/app/start-journey/page.tsx",
-                                                    lineNumber: 127,
+                                                    lineNumber: 150,
                                                     columnNumber: 21
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/start-journey/page.tsx",
-                                                lineNumber: 126,
-                                                columnNumber: 19
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "text-xs font-bold uppercase tracking-widest text-[var(--accent-earth)]",
-                                                children: [
-                                                    "Step ",
-                                                    step.step
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/src/app/start-journey/page.tsx",
-                                                lineNumber: 129,
-                                                columnNumber: 19
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                                className: "text-2xl font-black mt-3",
-                                                children: step.title
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/app/start-journey/page.tsx",
-                                                lineNumber: 130,
+                                                lineNumber: 149,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/start-journey/page.tsx",
-                                        lineNumber: 125,
-                                        columnNumber: 17
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "text-sm text-[var(--text-secondary)] mb-6",
-                                        children: step.description
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/app/start-journey/page.tsx",
                                         lineNumber: 133,
                                         columnNumber: 17
-                                    }, this),
-                                    selectedStep === idx && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
-                                        initial: {
-                                            opacity: 0
-                                        },
-                                        animate: {
-                                            opacity: 1
-                                        },
-                                        className: "space-y-2 pt-6 border-t border-black/10",
-                                        children: step.highlights.map((highlight, hidx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "text-sm font-semibold text-[var(--accent-teal)] flex items-center gap-2",
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        className: "w-1.5 h-1.5 bg-[var(--accent-earth)] rounded-full"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/src/app/start-journey/page.tsx",
-                                                        lineNumber: 145,
-                                                        columnNumber: 25
-                                                    }, this),
-                                                    highlight
-                                                ]
-                                            }, hidx, true, {
-                                                fileName: "[project]/src/app/start-journey/page.tsx",
-                                                lineNumber: 144,
-                                                columnNumber: 23
-                                            }, this))
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/app/start-journey/page.tsx",
-                                        lineNumber: 138,
-                                        columnNumber: 19
                                     }, this)
                                 ]
                             }, step.step, true, {
@@ -391,7 +474,7 @@ function StartAJourneyPage() {
                                 className: "absolute top-16 left-0 right-0 h-1 bg-gradient-to-r from-[var(--accent-earth)] via-[var(--accent-teal)] to-[var(--accent-earth)]"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/start-journey/page.tsx",
-                                lineNumber: 158,
+                                lineNumber: 183,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -403,23 +486,23 @@ function StartAJourneyPage() {
                                             children: step.step
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/start-journey/page.tsx",
-                                            lineNumber: 162,
+                                            lineNumber: 187,
                                             columnNumber: 17
                                         }, this)
                                     }, step.step, false, {
                                         fileName: "[project]/src/app/start-journey/page.tsx",
-                                        lineNumber: 161,
+                                        lineNumber: 186,
                                         columnNumber: 15
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/src/app/start-journey/page.tsx",
-                                lineNumber: 159,
+                                lineNumber: 184,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/start-journey/page.tsx",
-                        lineNumber: 157,
+                        lineNumber: 182,
                         columnNumber: 9
                     }, this)
                 ]
@@ -439,7 +522,7 @@ function StartAJourneyPage() {
                                 children: "Why Choose Ghumo Holidays?"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/start-journey/page.tsx",
-                                lineNumber: 174,
+                                lineNumber: 199,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -447,13 +530,13 @@ function StartAJourneyPage() {
                                 children: "Because we believe travel should be more than just checking off destinations."
                             }, void 0, false, {
                                 fileName: "[project]/src/app/start-journey/page.tsx",
-                                lineNumber: 177,
+                                lineNumber: 202,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/start-journey/page.tsx",
-                        lineNumber: 173,
+                        lineNumber: 198,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -509,7 +592,7 @@ function StartAJourneyPage() {
                                         children: feature.stat
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/start-journey/page.tsx",
-                                        lineNumber: 222,
+                                        lineNumber: 247,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -517,7 +600,7 @@ function StartAJourneyPage() {
                                         children: feature.title
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/start-journey/page.tsx",
-                                        lineNumber: 223,
+                                        lineNumber: 248,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -525,24 +608,24 @@ function StartAJourneyPage() {
                                         children: feature.description
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/start-journey/page.tsx",
-                                        lineNumber: 224,
+                                        lineNumber: 249,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, idx, true, {
                                 fileName: "[project]/src/app/start-journey/page.tsx",
-                                lineNumber: 215,
+                                lineNumber: 240,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/src/app/start-journey/page.tsx",
-                        lineNumber: 182,
+                        lineNumber: 207,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/start-journey/page.tsx",
-                lineNumber: 172,
+                lineNumber: 197,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -555,7 +638,7 @@ function StartAJourneyPage() {
                             children: "Ready to Start Your Journey?"
                         }, void 0, false, {
                             fileName: "[project]/src/app/start-journey/page.tsx",
-                            lineNumber: 233,
+                            lineNumber: 258,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -563,7 +646,7 @@ function StartAJourneyPage() {
                             children: "Let's create memories that last a lifetime. Whether you're planning a solo adventure, couple's getaway, or family vacation, we've got you covered."
                         }, void 0, false, {
                             fileName: "[project]/src/app/start-journey/page.tsx",
-                            lineNumber: 234,
+                            lineNumber: 259,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -582,18 +665,18 @@ function StartAJourneyPage() {
                                                 className: "w-4 h-4 ml-2"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/start-journey/page.tsx",
-                                                lineNumber: 240,
+                                                lineNumber: 265,
                                                 columnNumber: 30
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/start-journey/page.tsx",
-                                        lineNumber: 239,
+                                        lineNumber: 264,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/start-journey/page.tsx",
-                                    lineNumber: 238,
+                                    lineNumber: 263,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -605,29 +688,29 @@ function StartAJourneyPage() {
                                         children: "Browse All Packages"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/start-journey/page.tsx",
-                                        lineNumber: 244,
+                                        lineNumber: 269,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/start-journey/page.tsx",
-                                    lineNumber: 243,
+                                    lineNumber: 268,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/start-journey/page.tsx",
-                            lineNumber: 237,
+                            lineNumber: 262,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/start-journey/page.tsx",
-                    lineNumber: 232,
+                    lineNumber: 257,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/start-journey/page.tsx",
-                lineNumber: 231,
+                lineNumber: 256,
                 columnNumber: 7
             }, this)
         ]

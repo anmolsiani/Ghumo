@@ -195,7 +195,7 @@ function NavBar() {
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                            href: "/blog/upload",
+                            href: "/blog",
                             className: "hover:text-[var(--accent-earth)] transition-colors text-sm uppercase tracking-widest font-bold",
                             children: "Blog"
                         }, void 0, false, {
@@ -295,6 +295,7 @@ function Footer() {
     const [formData, setFormData] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])({
         name: '',
         email: '',
+        phone: '',
         message: ''
     });
     const [submitted, setSubmitted] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
@@ -308,6 +309,7 @@ function Footer() {
             setFormData({
                 name: '',
                 email: '',
+                phone: '',
                 message: ''
             });
             setTimeout(()=>setSubmitted(false), 3000);
@@ -642,7 +644,7 @@ function Footer() {
                                             className: "space-y-4",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "grid grid-cols-2 gap-4",
+                                                    className: "grid grid-cols-1 sm:grid-cols-2 gap-4",
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                                             type: "text",
@@ -660,13 +662,13 @@ function Footer() {
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                                            type: "email",
+                                                            type: "tel",
                                                             required: true,
-                                                            placeholder: "Email Address",
-                                                            value: formData.email,
+                                                            placeholder: "Phone Number",
+                                                            value: formData.phone,
                                                             onChange: (e)=>setFormData({
                                                                     ...formData,
-                                                                    email: e.target.value
+                                                                    phone: e.target.value
                                                                 }),
                                                             className: "w-full px-5 py-3 rounded-xl border border-gray-200 focus:border-[var(--accent-earth)] focus:outline-none bg-gray-50 transition-colors"
                                                         }, void 0, false, {
@@ -678,6 +680,21 @@ function Footer() {
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/ui/Footer.tsx",
                                                     lineNumber: 89,
+                                                    columnNumber: 17
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                    type: "email",
+                                                    required: true,
+                                                    placeholder: "Email Address",
+                                                    value: formData.email,
+                                                    onChange: (e)=>setFormData({
+                                                            ...formData,
+                                                            email: e.target.value
+                                                        }),
+                                                    className: "w-full px-5 py-3 rounded-xl border border-gray-200 focus:border-[var(--accent-earth)] focus:outline-none bg-gray-50 transition-colors"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/src/components/ui/Footer.tsx",
+                                                    lineNumber: 107,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -692,7 +709,7 @@ function Footer() {
                                                     className: "w-full px-5 py-3 rounded-xl border border-gray-200 focus:border-[var(--accent-earth)] focus:outline-none bg-gray-50 transition-colors resize-none"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ui/Footer.tsx",
-                                                    lineNumber: 107,
+                                                    lineNumber: 115,
                                                     columnNumber: 17
                                                 }, this),
                                                 submitted ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -710,14 +727,14 @@ function Footer() {
                                                             className: "w-5 h-5"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ui/Footer.tsx",
-                                                            lineNumber: 122,
+                                                            lineNumber: 130,
                                                             columnNumber: 21
                                                         }, this),
                                                         " Message Sent!"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/ui/Footer.tsx",
-                                                    lineNumber: 117,
+                                                    lineNumber: 125,
                                                     columnNumber: 19
                                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$Button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
                                                     type: "submit",
@@ -744,19 +761,19 @@ function Footer() {
                                                                     className: "w-4 h-4"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/ui/Footer.tsx",
-                                                                    lineNumber: 138,
+                                                                    lineNumber: 146,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/ui/Footer.tsx",
-                                                                lineNumber: 134,
+                                                                lineNumber: 142,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
                                                     }, void 0, true)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ui/Footer.tsx",
-                                                    lineNumber: 125,
+                                                    lineNumber: 133,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
@@ -795,7 +812,7 @@ function Footer() {
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/ui/Footer.tsx",
-                            lineNumber: 151,
+                            lineNumber: 159,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -816,17 +833,17 @@ function Footer() {
                                             d: "M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ui/Footer.tsx",
-                                            lineNumber: 158,
+                                            lineNumber: 166,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/ui/Footer.tsx",
-                                        lineNumber: 157,
+                                        lineNumber: 165,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/ui/Footer.tsx",
-                                    lineNumber: 156,
+                                    lineNumber: 164,
                                     columnNumber: 13
                                 }, this),
                                 [
@@ -850,24 +867,24 @@ function Footer() {
                                             children: social.icon
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ui/Footer.tsx",
-                                            lineNumber: 169,
+                                            lineNumber: 177,
                                             columnNumber: 17
                                         }, this)
                                     }, social.name, false, {
                                         fileName: "[project]/src/components/ui/Footer.tsx",
-                                        lineNumber: 168,
+                                        lineNumber: 176,
                                         columnNumber: 15
                                     }, this))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/ui/Footer.tsx",
-                            lineNumber: 155,
+                            lineNumber: 163,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/ui/Footer.tsx",
-                    lineNumber: 150,
+                    lineNumber: 158,
                     columnNumber: 9
                 }, this)
             ]
@@ -912,13 +929,15 @@ function SmoothScrollProvider({ children }) {
             smoothWheel: true
         });
         lenisRef.current = lenis;
+        let rfId;
         function raf(time) {
             lenis.raf(time);
-            requestAnimationFrame(raf);
+            rfId = requestAnimationFrame(raf);
         }
-        requestAnimationFrame(raf);
+        rfId = requestAnimationFrame(raf);
         return ()=>{
             lenis.destroy();
+            cancelAnimationFrame(rfId);
         };
     }, [
         mounted
@@ -928,7 +947,7 @@ function SmoothScrollProvider({ children }) {
         children: children
     }, void 0, false, {
         fileName: "[project]/src/components/layout/SmoothScrollProvider.tsx",
-        lineNumber: 39,
+        lineNumber: 42,
         columnNumber: 5
     }, this);
 }

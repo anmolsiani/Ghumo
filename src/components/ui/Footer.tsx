@@ -7,7 +7,7 @@ import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/Button'
 
 export function Footer() {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' })
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' })
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
 
@@ -17,7 +17,7 @@ export function Footer() {
     setTimeout(() => {
       setSubmitted(true)
       setLoading(false)
-      setFormData({ name: '', email: '', message: '' })
+      setFormData({ name: '', email: '', phone: '', message: '' })
       setTimeout(() => setSubmitted(false), 3000)
     }, 1000)
   }
@@ -86,7 +86,7 @@ export function Footer() {
               <p className="text-[var(--text-secondary)] mb-8">We'd love to hear from you. Drop us a line!</p>
 
               <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <input
                     type="text"
                     required
@@ -96,14 +96,22 @@ export function Footer() {
                     className="w-full px-5 py-3 rounded-xl border border-gray-200 focus:border-[var(--accent-earth)] focus:outline-none bg-gray-50 transition-colors"
                   />
                   <input
-                    type="email"
+                    type="tel"
                     required
-                    placeholder="Email Address"
-                    value={formData.email}
-                    onChange={(e) => setFormData({...formData, email: e.target.value})}
+                    placeholder="Phone Number"
+                    value={formData.phone}
+                    onChange={(e) => setFormData({...formData, phone: e.target.value})}
                     className="w-full px-5 py-3 rounded-xl border border-gray-200 focus:border-[var(--accent-earth)] focus:outline-none bg-gray-50 transition-colors"
                   />
                 </div>
+                <input
+                  type="email"
+                  required
+                  placeholder="Email Address"
+                  value={formData.email}
+                  onChange={(e) => setFormData({...formData, email: e.target.value})}
+                  className="w-full px-5 py-3 rounded-xl border border-gray-200 focus:border-[var(--accent-earth)] focus:outline-none bg-gray-50 transition-colors"
+                />
                 <textarea
                   required
                   placeholder="How can we help you plan your trip?"

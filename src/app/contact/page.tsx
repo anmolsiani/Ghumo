@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/Button'
 import { Mail, Phone, MapPin, Clock, Send, CheckCircle } from 'lucide-react'
+import { useRouter } from 'next/navigation'
 
 // Define animation variants outside component
 const container = {
@@ -60,56 +61,69 @@ export default function ContactPage() {
     name: '',
     email: '',
     phone: '',
+    travelers: '1',
+    travelDates: '',
     subject: '',
     message: '',
   })
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
+  const router = useRouter()
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
+    setError('')
 
     try {
-      // Simulate API call for now to guarantee success UI
-      await new Promise(resolve => setTimeout(resolve, 1500))
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      })
+
+      if (!response.ok) {
+        throw new Error('Failed to send message')
+      }
       
+      router.refresh()
       setSubmitted(true)
-      setFormData({ name: '', email: '', phone: '', subject: '', message: '' })
+      setFormData({ name: '', email: '', phone: '', travelers: '1', travelDates: '', subject: '', message: '' })
       setTimeout(() => setSubmitted(false), 5000)
-    } catch (error) {
-      console.error('Error:', error)
+    } catch (error: any) {
+      setError(error.message)
     } finally {
       setLoading(false)
     }
   }
 
   return (
-    <div className="bg-[var(--bg-primary)] min-h-screen pt-40 pb-32">
+    <div className="bg-[var(--bg-primary)] min-h-screen pt-40 pb-32 perspective-container">
       {/* Hero */}
-      <section className="px-6 max-w-[1400px] mx-auto mb-24">
+      <section className="px-6 max-w-[1400px] mx-auto mb-24 preserve-3d">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center space-y-6 mb-16"
+          className="text-center space-y-6 mb-16 preserve-3d"
         >
           <span className="text-xs font-bold uppercase tracking-[0.4em] text-[var(--accent-earth)]">Get in Touch</span>
           <h1 className="text-6xl md:text-7xl font-black tracking-tighter leading-tight">
             Let's Plan Your <br /> Next <span className="text-[var(--accent-earth)]">Adventure</span>
           </h1>
-          <p className="text-xl text-[var(--text-secondary)] max-w-2xl mx-auto">
-            Have questions? Need personalized recommendations? Our travel experts are here to help you create the perfect itinerary.
-          </p>
+          <h3 className="text-xl text-[var(--text-secondary)] max-w-2xl mx-auto font-medium">
+            Have questions? Need personalized recommendations? Our travel experts are here to help you curate the perfect itinerary.
+          </h3>
         </motion.div>
       </section>
 
       {/* Main Content */}
-      <section className="px-6 max-w-[1400px] mx-auto mb-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+      <section className="px-6 max-w-[1400px] mx-auto mb-24 preserve-3d">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 preserve-3d">
           
           {/* Contact Form */}
           <motion.div 
@@ -117,16 +131,16 @@ export default function ContactPage() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            className="space-y-8"
+            className="space-y-8 preserve-3d"
           >
             <div>
               <span className="text-xs font-bold uppercase tracking-[0.4em] text-[var(--accent-earth)] block mb-3">Contact Form</span>
               <h2 className="text-4xl font-black tracking-tighter mb-4">Send us a Message</h2>
-              <p className="text-[var(--text-secondary)]">Fill out the form and we'll get back to you within 24 hours.</p>
+              <h4 className="text-[var(--text-secondary)] font-normal">Fill out the form and we'll get back to you within 24 hours.</h4>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-6 bg-white p-10 rounded-[2.5rem] shadow-xl border border-gray-100">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <form onSubmit={handleSubmit} className="space-y-6 bg-white p-10 rounded-[2.5rem] shadow-xl border border-gray-100 preserve-3d">
+              <div className="grid grid-cols-1 gap-6">
                 <motion.div variants={item}>
                   <label className="block text-sm font-bold mb-3 text-[var(--text-primary)]">Full Name *</label>
                   <input
@@ -139,7 +153,9 @@ export default function ContactPage() {
                     placeholder="John Doe"
                   />
                 </motion.div>
+              </div>
 
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <motion.div variants={item}>
                   <label className="block text-sm font-bold mb-3 text-[var(--text-primary)]">Email Address *</label>
                   <input
@@ -152,9 +168,7 @@ export default function ContactPage() {
                     placeholder="john@example.com"
                   />
                 </motion.div>
-              </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <motion.div variants={item}>
                   <label className="block text-sm font-bold mb-3 text-[var(--text-primary)]">Phone Number *</label>
                   <input
@@ -167,7 +181,38 @@ export default function ContactPage() {
                     placeholder="+91 99999 00000"
                   />
                 </motion.div>
+              </div>
 
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <motion.div variants={item}>
+                  <label className="block text-sm font-bold mb-3 text-[var(--text-primary)]">Travelers *</label>
+                  <select
+                    name="travelers"
+                    value={formData.travelers}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-6 py-4 rounded-xl border border-gray-200 focus:border-[var(--accent-earth)] focus:outline-none transition-colors bg-gray-50 cursor-pointer"
+                  >
+                    {[1, 2, 3, 4, 5, '6-10', '10+'].map(val => (
+                      <option key={val} value={val}>{val} {val === 1 ? 'Traveler' : 'Travelers'}</option>
+                    ))}
+                  </select>
+                </motion.div>
+
+                <motion.div variants={item}>
+                  <label className="block text-sm font-bold mb-3 text-[var(--text-primary)]">Preferred Dates</label>
+                  <input
+                    type="text"
+                    name="travelDates"
+                    value={formData.travelDates}
+                    onChange={handleChange}
+                    className="w-full px-6 py-4 rounded-xl border border-gray-200 focus:border-[var(--accent-earth)] focus:outline-none transition-colors bg-gray-50"
+                    placeholder="Dec 2023 or 15-20 Jan"
+                  />
+                </motion.div>
+              </div>
+
+              <div className="grid grid-cols-1 gap-6">
                 <motion.div variants={item}>
                   <label className="block text-sm font-bold mb-3 text-[var(--text-primary)]">Subject *</label>
                   <input
@@ -177,7 +222,7 @@ export default function ContactPage() {
                     onChange={handleChange}
                     required
                     className="w-full px-6 py-4 rounded-xl border border-gray-200 focus:border-[var(--accent-earth)] focus:outline-none transition-colors bg-gray-50"
-                    placeholder="What's this about?"
+                    placeholder="E.g. Package Inquiry, Custom Trip, etc."
                   />
                 </motion.div>
               </div>
@@ -215,8 +260,8 @@ export default function ContactPage() {
                 >
                   <CheckCircle className="w-8 h-8 flex-shrink-0" />
                   <div>
-                    <p className="font-bold text-lg">Message sent successfully!</p>
-                    <p className="text-sm">Our team will be in touch with you shortly.</p>
+                    <h4 className="font-bold text-lg">Message sent successfully!</h4>
+                    <h4 className="text-sm font-normal">Our team will be in touch with you shortly.</h4>
                   </div>
                 </motion.div>
               )}
@@ -229,26 +274,31 @@ export default function ContactPage() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            className="space-y-8"
+            className="space-y-8 preserve-3d"
           >
             <div>
               <span className="text-xs font-bold uppercase tracking-[0.4em] text-[var(--accent-earth)] block mb-3">Information</span>
               <h2 className="text-4xl font-black tracking-tighter mb-4">Contact Details</h2>
-              <p className="text-[var(--text-secondary)]">Multiple ways to reach our world-class customer service team.</p>
+              <h4 className="text-[var(--text-secondary)] font-normal">Multiple ways to reach our world-class customer service team.</h4>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 preserve-3d">
               {CONTACT_INFO.map((contact, idx) => {
                 const Icon = contact.icon
                 return (
-                  <motion.div key={idx} variants={item} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all border border-gray-100 hover:-translate-y-1 group">
-                    <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[var(--accent-earth)]/10 to-[var(--accent-teal)]/10 flex items-center justify-center text-[var(--accent-earth)] mb-6 group-hover:scale-110 transition-transform">
+                  <motion.div 
+                    key={idx} 
+                    variants={item} 
+                    whileHover={{ rotateY: idx % 2 === 0 ? 10 : -10, z: 30 }}
+                    className="bg-white rounded-2xl p-8 shadow-lg transition-all border border-gray-100 group preserve-3d"
+                  >
+                    <div className="w-14 h-14 rounded-full bg-gradient-to-br from-[var(--accent-earth)]/10 to-[var(--accent-teal)]/10 flex items-center justify-center text-[var(--accent-earth)] mb-6 group-hover:scale-110 transition-transform" style={{ transform: 'translateZ(20px)' }}>
                       <Icon className="w-7 h-7" />
                     </div>
-                    <div>
-                      <p className="text-xs font-bold uppercase tracking-widest text-[var(--text-muted)] mb-3">{contact.title}</p>
-                      <p className="text-lg font-black text-[var(--text-primary)] mb-1">{contact.content}</p>
-                      <p className="text-sm text-[var(--text-secondary)]">{contact.subtext}</p>
+                    <div style={{ transform: 'translateZ(10px)' }}>
+                      <h4 className="text-xs font-bold uppercase tracking-widest text-[var(--text-muted)] mb-3">{contact.title}</h4>
+                      <h4 className="text-lg font-black text-[var(--text-primary)] mb-1">{contact.content}</h4>
+                      <h4 className="text-sm text-[var(--text-secondary)] font-normal">{contact.subtext}</h4>
                     </div>
                   </motion.div>
                 )
@@ -256,16 +306,16 @@ export default function ContactPage() {
             </div>
 
             {/* FAQ */}
-            <motion.div variants={item} className="bg-white rounded-[2.5rem] p-10 shadow-xl border border-gray-100 mt-8">
+            <motion.div variants={item} className="bg-white rounded-[2.5rem] p-10 shadow-xl border border-gray-100 mt-8 preserve-3d">
               <h3 className="font-black text-2xl mb-8 flex items-center gap-3">
                 <span className="w-10 h-10 rounded-full bg-[var(--accent-earth)] text-white flex items-center justify-center text-sm">FAQ</span>
                 Frequent Questions
               </h3>
-              <div className="space-y-6">
+              <div className="space-y-6 preserve-3d">
                 {FAQ_DATA.map((faq, idx) => (
-                  <div key={idx} className="border-b border-gray-100 pb-6 last:border-0 last:pb-0">
-                    <p className="font-bold text-[var(--text-primary)] mb-2 text-lg">{faq.q}</p>
-                    <p className="text-[var(--text-secondary)] leading-relaxed">{faq.a}</p>
+                  <div key={idx} className="border-b border-gray-100 pb-6 last:border-0 last:pb-0" style={{ transform: `translateZ(${idx * 5}px)` }}>
+                    <h4 className="font-bold text-[var(--text-primary)] mb-2 text-lg">{faq.q}</h4>
+                    <h4 className="text-[var(--text-secondary)] leading-relaxed font-normal">{faq.a}</h4>
                   </div>
                 ))}
               </div>
