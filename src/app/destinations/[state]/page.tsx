@@ -2,9 +2,10 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { packagesData } from '@/data/packages'
-import { fetchStateImages } from '@/lib/unsplash'
+import { DESTINATION_IMAGES } from '@/data/destinationsData'
 import { Button } from '@/components/ui/Button'
 import { ArrowLeft, Clock, Star, MapPin } from 'lucide-react'
+import { StateGallery } from '@/components/destinations/StateGallery'
 
 export default async function StatePage({ params }: { params: Promise<{ state: string }> }) {
   const { state } = await params
@@ -12,20 +13,16 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
   // Fetch packages for this state from LOCAL DATA
   const statePackages = packagesData.filter(pkg => pkg.state === state)
   
-  // Fetch images from Unsplash for the header
-  let headerImage = "https://images.unsplash.com/photo-1506461883276-594a12b11cf3?auto=format&fit=crop&w=1400&q=80"
-  try {
-    const images = await fetchStateImages(state, undefined, 1)
-    if (images.length > 0) headerImage = images[0].urlFull
-  } catch (e) {
-    console.error("Unsplash error", e)
-  }
+  // Use local Pexels images for the header
+  // @ts-ignore
+  const stateImgs = DESTINATION_IMAGES[state] || []
+  const headerImage = stateImgs[0] || "https://images.unsplash.com/photo-1506461883276-594a12b11cf3?auto=format&fit=crop&w=1400&q=80"
 
   const stateTitle = state.split('-').map(s => s.charAt(0).toUpperCase() + s.slice(1)).join(' ')
 
   return (
     <div className="bg-[var(--bg-primary)] min-h-screen pb-32">
-      <header className="relative h-[70vh] w-full overflow-hidden">
+      <header className="relative min-h-[50vh] md:h-[70vh] w-full overflow-hidden flex items-center justify-center">
         <Image 
           src={headerImage} 
           fill 
@@ -33,17 +30,17 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
           alt={stateTitle} 
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-primary)] via-black/20 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-primary)] via-black/20 to-transparent shadow-inner"></div>
         
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 z-10">
-          <Link href="/destinations" className="mb-8 glass px-6 py-2 rounded-full flex items-center gap-2 text-white hover:bg-white hover:text-black transition-all">
+        <div className="relative inset-0 flex flex-col items-center justify-center text-center px-6 py-20 md:py-0 z-10 w-full">
+          <Link href="/destinations" className="mb-6 md:mb-8 glass px-5 md:px-6 py-2 rounded-full flex items-center gap-2 text-white hover:bg-white hover:text-black transition-all">
             <ArrowLeft className="w-4 h-4" />
-            <span className="text-xs font-bold uppercase tracking-widest">All Destinations</span>
+            <span className="text-[10px] md:text-xs font-bold uppercase tracking-widest">All Destinations</span>
           </Link>
-          <h1 className="text-white text-[var(--text-xl)] font-black tracking-tighter mb-4 drop-shadow-2xl">
+          <h1 className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-[var(--text-xl)] font-black tracking-tighter mb-4 drop-shadow-2xl">
             {stateTitle}
           </h1>
-          <p className="text-white/80 text-lg max-w-2xl font-medium">
+          <p className="text-white/80 text-sm md:text-lg max-w-xl md:max-w-2xl font-medium">
             Explore {statePackages.length} curated premium packages in the heart of {stateTitle}.
           </p>
         </div>
@@ -60,6 +57,7 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
                     fill 
                     className="object-cover transition-transform duration-700 group-hover:scale-110" 
                     alt={pkg.title}
+                    loading="lazy"
                   />
                   <div className="absolute top-6 left-6 glass px-4 py-2 rounded-full text-[10px] font-bold text-white uppercase tracking-widest">
                     {pkg.category}
@@ -101,6 +99,18 @@ export default async function StatePage({ params }: { params: Promise<{ state: s
             </div>
           )}
         </div>
+      </section>
+
+      {/* Region Gallery */}
+      <section className="max-w-[1400px] mx-auto px-6 lg:px-20 pt-32">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
+          <div className="space-y-4">
+             <span className="text-xs font-bold uppercase tracking-[0.3em] text-[var(--accent-earth)]">Visual Snapshot</span>
+             <h2 className="text-[var(--text-lg)] font-black leading-tight">Glimpses of {stateTitle}</h2>
+          </div>
+        </div>
+
+        <StateGallery images={stateImgs} stateTitle={stateTitle} />
       </section>
     </div>
   )

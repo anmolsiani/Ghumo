@@ -79,7 +79,11 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$sparkles$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Sparkles$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/sparkles.js [app-ssr] (ecmascript) <export default as Sparkles>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__CheckCircle2$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/circle-check.js [app-ssr] (ecmascript) <export default as CheckCircle2>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$Button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/Button.tsx [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/node_modules/@emailjs/browser/es/index.js [app-ssr] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$store$2f$cartStore$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/store/cartStore.ts [app-ssr] (ecmascript)");
 'use client';
+;
+;
 ;
 ;
 ;
@@ -99,6 +103,7 @@ function LeadCaptureModal({ isOpen, onClose, onSuccess, cartTotal }) {
     const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [success, setSuccess] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const [error, setError] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])('');
+    const { items, total } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$store$2f$cartStore$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCartStore"])();
     const handleChange = (e)=>{
         setForm({
             ...form,
@@ -109,18 +114,64 @@ function LeadCaptureModal({ isOpen, onClose, onSuccess, cartTotal }) {
         e.preventDefault();
         setLoading(true);
         setError('');
+        const travN = parseInt(form.travelers) || 1;
+        const cartItems = items.map((i)=>({
+                name: i.title,
+                price: i.price,
+                location: i.state,
+                duration: '—',
+                id: i.id
+            }));
+        const getItem = (i, key)=>cartItems[i] ? cartItems[i][key] || '—' : '—';
+        const getSub = (i)=>{
+            if (!cartItems[i]) return '—';
+            const price = parseFloat(cartItems[i].price.toString()) || 0;
+            return '₹' + (price * travN).toLocaleString('en-IN');
+        };
+        const params = {
+            from_name: form.name,
+            from_email: form.email,
+            phone: form.phone,
+            travellers: form.travelers || '—',
+            travel_date: form.travelDate || '—',
+            message: form.specialRequests || 'Lead from Popup Modal',
+            submission_date: new Date().toLocaleString('en-IN'),
+            reference_id: 'GH-' + Date.now().toString().slice(-8),
+            cart_count: cartItems.length,
+            item1_name: getItem(0, 'name'),
+            item1_price: '₹' + (cartItems[0]?.price || 0),
+            item1_location: getItem(0, 'location'),
+            item1_duration: getItem(0, 'duration'),
+            item1_id: getItem(0, 'id'),
+            item1_subtotal: getSub(0),
+            item2_name: getItem(1, 'name'),
+            item2_price: '₹' + (cartItems[1]?.price || 0),
+            item2_location: getItem(1, 'location'),
+            item2_duration: getItem(1, 'duration'),
+            item2_id: getItem(1, 'id'),
+            item2_subtotal: getSub(1),
+            item3_name: getItem(2, 'name'),
+            item3_price: '₹' + (cartItems[2]?.price || 0),
+            item3_location: getItem(2, 'location'),
+            item3_duration: getItem(2, 'duration'),
+            item3_id: getItem(2, 'id'),
+            item3_visible: cartItems.length >= 3 ? 'flex' : 'none',
+            grand_total: '₹' + (cartTotal || total).toLocaleString('en-IN')
+        };
         try {
-            const res = await fetch('/api/leads', {
+            // 1. Send EmailJS
+            await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$index$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].send(("TURBOPACK compile-time value", "service_f2x5t7q"), ("TURBOPACK compile-time value", "template_440at29"), params, ("TURBOPACK compile-time value", "Q_ti9n4B5LPHdxHO9"));
+            // 2. API call
+            await fetch('/api/leads', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
                     ...form,
-                    cartTotal
+                    cartTotal: cartTotal || total
                 })
             });
-            if (!res.ok) throw new Error('Submission failed. Please try again.');
             setSuccess(true);
             setTimeout(()=>{
                 setSuccess(false);
@@ -150,7 +201,7 @@ function LeadCaptureModal({ isOpen, onClose, onSuccess, cartTotal }) {
                     className: "absolute inset-0 bg-black/60 backdrop-blur-2xl"
                 }, void 0, false, {
                     fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-                    lineNumber: 70,
+                    lineNumber: 133,
                     columnNumber: 11
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -180,7 +231,7 @@ function LeadCaptureModal({ isOpen, onClose, onSuccess, cartTotal }) {
                             className: "absolute top-0 left-0 right-0 h-1 rounded-t-[3rem] bg-gradient-to-r from-[var(--accent-earth)] to-[var(--accent-teal)]"
                         }, void 0, false, {
                             fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-                            lineNumber: 87,
+                            lineNumber: 150,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -199,7 +250,7 @@ function LeadCaptureModal({ isOpen, onClose, onSuccess, cartTotal }) {
                                                             className: "w-5 h-5"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-                                                            lineNumber: 94,
+                                                            lineNumber: 157,
                                                             columnNumber: 21
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -207,13 +258,13 @@ function LeadCaptureModal({ isOpen, onClose, onSuccess, cartTotal }) {
                                                             children: "Almost There"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-                                                            lineNumber: 95,
+                                                            lineNumber: 158,
                                                             columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-                                                    lineNumber: 93,
+                                                    lineNumber: 156,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -222,14 +273,14 @@ function LeadCaptureModal({ isOpen, onClose, onSuccess, cartTotal }) {
                                                         "Tell us about",
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                             fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-                                                            lineNumber: 98,
+                                                            lineNumber: 161,
                                                             columnNumber: 34
                                                         }, this),
                                                         "your journey"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-                                                    lineNumber: 97,
+                                                    lineNumber: 160,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
@@ -237,13 +288,13 @@ function LeadCaptureModal({ isOpen, onClose, onSuccess, cartTotal }) {
                                                     children: "Help us personalise your perfect trip 🌏"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-                                                    lineNumber: 100,
+                                                    lineNumber: 163,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-                                            lineNumber: 92,
+                                            lineNumber: 155,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -254,18 +305,18 @@ function LeadCaptureModal({ isOpen, onClose, onSuccess, cartTotal }) {
                                                 className: "w-5 h-5"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-                                                lineNumber: 109,
+                                                lineNumber: 172,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-                                            lineNumber: 104,
+                                            lineNumber: 167,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-                                    lineNumber: 91,
+                                    lineNumber: 154,
                                     columnNumber: 15
                                 }, this),
                                 success ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -285,12 +336,12 @@ function LeadCaptureModal({ isOpen, onClose, onSuccess, cartTotal }) {
                                                 className: "w-10 h-10 text-green-500"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-                                                lineNumber: 121,
+                                                lineNumber: 184,
                                                 columnNumber: 21
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-                                            lineNumber: 120,
+                                            lineNumber: 183,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -298,7 +349,7 @@ function LeadCaptureModal({ isOpen, onClose, onSuccess, cartTotal }) {
                                             children: "Brilliant! All set 🎉"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-                                            lineNumber: 123,
+                                            lineNumber: 186,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
@@ -306,13 +357,13 @@ function LeadCaptureModal({ isOpen, onClose, onSuccess, cartTotal }) {
                                             children: "Redirecting you to checkout..."
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-                                            lineNumber: 124,
+                                            lineNumber: 187,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-                                    lineNumber: 115,
+                                    lineNumber: 178,
                                     columnNumber: 17
                                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
                                     onSubmit: handleSubmit,
@@ -327,14 +378,14 @@ function LeadCaptureModal({ isOpen, onClose, onSuccess, cartTotal }) {
                                                             className: "inline w-3 h-3 mr-1"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-                                                            lineNumber: 131,
+                                                            lineNumber: 194,
                                                             columnNumber: 23
                                                         }, this),
                                                         "Full Name *"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-                                                    lineNumber: 130,
+                                                    lineNumber: 193,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -347,13 +398,13 @@ function LeadCaptureModal({ isOpen, onClose, onSuccess, cartTotal }) {
                                                     className: INPUT_CLS
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-                                                    lineNumber: 133,
+                                                    lineNumber: 196,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-                                            lineNumber: 129,
+                                            lineNumber: 192,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -368,14 +419,14 @@ function LeadCaptureModal({ isOpen, onClose, onSuccess, cartTotal }) {
                                                                     className: "inline w-3 h-3 mr-1"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-                                                                    lineNumber: 148,
+                                                                    lineNumber: 211,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 "Email Address *"
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-                                                            lineNumber: 147,
+                                                            lineNumber: 210,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -388,13 +439,13 @@ function LeadCaptureModal({ isOpen, onClose, onSuccess, cartTotal }) {
                                                             className: INPUT_CLS
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-                                                            lineNumber: 150,
+                                                            lineNumber: 213,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-                                                    lineNumber: 146,
+                                                    lineNumber: 209,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -406,14 +457,14 @@ function LeadCaptureModal({ isOpen, onClose, onSuccess, cartTotal }) {
                                                                     className: "inline w-3 h-3 mr-1"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-                                                                    lineNumber: 162,
+                                                                    lineNumber: 225,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 "Phone Number *"
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-                                                            lineNumber: 161,
+                                                            lineNumber: 224,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -426,19 +477,19 @@ function LeadCaptureModal({ isOpen, onClose, onSuccess, cartTotal }) {
                                                             className: INPUT_CLS
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-                                                            lineNumber: 164,
+                                                            lineNumber: 227,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-                                                    lineNumber: 160,
+                                                    lineNumber: 223,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-                                            lineNumber: 145,
+                                            lineNumber: 208,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -453,14 +504,14 @@ function LeadCaptureModal({ isOpen, onClose, onSuccess, cartTotal }) {
                                                                     className: "inline w-3 h-3 mr-1"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-                                                                    lineNumber: 180,
+                                                                    lineNumber: 243,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 "Number of Travelers *"
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-                                                            lineNumber: 179,
+                                                            lineNumber: 242,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -486,18 +537,18 @@ function LeadCaptureModal({ isOpen, onClose, onSuccess, cartTotal }) {
                                                                     ]
                                                                 }, v, true, {
                                                                     fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-                                                                    lineNumber: 190,
+                                                                    lineNumber: 253,
                                                                     columnNumber: 27
                                                                 }, this))
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-                                                            lineNumber: 182,
+                                                            lineNumber: 245,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-                                                    lineNumber: 178,
+                                                    lineNumber: 241,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -509,14 +560,14 @@ function LeadCaptureModal({ isOpen, onClose, onSuccess, cartTotal }) {
                                                                     className: "inline w-3 h-3 mr-1"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-                                                                    lineNumber: 196,
+                                                                    lineNumber: 259,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 "Travel Date *"
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-                                                            lineNumber: 195,
+                                                            lineNumber: 258,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -529,19 +580,19 @@ function LeadCaptureModal({ isOpen, onClose, onSuccess, cartTotal }) {
                                                             className: INPUT_CLS
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-                                                            lineNumber: 198,
+                                                            lineNumber: 261,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-                                                    lineNumber: 194,
+                                                    lineNumber: 257,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-                                            lineNumber: 177,
+                                            lineNumber: 240,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -553,14 +604,14 @@ function LeadCaptureModal({ isOpen, onClose, onSuccess, cartTotal }) {
                                                             className: "inline w-3 h-3 mr-1"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-                                                            lineNumber: 213,
+                                                            lineNumber: 276,
                                                             columnNumber: 23
                                                         }, this),
                                                         "Special Requests"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-                                                    lineNumber: 212,
+                                                    lineNumber: 275,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -572,13 +623,13 @@ function LeadCaptureModal({ isOpen, onClose, onSuccess, cartTotal }) {
                                                     className: INPUT_CLS + ' resize-none'
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-                                                    lineNumber: 215,
+                                                    lineNumber: 278,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-                                            lineNumber: 211,
+                                            lineNumber: 274,
                                             columnNumber: 19
                                         }, this),
                                         error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -586,7 +637,7 @@ function LeadCaptureModal({ isOpen, onClose, onSuccess, cartTotal }) {
                                             children: error
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-                                            lineNumber: 227,
+                                            lineNumber: 290,
                                             columnNumber: 21
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$Button$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Button"], {
@@ -601,7 +652,7 @@ function LeadCaptureModal({ isOpen, onClose, onSuccess, cartTotal }) {
                                                         className: "w-5 h-5 mr-2"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-                                                        lineNumber: 239,
+                                                        lineNumber: 302,
                                                         columnNumber: 25
                                                     }, this),
                                                     " Submit & Continue to Checkout"
@@ -609,7 +660,7 @@ function LeadCaptureModal({ isOpen, onClose, onSuccess, cartTotal }) {
                                             }, void 0, true)
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-                                            lineNumber: 231,
+                                            lineNumber: 294,
                                             columnNumber: 19
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -617,36 +668,36 @@ function LeadCaptureModal({ isOpen, onClose, onSuccess, cartTotal }) {
                                             children: "Your information is secure and will never be shared with third parties."
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-                                            lineNumber: 243,
+                                            lineNumber: 306,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-                                    lineNumber: 127,
+                                    lineNumber: 190,
                                     columnNumber: 17
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-                            lineNumber: 89,
+                            lineNumber: 152,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-                    lineNumber: 79,
+                    lineNumber: 142,
                     columnNumber: 11
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-            lineNumber: 68,
+            lineNumber: 131,
             columnNumber: 9
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/ui/LeadCaptureModal.tsx",
-        lineNumber: 66,
+        lineNumber: 129,
         columnNumber: 5
     }, this);
 }

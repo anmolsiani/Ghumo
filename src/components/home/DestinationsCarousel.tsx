@@ -7,6 +7,8 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ArrowRight } from 'lucide-react'
 
+import { DESTINATION_IMAGES } from '@/data/destinationsData'
+
 import { motion } from 'framer-motion'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -62,14 +64,14 @@ export function DestinationsCarousel() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="destinations-section relative bg-[var(--bg-secondary)] overflow-hidden py-32 min-h-screen flex flex-col justify-center perspective-container">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-20 mb-16 preserve-3d">
+    <section ref={sectionRef} className="destinations-section relative bg-[var(--bg-secondary)] overflow-hidden py-20 md:py-32 min-h-screen flex flex-col justify-center perspective-container">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-20 mb-8 md:mb-16 preserve-3d">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div className="space-y-4">
              <span className="text-xs font-bold uppercase tracking-[0.3em] text-[var(--accent-earth)]">Explore Destinations</span>
-             <h2 className="text-[var(--text-lg)] font-black leading-tight max-w-xl">Where would you like to go?</h2>
+             <h2 className="text-3xl sm:text-4xl lg:text-[var(--text-lg)] font-black leading-tight max-w-xl">Where would you like to go?</h2>
           </div>
-          <div className="flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-6">
             <div className="relative w-24 h-24" style={{ transform: 'translateZ(30px)' }}>
                <svg className="w-full h-full -rotate-90" viewBox="0 0 100 100">
                   <circle 
@@ -98,46 +100,48 @@ export function DestinationsCarousel() {
       </div>
 
       <div className="carousel-container relative overflow-visible preserve-3d">
-        <div ref={trackRef} className="carousel-track flex gap-8 px-6 lg:px-20 pb-20 preserve-3d">
+        <div ref={trackRef} className="carousel-track flex gap-6 md:gap-8 px-6 lg:px-20 pb-20 preserve-3d will-change-transform">
           {DESTINATIONS.map((state) => (
             <motion.article 
               key={state.id} 
               whileHover={{ rotateY: 10, z: 50, scale: 1.02 }}
-              className="state-card flex-shrink-0 w-[450px] group preserve-3d"
+              className="state-card flex-shrink-0 w-[300px] sm:w-[350px] md:w-[450px] group preserve-3d will-change-transform"
             >
-              <div className="relative h-[550px] rounded-[2rem] overflow-hidden shadow-2xl glass border-white/40 preserve-3d">
+              <div className="relative h-[450px] md:h-[550px] rounded-[2rem] overflow-hidden shadow-2xl glass border-white/40 preserve-3d will-change-transform">
                 {/* Background Image */}
                 <div className="absolute inset-0 preserve-3d">
                    <Image 
-                     src={`https://images.unsplash.com/photo-1506461883276-594a12b11cf3?auto=format&fit=crop&w=800&q=80&sig=${state.id}`} 
+                     // @ts-ignore
+                     src={DESTINATION_IMAGES[state.id][0]} 
                      fill
                      className="object-cover transition-transform duration-700 group-hover:scale-110"
                      alt={state.name}
+                     loading="lazy"
                    />
                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
                 </div>
 
-                <div className="absolute top-8 right-8 glass px-4 py-2 rounded-full flex items-center gap-2" style={{ transform: 'translateZ(40px)' }}>
-                   <span>{state.icon}</span>
-                   <h4 className="text-xs font-bold text-white tracking-widest uppercase">{state.tag}</h4>
+                <div className="absolute top-6 md:top-8 right-6 md:right-8 glass px-3 md:px-4 py-1.5 md:py-2 rounded-full flex items-center gap-2" style={{ transform: 'translateZ(40px)' }}>
+                   <span className="text-sm md:text-base">{state.icon}</span>
+                   <h4 className="text-[10px] font-bold text-white tracking-widest uppercase">{state.tag}</h4>
                 </div>
 
-                <div className="absolute bottom-0 left-0 right-0 p-10 text-white space-y-4 preserve-3d">
-                  <div className="flex justify-between items-end border-b border-white/20 pb-6 mb-6" style={{ transform: 'translateZ(30px)' }}>
+                <div className="absolute bottom-0 left-0 right-0 p-8 md:p-10 text-white space-y-3 md:space-y-4 preserve-3d">
+                  <div className="flex justify-between items-end border-b border-white/20 pb-4 md:pb-6 mb-4 md:mb-6" style={{ transform: 'translateZ(30px)' }}>
                     <div>
-                      <h4 className="text-xs font-medium opacity-60 uppercase tracking-widest block mb-2">{state.packages} Packages</h4>
-                      <h3 className="text-3xl font-black font-heading">{state.name}</h3>
+                      <h4 className="text-[10px] font-medium opacity-60 uppercase tracking-widest block mb-1 md:mb-2">{state.packages} Packages</h4>
+                      <h3 className="text-2xl md:text-3xl font-black font-heading line-clamp-1">{state.name}</h3>
                     </div>
                   </div>
                   
                   <div className="flex items-center justify-between" style={{ transform: 'translateZ(50px)' }}>
                     <div>
-                      <h4 className="text-[10px] uppercase tracking-widest opacity-60 mb-1 font-normal">Starting from</h4>
-                      <h3 className="text-2xl font-black">₹{state.price.toLocaleString()}/-</h3>
+                      <h4 className="text-[9px] uppercase tracking-widest opacity-60 mb-1 font-normal">Starting from</h4>
+                      <h3 className="text-xl md:text-2xl font-black">₹{state.price.toLocaleString()}/-</h3>
                     </div>
                     <Link href={`/destinations/${state.id}`}>
-                      <div className="w-14 h-14 rounded-full bg-white text-black flex items-center justify-center hover:bg-[var(--accent-earth)] hover:text-white transition-colors cursor-pointer shadow-xl">
-                        <ArrowRight />
+                      <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white text-black flex items-center justify-center hover:bg-[var(--accent-earth)] hover:text-white transition-colors cursor-pointer shadow-xl">
+                        <ArrowRight className="w-5 h-5 md:w-6 md:h-6" />
                       </div>
                     </Link>
                   </div>

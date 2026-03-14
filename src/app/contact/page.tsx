@@ -3,8 +3,10 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/Button'
-import { Mail, Phone, MapPin, Clock, Send, CheckCircle } from 'lucide-react'
+import { Mail, Phone, MapPin, Clock, Send, CheckCircle, X } from 'lucide-react'
 import { useRouter } from 'next/navigation'
+import emailjs from '@emailjs/browser'
+import { useCartStore } from '@/store/cartStore'
 
 // Define animation variants outside component
 const container = {
@@ -68,8 +70,18 @@ export default function ContactPage() {
   })
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
-  const [error, setError] = useState('')
-  const router = useRouter()
+  const [error, setError] = useState(false) // Changed to boolean for simpler status handling as requested
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
+  const { items } = useCartStore()
+  
+  // Map cart store items to the structure expected by the EmailJS logic
+  const cartItems = items.map(i => ({
+    name: i.title,
+    price: i.price,
+    location: i.state,
+    duration: '—', // Duration not explicitly in store, setting fallback
+    id: i.id
+  }))
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -78,44 +90,96 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
-    setError('')
+    setStatus('sending')
+    setError(false)
+
+    const travN = parseInt(formData.travelers) || 1;
+
+    const getItem = (i: number, key: string) =>
+      cartItems[i] ? (cartItems[i] as any)[key] || '—' : '—';
+
+    const getSub = (i: number) => {
+      if (!cartItems[i]) return '—';
+      const price = parseFloat(cartItems[i].price.toString()) || 0;
+      return '₹' + (price * travN).toLocaleString('en-IN');
+    };
+
+    const grand = cartItems.reduce(
+      (sum, it) => sum + (parseFloat(it.price.toString()) || 0) * travN, 0
+    );
+
+    const params = {
+      from_name:       formData.name,
+      from_email:      formData.email,
+      phone:           formData.phone,
+      travellers:      formData.travelers || '—',
+      travel_date:     formData.travelDates || '—',
+      message:         formData.message || '—',
+      submission_date: new Date().toLocaleString('en-IN'),
+      reference_id:    'GH-' + Date.now().toString().slice(-8),
+      cart_count:      cartItems.length,
+
+      item1_name:      getItem(0, 'name'),
+      item1_price:     '₹' + (cartItems[0]?.price || 0),
+      item1_location:  getItem(0, 'location'),
+      item1_duration:  getItem(0, 'duration'),
+      item1_id:        getItem(0, 'id'),
+      item1_subtotal:  getSub(0),
+
+      item2_name:      getItem(1, 'name'),
+      item2_price:     '₹' + (cartItems[1]?.price || 0),
+      item2_location:  getItem(1, 'location'),
+      item2_duration:  getItem(1, 'duration'),
+      item2_id:        getItem(1, 'id'),
+      item2_subtotal:  getSub(1),
+
+      item3_name:      getItem(2, 'name'),
+      item3_price:     '₹' + (cartItems[2]?.price || 0),
+      item3_location:  getItem(2, 'location'),
+      item3_duration:  getItem(2, 'duration'),
+      item3_id:        getItem(2, 'id'),
+      item3_visible:   cartItems.length >= 3 ? 'flex' : 'none',
+
+      grand_total:     '₹' + grand.toLocaleString('en-IN'),
+    };
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-      })
-
-      if (!response.ok) {
-        throw new Error('Failed to send message')
-      }
-      
-      router.refresh()
-      setSubmitted(true)
-      setFormData({ name: '', email: '', phone: '', travelers: '1', travelDates: '', subject: '', message: '' })
-      setTimeout(() => setSubmitted(false), 5000)
-    } catch (error: any) {
-      setError(error.message)
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        params,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      );
+      setStatus('success');
+      setSubmitted(true);
+      setFormData({ name: '', email: '', phone: '', travelers: '1', travelDates: '', subject: '', message: '' });
+      setTimeout(() => {
+        setSubmitted(false);
+        setStatus('idle');
+      }, 5000);
+    } catch (err) {
+      console.error(err);
+      setStatus('error');
+      setError(true);
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
   }
 
   return (
-    <div className="bg-[var(--bg-primary)] min-h-screen pt-40 pb-32 perspective-container">
+    <div className="bg-[var(--bg-primary)] min-h-screen pt-32 md:pt-40 pb-32 perspective-container">
       {/* Hero */}
-      <section className="px-6 max-w-[1400px] mx-auto mb-24 preserve-3d">
+      <section className="px-6 max-w-[1400px] mx-auto mb-16 md:mb-24 preserve-3d">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center space-y-6 mb-16 preserve-3d"
+          className="text-center space-y-6 mb-12 md:mb-16 preserve-3d"
         >
           <span className="text-xs font-bold uppercase tracking-[0.4em] text-[var(--accent-earth)]">Get in Touch</span>
-          <h1 className="text-6xl md:text-7xl font-black tracking-tighter leading-tight">
-            Let's Plan Your <br /> Next <span className="text-[var(--accent-earth)]">Adventure</span>
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-black tracking-tighter leading-[1.1]">
+            Let's Plan Your <br className="hidden md:block" /> Next <span className="text-[var(--accent-earth)]">Adventure</span>
           </h1>
-          <h3 className="text-xl text-[var(--text-secondary)] max-w-2xl mx-auto font-medium">
+          <h3 className="text-base md:text-xl text-[var(--text-secondary)] max-w-2xl mx-auto font-medium leading-relaxed">
             Have questions? Need personalized recommendations? Our travel experts are here to help you curate the perfect itinerary.
           </h3>
         </motion.div>
@@ -123,7 +187,7 @@ export default function ContactPage() {
 
       {/* Main Content */}
       <section className="px-6 max-w-[1400px] mx-auto mb-24 preserve-3d">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 preserve-3d">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 preserve-3d">
           
           {/* Contact Form */}
           <motion.div 
@@ -133,13 +197,13 @@ export default function ContactPage() {
             viewport={{ once: true }}
             className="space-y-8 preserve-3d"
           >
-            <div>
+            <div className="text-center lg:text-left">
               <span className="text-xs font-bold uppercase tracking-[0.4em] text-[var(--accent-earth)] block mb-3">Contact Form</span>
-              <h2 className="text-4xl font-black tracking-tighter mb-4">Send us a Message</h2>
+              <h2 className="text-3xl md:text-4xl font-black tracking-tighter mb-4">Send us a Message</h2>
               <h4 className="text-[var(--text-secondary)] font-normal">Fill out the form and we'll get back to you within 24 hours.</h4>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-6 bg-white p-10 rounded-[2.5rem] shadow-xl border border-gray-100 preserve-3d">
+            <form onSubmit={handleSubmit} className="space-y-6 bg-white p-6 md:p-10 rounded-[2rem] md:rounded-[2.5rem] shadow-xl border border-gray-100 preserve-3d">
               <div className="grid grid-cols-1 gap-6">
                 <motion.div variants={item}>
                   <label className="block text-sm font-bold mb-3 text-[var(--text-primary)]">Full Name *</label>
@@ -245,14 +309,14 @@ export default function ContactPage() {
                   type="submit" 
                   variant="primary" 
                   className="w-full !py-5 !rounded-xl flex items-center justify-center gap-3 text-lg"
-                  disabled={loading}
+                  disabled={loading || status === 'sending'}
                   magnetic
                 >
-                  {loading ? 'Sending...' : <>Send Message <Send className="w-5 h-5" /></>}
+                  {status === 'sending' ? 'Sending...' : <>Send Message <Send className="w-5 h-5" /></>}
                 </Button>
               </motion.div>
 
-              {submitted && (
+              {status === 'success' && (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
@@ -260,8 +324,22 @@ export default function ContactPage() {
                 >
                   <CheckCircle className="w-8 h-8 flex-shrink-0" />
                   <div>
-                    <h4 className="font-bold text-lg">Message sent successfully!</h4>
-                    <h4 className="text-sm font-normal">Our team will be in touch with you shortly.</h4>
+                    <h4 className="font-bold text-lg">Aapki enquiry send ho gayi!</h4>
+                    <h4 className="text-sm font-normal">Hum jald contact karenge.</h4>
+                  </div>
+                </motion.div>
+              )}
+
+              {status === 'error' && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="p-6 bg-red-50 border border-red-200 rounded-xl flex items-center gap-4 text-red-700 mt-4"
+                >
+                  <X className="w-8 h-8 flex-shrink-0" />
+                  <div>
+                    <h4 className="font-bold text-lg">Kuch error aayi.</h4>
+                    <h4 className="text-sm font-normal">Dobara try karein.</h4>
                   </div>
                 </motion.div>
               )}
@@ -274,11 +352,11 @@ export default function ContactPage() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            className="space-y-8 preserve-3d"
+            className="space-y-8 preserve-3d mt-12 lg:mt-0"
           >
-            <div>
+            <div className="text-center lg:text-left">
               <span className="text-xs font-bold uppercase tracking-[0.4em] text-[var(--accent-earth)] block mb-3">Information</span>
-              <h2 className="text-4xl font-black tracking-tighter mb-4">Contact Details</h2>
+              <h2 className="text-3xl md:text-4xl font-black tracking-tighter mb-4">Contact Details</h2>
               <h4 className="text-[var(--text-secondary)] font-normal">Multiple ways to reach our world-class customer service team.</h4>
             </div>
 
@@ -306,7 +384,7 @@ export default function ContactPage() {
             </div>
 
             {/* FAQ */}
-            <motion.div variants={item} className="bg-white rounded-[2.5rem] p-10 shadow-xl border border-gray-100 mt-8 preserve-3d">
+            <motion.div variants={item} className="bg-white rounded-[2rem] md:rounded-[2.5rem] p-6 md:p-10 shadow-xl border border-gray-100 mt-8 preserve-3d">
               <h3 className="font-black text-2xl mb-8 flex items-center gap-3">
                 <span className="w-10 h-10 rounded-full bg-[var(--accent-earth)] text-white flex items-center justify-center text-sm">FAQ</span>
                 Frequent Questions

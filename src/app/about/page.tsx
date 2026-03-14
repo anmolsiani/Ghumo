@@ -1,89 +1,135 @@
-'use client'
+"use client"
 
 import React from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
+import { Reveal } from '@/components/animations/Reveal'
 import { Button } from '@/components/ui/Button'
 import Link from 'next/link'
+import { Award, Globe, Users, Heart } from 'lucide-react'
+
+const team = [
+  {
+    name: "Rajat Saini",
+    role: "Founder",
+    bio: "Visionary leader with a passion for transforming the Indian travel landscape. Rajat focuses on strategic partnerships and expanding the Ghumo Holidays footprint globally.",
+    image: "/team/rajat_c.png",
+    skills: ["Strategy", "Partnerships", "Vision"]
+  },
+  {
+    name: "Komal Saini",
+    role: "CEO",
+    bio: "Driving operational excellence and customer-centric growth. Komal ensures that every package curated by Ghumo Holidays meets the highest standards of quality and service.",
+    image: "/team/komal_c.png",
+    skills: ["Operations", "Growth", "Quality"]
+  },
+  {
+    name: "Ish",
+    role: "Tech & Support",
+    bio: "Ensuring a seamless digital experience for all travelers. Ish leads our technical infrastructure and customer support systems, bridging technology with soulful travel.",
+    image: "/team/ish_c.png",
+    skills: ["Infrastructure", "Support", "Innovation"]
+  }
+]
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen pt-40 pb-32 bg-[var(--bg-primary)] perspective-container">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-20 space-y-32 preserve-3d">
-        
-        {/* Story Section */}
-        <section className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center preserve-3d">
-           <div className="space-y-8 order-2 lg:order-1">
-              <span className="text-xs font-bold uppercase tracking-[0.4em] text-[var(--accent-earth)]">Our Legacy</span>
-              <h1 className="text-[var(--text-xl)] font-black tracking-tighter leading-none">Crafting Memories <br/><span className="text-[var(--accent-earth)]">Since 2010.</span></h1>
-              <h3 className="text-lg text-[var(--text-secondary)] leading-relaxed font-medium">
-                At Ghumo Holidays, we believe that travel is the only thing you buy that makes you richer. For over 15 years, we've been dedicated to uncovering the soul of India, providing travelers with more than just a destination, but a deeper connection to the culture, land, and spirit of Bharat.
-              </h3>
-              <h4 className="text-[var(--text-base)] text-[var(--text-secondary)] leading-relaxed font-normal">
-                Starting as a small boutique agency in New Delhi, we've grown into one of India's premier travel connoisseurs, serving over 10,000 happy souls with hand-crafted, high-end itineraries.
-              </h4>
-           </div>
-           <motion.div 
-             whileHover={{ rotateX: -5, rotateY: 5, z: 50 }}
-             className="relative aspect-square rounded-[4rem] overflow-hidden shadow-2xl order-1 lg:order-2 preserve-3d border border-white/20"
-           >
-              <Image 
-                src="https://images.unsplash.com/photo-1548013146-72479768bbaa?auto=format&fit=crop&w=1200&q=80" 
-                fill 
-                className="object-cover" 
-                alt="Taj Mahal Experience"
-              />
-           </motion.div>
-        </section>
+    <main className="bg-[var(--bg-primary)] min-h-screen pt-32 pb-20 overflow-hidden">
+      {/* Hero Section */}
+      <section className="relative px-6 lg:px-20 mb-20 md:mb-32">
+        <div className="max-w-[1400px] mx-auto text-center space-y-8">
+          <Reveal direction="up">
+            <span className="text-xs font-bold uppercase tracking-[0.3em] text-[var(--accent-earth)]">Our Story</span>
+          </Reveal>
+          <Reveal direction="up" delay={0.1}>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-[1.1]">
+              Crafting Soulful <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--accent-earth)] to-[var(--accent-teal)] italic font-light">Odysseys</span>
+            </h1>
+          </Reveal>
+          <Reveal direction="up" delay={0.2}>
+            <p className="text-[var(--text-secondary)] text-lg md:text-xl max-w-2xl mx-auto font-medium leading-relaxed">
+              We don't just plan trips — we curate experiences that stay with you long after you return home. India's premier travel curators, dedicated to authenticity and luxury.
+            </p>
+          </Reveal>
+        </div>
+      </section>
 
-        {/* Mission Section */}
-        <section className="glass p-20 rounded-[4rem] border-white/40 text-center space-y-8 relative overflow-hidden preserve-3d">
-           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[var(--accent-earth)] to-transparent"></div>
-           <span className="text-xs font-bold uppercase tracking-[0.4em] text-[var(--text-muted)] italic">"Atithi Devo Bhava"</span>
-           <h2 className="text-[var(--text-lg)] font-black max-w-3xl mx-auto leading-tight">Our mission is to treat every traveler as a guest of honor in our home, India.</h2>
-           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 pt-12">
-              <div className="space-y-4" style={{ transform: 'translateZ(30px)' }}>
-                 <div className="text-4xl">💎</div>
-                 <h4 className="font-black text-xl">Pure Luxury</h4>
-                 <h4 className="text-sm text-[var(--text-secondary)] font-normal">Only the finest properties and most exclusive experiences for our guests.</h4>
+      {/* Stats Section */}
+      <section className="px-6 lg:px-20 mb-20 md:mb-32 relative">
+        <div className="max-w-[1400px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+          {[
+            { icon: <Globe className="w-5 h-5" />, label: "All Over India", value: "& More" },
+            { icon: <Users className="w-5 h-5" />, label: "10k+ Travelers", value: "Trusted" },
+            { icon: <Heart className="w-5 h-5" />, label: "43+ Packages", value: "Curated" },
+            { icon: <Award className="w-5 h-5" />, label: "4.9/5 Rating", value: "Reviews" }
+          ].map((stat, idx) => (
+            <Reveal key={idx} direction="up" delay={idx * 0.1}>
+              <div className="glass p-6 rounded-2xl md:rounded-3xl text-center space-y-3 border border-gray-100 shadow-sm">
+                <div className="w-10 h-10 rounded-full bg-[var(--accent-earth)]/10 flex items-center justify-center text-[var(--accent-earth)] mx-auto">
+                  {stat.icon}
+                </div>
+                <h4 className="text-xl md:text-2xl font-black">{stat.label}</h4>
+                <p className="text-xs font-bold uppercase tracking-widest text-[var(--text-muted)]">{stat.value}</p>
               </div>
-              <div className="space-y-4" style={{ transform: 'translateZ(50px)' }}>
-                 <div className="text-4xl">🌍</div>
-                 <h4 className="font-black text-xl">Expert Curation</h4>
-                 <h4 className="text-sm text-[var(--text-secondary)] font-normal">Local experts who know the hidden trails and the best-kept secrets.</h4>
-              </div>
-              <div className="space-y-4" style={{ transform: 'translateZ(30px)' }}>
-                 <div className="text-4xl">🛡️</div>
-                 <h4 className="font-black text-xl">Unmatched Safety</h4>
-                 <h4 className="text-sm text-[var(--text-secondary)] font-normal">24/7 support and vetted partners to ensure your peace of mind.</h4>
-              </div>
-           </div>
-        </section>
+            </Reveal>
+          ))}
+        </div>
+      </section>
 
-        {/* Team CTA */}
-        <section className="text-center space-y-12 preserve-3d">
-           <div className="flex flex-col items-center gap-6">
-              <div className="flex -space-x-4">
-                 {[1,2,3,4].map(i => (
-                   <motion.div 
-                     key={i} 
-                     whileHover={{ z: 20, scale: 1.1 }}
-                     className="w-20 h-20 rounded-full border-4 border-white overflow-hidden bg-gray-100 shadow-xl relative"
-                   >
-                      <Image src={`https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&h=150&fit=crop&q=80&sig=${i}`} fill sizes="150px" className="object-cover" alt="Expert" />
-                   </motion.div>
-                 ))}
-              </div>
-              <h3 className="text-4xl font-black">Meet our travel connoisseurs.</h3>
-              <h4 className="text-[var(--text-secondary)] max-w-lg mx-auto font-normal">
-                Our team consists of passionate explorers who have traversed every corner of India to bring you the most authentic experiences.
-              </h4>
-           </div>
-           <Link href="/contact">
-             <Button variant="primary" magnetic withArrow as="div">Talk to an Expert</Button>
-           </Link>
-        </section>
-      </div>
-    </div>
+      {/* Team Section */}
+      <section className="px-6 lg:px-20 mb-20 md:mb-32">
+        <div className="max-w-[1400px] mx-auto space-y-16 md:space-y-20">
+          <div className="text-center space-y-4">
+            <Reveal direction="up">
+              <h2 className="text-3xl md:text-5xl font-black tracking-tight">Meet the Visionaries</h2>
+            </Reveal>
+            <Reveal direction="up" delay={0.1}>
+              <p className="text-[var(--text-secondary)] text-sm md:text-base font-medium max-w-xl mx-auto uppercase tracking-widest">
+                The experts behind your next soulful journey
+              </p>
+            </Reveal>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+            {team.map((member, idx) => (
+              <Reveal key={member.name} direction="up" delay={0.2 + idx * 0.1}>
+                <div className="group relative">
+                  <div className="relative aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl mb-8 border border-gray-100 will-change-transform transform transition-transform duration-500 hover:-translate-y-4">
+                    <Image 
+                      src={member.image} 
+                      fill 
+                      className="object-cover transition-all duration-700 scale-105 group-hover:scale-110" 
+                      alt={member.name} 
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    
+                    <div className="absolute bottom-8 left-8 right-8 text-white space-y-1">
+                      <h3 className="text-2xl font-black tracking-tight">{member.name}</h3>
+                      <p className="text-sm font-bold uppercase tracking-[0.2em] text-[var(--accent-earth)]">{member.role}</p>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-4 px-4">
+                    <p className="text-[var(--text-secondary)] text-sm md:text-base leading-relaxed font-medium">
+                      {member.bio}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {member.skills.map(skill => (
+                        <span key={skill} className="px-3 py-1 bg-[var(--accent-earth)]/10 text-[var(--accent-earth)] rounded-full text-[10px] font-bold uppercase tracking-widest">
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* No CTA needed here as the new Footer provides a global premium CTA */}
+    </main>
   )
 }

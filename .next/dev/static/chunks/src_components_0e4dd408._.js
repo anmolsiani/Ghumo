@@ -219,7 +219,11 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$value$2f$use$2d$scroll$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/value/use-scroll.mjs [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$utils$2f$use$2d$motion$2d$value$2d$event$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/utils/use-motion-value-event.mjs [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/components/AnimatePresence/index.mjs [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$Button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/Button.tsx [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$menu$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Menu$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/menu.js [app-client] (ecmascript) <export default as Menu>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/x.js [app-client] (ecmascript) <export default as X>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$shopping$2d$cart$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ShoppingCart$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/shopping-cart.js [app-client] (ecmascript) <export default as ShoppingCart>");
 ;
 var _s = __turbopack_context__.k.signature();
 "use client";
@@ -228,40 +232,90 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
+;
 function NavBar() {
     _s();
-    const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(12);
-    if ($[0] !== "7fb12b61da3bcc250b5a8aef9d4ecfb40c507501c54fac9256de79cbe2041a3a") {
-        for(let $i = 0; $i < 12; $i += 1){
+    const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(35);
+    if ($[0] !== "627abd509b69c66411b4322f964163c34db4eca44229df2ef6ffd6e8bd2d5002") {
+        for(let $i = 0; $i < 35; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "7fb12b61da3bcc250b5a8aef9d4ecfb40c507501c54fac9256de79cbe2041a3a";
+        $[0] = "627abd509b69c66411b4322f964163c34db4eca44229df2ef6ffd6e8bd2d5002";
     }
     const [hidden, setHidden] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [scrolled, setScrolled] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [isOpen, setIsOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const { scrollY } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$value$2f$use$2d$scroll$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useScroll"])();
     let t0;
-    if ($[1] !== scrollY) {
+    if ($[1] !== hidden || $[2] !== isOpen || $[3] !== scrollY || $[4] !== scrolled) {
         t0 = ({
             "NavBar[useMotionValueEvent()]": (latest)=>{
-                const previous = scrollY.getPrevious() || 0;
-                if (latest > previous && latest > 150) {
-                    setHidden(true);
-                } else {
-                    setHidden(false);
+                if (isOpen) {
+                    if (hidden) {
+                        setHidden(false);
+                    }
+                    return;
                 }
-                setScrolled(latest > 50);
+                const previous = scrollY.getPrevious() || 0;
+                const diff = latest - previous;
+                if (Math.abs(diff) > 5) {
+                    const shouldHide = latest > previous && latest > 200;
+                    if (shouldHide !== hidden) {
+                        setHidden(shouldHide);
+                    }
+                }
+                const isScrolled = latest > 50;
+                if (isScrolled !== scrolled) {
+                    setScrolled(isScrolled);
+                }
             }
         })["NavBar[useMotionValueEvent()]"];
-        $[1] = scrollY;
-        $[2] = t0;
+        $[1] = hidden;
+        $[2] = isOpen;
+        $[3] = scrollY;
+        $[4] = scrolled;
+        $[5] = t0;
     } else {
-        t0 = $[2];
+        t0 = $[5];
     }
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$utils$2f$use$2d$motion$2d$value$2d$event$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMotionValueEvent"])(scrollY, "change", t0);
     let t1;
-    if ($[3] === Symbol.for("react.memo_cache_sentinel")) {
-        t1 = {
+    if ($[6] === Symbol.for("react.memo_cache_sentinel")) {
+        t1 = [
+            {
+                name: "Home",
+                href: "/"
+            },
+            {
+                name: "Destinations",
+                href: "/destinations"
+            },
+            {
+                name: "About",
+                href: "/about"
+            },
+            {
+                name: "Gallery",
+                href: "/gallery"
+            },
+            {
+                name: "Start Journey",
+                href: "/start-journey",
+                highlight: true
+            },
+            {
+                name: "Blog",
+                href: "/blog"
+            }
+        ];
+        $[6] = t1;
+    } else {
+        t1 = $[6];
+    }
+    const navLinks = t1;
+    let t2;
+    if ($[7] === Symbol.for("react.memo_cache_sentinel")) {
+        t2 = {
             visible: {
                 y: 0
             },
@@ -269,204 +323,434 @@ function NavBar() {
                 y: "-100%"
             }
         };
-        $[3] = t1;
+        $[7] = t2;
     } else {
-        t1 = $[3];
+        t2 = $[7];
     }
-    const t2 = hidden ? "hidden" : "visible";
-    let t3;
-    if ($[4] === Symbol.for("react.memo_cache_sentinel")) {
-        t3 = {
+    const t3 = hidden ? "hidden" : "visible";
+    let t4;
+    if ($[8] === Symbol.for("react.memo_cache_sentinel")) {
+        t4 = {
             duration: 0.35,
             ease: "easeInOut"
         };
-        $[4] = t3;
+        $[8] = t4;
     } else {
-        t3 = $[4];
+        t4 = $[8];
     }
-    const t4 = `fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${scrolled ? "glass" : "bg-transparent"}`;
-    let t5;
-    if ($[5] === Symbol.for("react.memo_cache_sentinel")) {
-        t5 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-            href: "/",
-            className: "font-heading font-black text-2xl tracking-tighter text-[var(--accent-earth)]",
-            children: [
-                "GHUMO",
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                    className: "text-[var(--text-primary)]",
-                    children: "HOLIDAYS"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/ui/NavBar.tsx",
-                    lineNumber: 68,
-                    columnNumber: 119
-                }, this)
-            ]
-        }, void 0, true, {
-            fileName: "[project]/src/components/ui/NavBar.tsx",
-            lineNumber: 68,
-            columnNumber: 10
-        }, this);
-        $[5] = t5;
-    } else {
-        t5 = $[5];
-    }
+    const t5 = `fixed top-0 left-0 right-0 z-[130] transition-colors duration-300 ${scrolled || isOpen ? "glass border-b border-black/5" : "bg-transparent"}`;
     let t6;
-    if ($[6] === Symbol.for("react.memo_cache_sentinel")) {
-        t6 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
-            className: "hidden md:flex items-center gap-8 font-medium",
-            children: [
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                    href: "/",
-                    className: "hover:text-[var(--accent-earth)] transition-colors text-sm uppercase tracking-widest font-bold",
-                    children: "Home"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/ui/NavBar.tsx",
-                    lineNumber: 75,
-                    columnNumber: 73
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                    href: "/destinations",
-                    className: "hover:text-[var(--accent-earth)] transition-colors text-sm uppercase tracking-widest font-bold",
-                    children: "Destinations"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/ui/NavBar.tsx",
-                    lineNumber: 75,
-                    columnNumber: 206
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                    href: "/gallery",
-                    className: "hover:text-[var(--accent-earth)] transition-colors text-sm uppercase tracking-widest font-bold",
-                    children: "Gallery"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/ui/NavBar.tsx",
-                    lineNumber: 75,
-                    columnNumber: 359
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                    href: "/start-journey",
-                    className: "hover:text-[var(--accent-earth)] transition-colors text-sm uppercase tracking-widest font-bold text-[var(--accent-teal)]",
-                    children: "Start Journey"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/ui/NavBar.tsx",
-                    lineNumber: 75,
-                    columnNumber: 502
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                    href: "/blog",
-                    className: "hover:text-[var(--accent-earth)] transition-colors text-sm uppercase tracking-widest font-bold",
-                    children: "Blog"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/ui/NavBar.tsx",
-                    lineNumber: 75,
-                    columnNumber: 683
-                }, this)
-            ]
-        }, void 0, true, {
-            fileName: "[project]/src/components/ui/NavBar.tsx",
-            lineNumber: 75,
-            columnNumber: 10
-        }, this);
-        $[6] = t6;
+    if ($[9] !== isOpen) {
+        t6 = ({
+            "NavBar[<button>.onClick]": ()=>setIsOpen(!isOpen)
+        })["NavBar[<button>.onClick]"];
+        $[9] = isOpen;
+        $[10] = t6;
     } else {
-        t6 = $[6];
+        t6 = $[10];
     }
     let t7;
-    if ($[7] === Symbol.for("react.memo_cache_sentinel")) {
-        t7 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-            href: "/cart",
-            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$Button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
-                variant: "secondary",
-                className: "!px-6 !py-3 !rounded-full",
-                as: "div",
-                children: "Cart"
+    if ($[11] !== isOpen) {
+        t7 = isOpen ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__["X"], {
+            className: "w-6 h-6"
+        }, void 0, false, {
+            fileName: "[project]/src/components/ui/NavBar.tsx",
+            lineNumber: 121,
+            columnNumber: 19
+        }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$menu$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Menu$3e$__["Menu"], {
+            className: "w-6 h-6"
+        }, void 0, false, {
+            fileName: "[project]/src/components/ui/NavBar.tsx",
+            lineNumber: 121,
+            columnNumber: 47
+        }, this);
+        $[11] = isOpen;
+        $[12] = t7;
+    } else {
+        t7 = $[12];
+    }
+    let t8;
+    if ($[13] !== t6 || $[14] !== t7) {
+        t8 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "lg:hidden flex-none",
+            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                onClick: t6,
+                className: "p-2 rounded-xl bg-gray-100/50 hover:bg-gray-100 transition-colors text-[var(--text-primary)]",
+                "aria-label": "Toggle Menu",
+                children: t7
             }, void 0, false, {
                 fileName: "[project]/src/components/ui/NavBar.tsx",
-                lineNumber: 82,
-                columnNumber: 29
+                lineNumber: 129,
+                columnNumber: 47
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/components/ui/NavBar.tsx",
-            lineNumber: 82,
+            lineNumber: 129,
             columnNumber: 10
         }, this);
-        $[7] = t7;
+        $[13] = t6;
+        $[14] = t7;
+        $[15] = t8;
     } else {
-        t7 = $[7];
+        t8 = $[15];
     }
-    let t8;
-    if ($[8] === Symbol.for("react.memo_cache_sentinel")) {
-        t8 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "max-w-[1400px] mx-auto px-6 lg:px-20 h-24 flex items-center justify-between",
+    let t9;
+    if ($[16] === Symbol.for("react.memo_cache_sentinel")) {
+        t9 = ({
+            "NavBar[<Link>.onClick]": ()=>setIsOpen(false)
+        })["NavBar[<Link>.onClick]"];
+        $[16] = t9;
+    } else {
+        t9 = $[16];
+    }
+    let t10;
+    if ($[17] === Symbol.for("react.memo_cache_sentinel")) {
+        t10 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "flex-1 lg:flex-none flex justify-center lg:justify-start lg:mr-auto overflow-hidden",
+            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                href: "/",
+                className: "font-heading font-black text-base sx:text-lg sm:text-xl md:text-2xl tracking-tighter text-[var(--accent-earth)] whitespace-nowrap",
+                onClick: t9,
+                children: [
+                    "GHUMO",
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                        className: "text-[var(--text-primary)]",
+                        children: "HOLIDAYS"
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/ui/NavBar.tsx",
+                        lineNumber: 147,
+                        columnNumber: 287
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/src/components/ui/NavBar.tsx",
+                lineNumber: 147,
+                columnNumber: 112
+            }, this)
+        }, void 0, false, {
+            fileName: "[project]/src/components/ui/NavBar.tsx",
+            lineNumber: 147,
+            columnNumber: 11
+        }, this);
+        $[17] = t10;
+    } else {
+        t10 = $[17];
+    }
+    let t11;
+    if ($[18] === Symbol.for("react.memo_cache_sentinel")) {
+        t11 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
+            className: "hidden lg:flex items-center gap-8 font-medium mx-12",
+            children: navLinks.map(_NavBarNavLinksMap)
+        }, void 0, false, {
+            fileName: "[project]/src/components/ui/NavBar.tsx",
+            lineNumber: 154,
+            columnNumber: 11
+        }, this);
+        $[18] = t11;
+    } else {
+        t11 = $[18];
+    }
+    let t12;
+    if ($[19] === Symbol.for("react.memo_cache_sentinel")) {
+        t12 = ({
+            "NavBar[<Link>.onClick]": ()=>setIsOpen(false)
+        })["NavBar[<Link>.onClick]"];
+        $[19] = t12;
+    } else {
+        t12 = $[19];
+    }
+    let t13;
+    if ($[20] === Symbol.for("react.memo_cache_sentinel")) {
+        t13 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+            href: "/cart",
+            onClick: t12,
+            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$Button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
+                variant: "secondary",
+                className: "!px-3 sm:!px-4 md:!px-6 !py-2 md:!py-3 !rounded-full !text-xs md:!text-sm flex items-center gap-2",
+                as: "div",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$shopping$2d$cart$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ShoppingCart$3e$__["ShoppingCart"], {
+                        className: "w-4 h-4 text-[var(--text-primary)]"
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/ui/NavBar.tsx",
+                        lineNumber: 170,
+                        columnNumber: 191
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                        className: "hidden sm:inline",
+                        children: "Cart"
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/ui/NavBar.tsx",
+                        lineNumber: 170,
+                        columnNumber: 254
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/src/components/ui/NavBar.tsx",
+                lineNumber: 170,
+                columnNumber: 44
+            }, this)
+        }, void 0, false, {
+            fileName: "[project]/src/components/ui/NavBar.tsx",
+            lineNumber: 170,
+            columnNumber: 11
+        }, this);
+        $[20] = t13;
+    } else {
+        t13 = $[20];
+    }
+    let t14;
+    if ($[21] === Symbol.for("react.memo_cache_sentinel")) {
+        t14 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "flex-none lg:flex-none flex items-center justify-end gap-2 md:gap-4",
             children: [
-                t5,
-                t6,
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "flex items-center gap-4",
-                    children: [
-                        t7,
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                            href: "/contact",
-                            className: "hidden sm:block",
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$Button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
-                                variant: "primary",
-                                magnetic: true,
-                                className: "!px-6 !py-3 !rounded-full",
-                                as: "div",
-                                children: "Contact Us"
-                            }, void 0, false, {
-                                fileName: "[project]/src/components/ui/NavBar.tsx",
-                                lineNumber: 89,
-                                columnNumber: 206
-                            }, this)
-                        }, void 0, false, {
-                            fileName: "[project]/src/components/ui/NavBar.tsx",
-                            lineNumber: 89,
-                            columnNumber: 156
-                        }, this)
-                    ]
-                }, void 0, true, {
+                t13,
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                    href: "/contact",
+                    className: "hidden lg:block",
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$Button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
+                        variant: "primary",
+                        magnetic: true,
+                        className: "!px-6 !py-3 !rounded-full !text-sm",
+                        as: "div",
+                        children: "Contact Us"
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/ui/NavBar.tsx",
+                        lineNumber: 177,
+                        columnNumber: 151
+                    }, this)
+                }, void 0, false, {
                     fileName: "[project]/src/components/ui/NavBar.tsx",
-                    lineNumber: 89,
-                    columnNumber: 111
+                    lineNumber: 177,
+                    columnNumber: 101
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/ui/NavBar.tsx",
-            lineNumber: 89,
-            columnNumber: 10
+            lineNumber: 177,
+            columnNumber: 11
         }, this);
-        $[8] = t8;
+        $[21] = t14;
     } else {
-        t8 = $[8];
+        t14 = $[21];
     }
-    let t9;
-    if ($[9] !== t2 || $[10] !== t4) {
-        t9 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].header, {
-            variants: t1,
-            animate: t2,
-            transition: t3,
-            className: t4,
-            children: t8
+    let t15;
+    if ($[22] !== t8) {
+        t15 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-20 h-16 md:h-24 flex items-center gap-2",
+            children: [
+                t8,
+                t10,
+                t11,
+                t14
+            ]
+        }, void 0, true, {
+            fileName: "[project]/src/components/ui/NavBar.tsx",
+            lineNumber: 184,
+            columnNumber: 11
+        }, this);
+        $[22] = t8;
+        $[23] = t15;
+    } else {
+        t15 = $[23];
+    }
+    let t16;
+    if ($[24] !== t15 || $[25] !== t3 || $[26] !== t5) {
+        t16 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].header, {
+            variants: t2,
+            animate: t3,
+            transition: t4,
+            className: t5,
+            children: t15
         }, void 0, false, {
             fileName: "[project]/src/components/ui/NavBar.tsx",
-            lineNumber: 96,
-            columnNumber: 10
+            lineNumber: 192,
+            columnNumber: 11
         }, this);
-        $[9] = t2;
-        $[10] = t4;
-        $[11] = t9;
+        $[24] = t15;
+        $[25] = t3;
+        $[26] = t5;
+        $[27] = t16;
     } else {
-        t9 = $[11];
+        t16 = $[27];
     }
-    return t9;
+    let t17;
+    if ($[28] !== isOpen) {
+        t17 = isOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
+                    initial: {
+                        opacity: 0
+                    },
+                    animate: {
+                        opacity: 1
+                    },
+                    exit: {
+                        opacity: 0
+                    },
+                    onClick: {
+                        "NavBar[<motion.div>.onClick]": ()=>setIsOpen(false)
+                    }["NavBar[<motion.div>.onClick]"],
+                    className: "fixed inset-0 bg-black/20 backdrop-blur-sm z-[110] lg:hidden"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/ui/NavBar.tsx",
+                    lineNumber: 202,
+                    columnNumber: 23
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
+                    initial: {
+                        x: "-100%"
+                    },
+                    animate: {
+                        x: 0
+                    },
+                    exit: {
+                        x: "-100%"
+                    },
+                    transition: {
+                        type: "spring",
+                        damping: 25,
+                        stiffness: 200
+                    },
+                    className: "fixed inset-y-0 left-0 w-[280px] sm:w-[300px] z-[120] p-8 lg:hidden glass border-r border-black/5 flex flex-col pt-24 overflow-y-auto",
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
+                        className: "flex flex-col gap-6",
+                        children: [
+                            navLinks.map({
+                                "NavBar[navLinks.map()]": (link_0, idx)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
+                                        initial: {
+                                            opacity: 0,
+                                            x: -20
+                                        },
+                                        animate: {
+                                            opacity: 1,
+                                            x: 0
+                                        },
+                                        transition: {
+                                            delay: 0.1 + idx * 0.05
+                                        },
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                            href: link_0.href,
+                                            onClick: {
+                                                "NavBar[navLinks.map() > <Link>.onClick]": ()=>setIsOpen(false)
+                                            }["NavBar[navLinks.map() > <Link>.onClick]"],
+                                            className: `text-2xl font-black tracking-tighter hover:text-[var(--accent-earth)] transition-colors block ${link_0.highlight ? "text-[var(--accent-teal)]" : "text-[var(--text-primary)]"}`,
+                                            children: link_0.name
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/ui/NavBar.tsx",
+                                            lineNumber: 229,
+                                            columnNumber: 16
+                                        }, this)
+                                    }, link_0.name, false, {
+                                        fileName: "[project]/src/components/ui/NavBar.tsx",
+                                        lineNumber: 221,
+                                        columnNumber: 56
+                                    }, this)
+                            }["NavBar[navLinks.map()]"]),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
+                                initial: {
+                                    opacity: 0,
+                                    x: -20
+                                },
+                                animate: {
+                                    opacity: 1,
+                                    x: 0
+                                },
+                                transition: {
+                                    delay: 0.4
+                                },
+                                className: "pt-10 mt-4 border-t border-black/5",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                    href: "/contact",
+                                    onClick: {
+                                        "NavBar[<Link>.onClick]": ()=>setIsOpen(false)
+                                    }["NavBar[<Link>.onClick]"],
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$Button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
+                                        variant: "primary",
+                                        className: "w-full !py-4 !rounded-2xl !text-base",
+                                        as: "div",
+                                        children: "Talk to an Expert"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/ui/NavBar.tsx",
+                                        lineNumber: 242,
+                                        columnNumber: 42
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/ui/NavBar.tsx",
+                                    lineNumber: 240,
+                                    columnNumber: 61
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/ui/NavBar.tsx",
+                                lineNumber: 232,
+                                columnNumber: 40
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/src/components/ui/NavBar.tsx",
+                        lineNumber: 220,
+                        columnNumber: 156
+                    }, this)
+                }, void 0, false, {
+                    fileName: "[project]/src/components/ui/NavBar.tsx",
+                    lineNumber: 210,
+                    columnNumber: 117
+                }, this)
+            ]
+        }, void 0, true);
+        $[28] = isOpen;
+        $[29] = t17;
+    } else {
+        t17 = $[29];
+    }
+    let t18;
+    if ($[30] !== t17) {
+        t18 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$components$2f$AnimatePresence$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["AnimatePresence"], {
+            children: t17
+        }, void 0, false, {
+            fileName: "[project]/src/components/ui/NavBar.tsx",
+            lineNumber: 250,
+            columnNumber: 11
+        }, this);
+        $[30] = t17;
+        $[31] = t18;
+    } else {
+        t18 = $[31];
+    }
+    let t19;
+    if ($[32] !== t16 || $[33] !== t18) {
+        t19 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
+            children: [
+                t16,
+                t18
+            ]
+        }, void 0, true);
+        $[32] = t16;
+        $[33] = t18;
+        $[34] = t19;
+    } else {
+        t19 = $[34];
+    }
+    return t19;
 }
-_s(NavBar, "ZVvrM3nWsCX4aPazv50ppGKktR0=", false, function() {
+_s(NavBar, "OoJgkE00ZhLZnGiuRhztbnhX86s=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$value$2f$use$2d$scroll$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useScroll"],
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$utils$2f$use$2d$motion$2d$value$2d$event$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMotionValueEvent"]
     ];
 });
 _c = NavBar;
+function _NavBarNavLinksMap(link) {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+        href: link.href,
+        className: `hover:text-[var(--accent-earth)] transition-colors text-xs uppercase tracking-widest font-bold ${link.highlight ? "text-[var(--accent-teal)]" : "text-[var(--text-primary)]"}`,
+        children: link.name
+    }, link.name, false, {
+        fileName: "[project]/src/components/ui/NavBar.tsx",
+        lineNumber: 268,
+        columnNumber: 10
+    }, this);
+}
 var _c;
 __turbopack_context__.k.register(_c, "NavBar");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
@@ -480,17 +764,15 @@ __turbopack_context__.s([
     "Footer",
     ()=>Footer
 ]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/compiler-runtime.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$mail$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Mail$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/mail.js [app-client] (ecmascript) <export default as Mail>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$phone$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Phone$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/phone.js [app-client] (ecmascript) <export default as Phone>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2d$pin$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MapPin$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/map-pin.js [app-client] (ecmascript) <export default as MapPin>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$send$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Send$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/send.js [app-client] (ecmascript) <export default as Send>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2d$big$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__CheckCircle$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/circle-check-big.js [app-client] (ecmascript) <export default as CheckCircle>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/arrow-right.js [app-client] (ecmascript) <export default as ArrowRight>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$Button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/Button.tsx [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/node_modules/@emailjs/browser/es/index.js [app-client] (ecmascript) <locals>");
 ;
 var _s = __turbopack_context__.k.signature();
 "use client";
@@ -500,14 +782,15 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
+;
 function Footer() {
     _s();
-    const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(53);
-    if ($[0] !== "8335055fed9c6e174795425ca23bf784d2d0e1e7065d9fbea3037401fffd9837") {
-        for(let $i = 0; $i < 53; $i += 1){
+    const $ = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$compiler$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["c"])(62);
+    if ($[0] !== "12eb60bbed3d4f3579c175de4ffae3dc84c4c1e776a388710e3ba582e06de2a8") {
+        for(let $i = 0; $i < 62; $i += 1){
             $[$i] = Symbol.for("react.memo_cache_sentinel");
         }
-        $[0] = "8335055fed9c6e174795425ca23bf784d2d0e1e7065d9fbea3037401fffd9837";
+        $[0] = "12eb60bbed3d4f3579c175de4ffae3dc84c4c1e776a388710e3ba582e06de2a8";
     }
     let t0;
     if ($[1] === Symbol.for("react.memo_cache_sentinel")) {
@@ -522,842 +805,960 @@ function Footer() {
         t0 = $[1];
     }
     const [formData, setFormData] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(t0);
-    const [submitted, setSubmitted] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
-    const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [status, setStatus] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("idle");
     let t1;
-    if ($[2] === Symbol.for("react.memo_cache_sentinel")) {
+    if ($[2] !== formData.email || $[3] !== formData.message || $[4] !== formData.name || $[5] !== formData.phone) {
         t1 = ({
-            "Footer[handleSubmit]": (e)=>{
+            "Footer[handleSubmit]": async (e)=>{
                 e.preventDefault();
-                setLoading(true);
-                setTimeout({
-                    "Footer[handleSubmit > setTimeout()]": ()=>{
-                        setSubmitted(true);
-                        setLoading(false);
-                        setFormData({
-                            name: "",
-                            email: "",
-                            phone: "",
-                            message: ""
-                        });
-                        setTimeout({
-                            "Footer[handleSubmit > setTimeout() > setTimeout()]": ()=>setSubmitted(false)
-                        }["Footer[handleSubmit > setTimeout() > setTimeout()]"], 3000);
-                    }
-                }["Footer[handleSubmit > setTimeout()]"], 1000);
+                setStatus("sending");
+                const params = {
+                    from_name: formData.name,
+                    from_email: formData.email,
+                    phone: formData.phone,
+                    message: formData.message || "Legacy Footer Contact",
+                    submission_date: new Date().toLocaleString("en-IN"),
+                    reference_id: "GH-" + Date.now().toString().slice(-8)
+                };
+                ;
+                try {
+                    await __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$emailjs$2f$browser$2f$es$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["default"].send(("TURBOPACK compile-time value", "service_f2x5t7q"), ("TURBOPACK compile-time value", "template_440at29"), params, ("TURBOPACK compile-time value", "Q_ti9n4B5LPHdxHO9"));
+                    setStatus("success");
+                    setFormData({
+                        name: "",
+                        email: "",
+                        phone: "",
+                        message: ""
+                    });
+                    setTimeout({
+                        "Footer[handleSubmit > setTimeout()]": ()=>setStatus("idle")
+                    }["Footer[handleSubmit > setTimeout()]"], 3000);
+                } catch (t2) {
+                    const err = t2;
+                    console.error(err);
+                    setStatus("error");
+                }
             }
         })["Footer[handleSubmit]"];
-        $[2] = t1;
+        $[2] = formData.email;
+        $[3] = formData.message;
+        $[4] = formData.name;
+        $[5] = formData.phone;
+        $[6] = t1;
     } else {
-        t1 = $[2];
+        t1 = $[6];
     }
     const handleSubmit = t1;
     let t2;
-    if ($[3] === Symbol.for("react.memo_cache_sentinel")) {
+    if ($[7] === Symbol.for("react.memo_cache_sentinel")) {
         t2 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            children: [
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                    href: "/",
-                    className: "font-heading font-black text-4xl tracking-tighter text-[var(--accent-earth)] mb-6 block",
-                    children: [
-                        "GHUMO",
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                            className: "text-[var(--text-primary)]",
-                            children: "HOLIDAYS"
-                        }, void 0, false, {
-                            fileName: "[project]/src/components/ui/Footer.tsx",
-                            lineNumber: 62,
-                            columnNumber: 135
-                        }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "[project]/src/components/ui/Footer.tsx",
-                    lineNumber: 62,
-                    columnNumber: 15
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                    className: "text-[var(--text-secondary)] text-lg max-w-md",
-                    children: "We don't just plan trips — we create experiences that stay with you long after you return home. India's premier travel curators."
-                }, void 0, false, {
-                    fileName: "[project]/src/components/ui/Footer.tsx",
-                    lineNumber: 62,
-                    columnNumber: 202
-                }, this)
-            ]
-        }, void 0, true, {
+            className: "absolute top-[60%] left-1/2 -translate-x-1/2 -translate-y-1/2 select-none pointer-events-none z-0",
+            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                className: "text-[25vw] font-black text-black/[0.02] leading-none tracking-tighter uppercase",
+                children: "GHUMO"
+            }, void 0, false, {
+                fileName: "[project]/src/components/ui/Footer.tsx",
+                lineNumber: 77,
+                columnNumber: 125
+            }, this)
+        }, void 0, false, {
             fileName: "[project]/src/components/ui/Footer.tsx",
-            lineNumber: 62,
+            lineNumber: 77,
             columnNumber: 10
         }, this);
-        $[3] = t2;
+        $[7] = t2;
     } else {
-        t2 = $[3];
+        t2 = $[7];
     }
     let t3;
-    if ($[4] === Symbol.for("react.memo_cache_sentinel")) {
-        t3 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
-            className: "font-heading font-black text-xl mb-6",
-            children: "Explore"
-        }, void 0, false, {
-            fileName: "[project]/src/components/ui/Footer.tsx",
-            lineNumber: 69,
-            columnNumber: 10
-        }, this);
-        $[4] = t3;
-    } else {
-        t3 = $[4];
-    }
     let t4;
     let t5;
-    let t6;
-    if ($[5] === Symbol.for("react.memo_cache_sentinel")) {
-        t4 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                href: "/destinations",
-                className: "hover:text-[var(--accent-earth)] transition-colors",
-                children: "Destinations"
-            }, void 0, false, {
-                fileName: "[project]/src/components/ui/Footer.tsx",
-                lineNumber: 78,
-                columnNumber: 14
-            }, this)
-        }, void 0, false, {
-            fileName: "[project]/src/components/ui/Footer.tsx",
-            lineNumber: 78,
-            columnNumber: 10
-        }, this);
-        t5 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                href: "/gallery",
-                className: "hover:text-[var(--accent-earth)] transition-colors",
-                children: "Gallery"
-            }, void 0, false, {
-                fileName: "[project]/src/components/ui/Footer.tsx",
-                lineNumber: 79,
-                columnNumber: 14
-            }, this)
-        }, void 0, false, {
-            fileName: "[project]/src/components/ui/Footer.tsx",
-            lineNumber: 79,
-            columnNumber: 10
-        }, this);
-        t6 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                href: "/start-journey",
-                className: "hover:text-[var(--accent-earth)] transition-colors",
-                children: "Start a Journey"
-            }, void 0, false, {
-                fileName: "[project]/src/components/ui/Footer.tsx",
-                lineNumber: 80,
-                columnNumber: 14
-            }, this)
-        }, void 0, false, {
-            fileName: "[project]/src/components/ui/Footer.tsx",
-            lineNumber: 80,
-            columnNumber: 10
-        }, this);
-        $[5] = t4;
-        $[6] = t5;
-        $[7] = t6;
-    } else {
-        t4 = $[5];
-        t5 = $[6];
-        t6 = $[7];
-    }
-    let t7;
-    let t8;
     if ($[8] === Symbol.for("react.memo_cache_sentinel")) {
-        t7 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            children: [
-                t3,
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
-                    className: "space-y-3 text-[var(--text-secondary)] font-medium",
-                    children: [
-                        t4,
-                        t5,
-                        t6,
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                href: "/blog/upload",
-                                className: "hover:text-[var(--accent-earth)] transition-colors flex items-center gap-2",
-                                children: [
-                                    "Write a Blog ",
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "px-2 py-0.5 bg-[var(--accent-teal)]/10 text-[var(--accent-teal)] rounded text-[10px] uppercase font-bold",
-                                        children: "New"
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/ui/Footer.tsx",
-                                        lineNumber: 92,
-                                        columnNumber: 228
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/src/components/ui/Footer.tsx",
-                                lineNumber: 92,
-                                columnNumber: 102
-                            }, this)
-                        }, void 0, false, {
-                            fileName: "[project]/src/components/ui/Footer.tsx",
-                            lineNumber: 92,
-                            columnNumber: 98
-                        }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "[project]/src/components/ui/Footer.tsx",
-                    lineNumber: 92,
-                    columnNumber: 19
-                }, this)
-            ]
-        }, void 0, true, {
-            fileName: "[project]/src/components/ui/Footer.tsx",
-            lineNumber: 92,
-            columnNumber: 10
-        }, this);
-        t8 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
-            className: "font-heading font-black text-xl mb-6",
-            children: "Contact"
+        t3 = {
+            y: 50,
+            opacity: 0
+        };
+        t4 = {
+            y: 0,
+            opacity: 1
+        };
+        t5 = {
+            once: true
+        };
+        $[8] = t3;
+        $[9] = t4;
+        $[10] = t5;
+    } else {
+        t3 = $[8];
+        t4 = $[9];
+        t5 = $[10];
+    }
+    let t6;
+    let t7;
+    if ($[11] === Symbol.for("react.memo_cache_sentinel")) {
+        t6 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "absolute top-0 right-0 w-[50%] h-full bg-gradient-to-bl from-[var(--accent-earth)]/20 to-transparent blur-3xl -z-10"
         }, void 0, false, {
             fileName: "[project]/src/components/ui/Footer.tsx",
-            lineNumber: 93,
+            lineNumber: 108,
             columnNumber: 10
         }, this);
-        $[8] = t7;
-        $[9] = t8;
-    } else {
-        t7 = $[8];
-        t8 = $[9];
-    }
-    let t9;
-    if ($[10] === Symbol.for("react.memo_cache_sentinel")) {
-        t9 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-            className: "flex items-center gap-3",
-            children: [
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "w-8 h-8 rounded-full bg-[var(--accent-earth)]/10 flex items-center justify-center text-[var(--accent-earth)]",
-                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$phone$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Phone$3e$__["Phone"], {
-                        className: "w-4 h-4"
-                    }, void 0, false, {
-                        fileName: "[project]/src/components/ui/Footer.tsx",
-                        lineNumber: 102,
-                        columnNumber: 176
-                    }, this)
-                }, void 0, false, {
-                    fileName: "[project]/src/components/ui/Footer.tsx",
-                    lineNumber: 102,
-                    columnNumber: 50
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                    className: "font-medium",
-                    children: "+91 99998 08162"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/ui/Footer.tsx",
-                    lineNumber: 102,
-                    columnNumber: 211
-                }, this)
-            ]
-        }, void 0, true, {
-            fileName: "[project]/src/components/ui/Footer.tsx",
-            lineNumber: 102,
-            columnNumber: 10
-        }, this);
-        $[10] = t9;
-    } else {
-        t9 = $[10];
-    }
-    let t10;
-    if ($[11] === Symbol.for("react.memo_cache_sentinel")) {
-        t10 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-            className: "flex items-center gap-3",
-            children: [
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "w-8 h-8 rounded-full bg-[var(--accent-earth)]/10 flex items-center justify-center text-[var(--accent-earth)]",
-                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$mail$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Mail$3e$__["Mail"], {
-                        className: "w-4 h-4"
-                    }, void 0, false, {
-                        fileName: "[project]/src/components/ui/Footer.tsx",
-                        lineNumber: 109,
-                        columnNumber: 177
-                    }, this)
-                }, void 0, false, {
-                    fileName: "[project]/src/components/ui/Footer.tsx",
-                    lineNumber: 109,
-                    columnNumber: 51
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                    className: "font-medium",
-                    children: "hello@ghumoholidays.com"
-                }, void 0, false, {
-                    fileName: "[project]/src/components/ui/Footer.tsx",
-                    lineNumber: 109,
-                    columnNumber: 211
-                }, this)
-            ]
-        }, void 0, true, {
+        t7 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "absolute bottom-0 left-0 w-[50%] h-full bg-gradient-to-tr from-[var(--accent-teal)]/10 to-transparent blur-3xl -z-10"
+        }, void 0, false, {
             fileName: "[project]/src/components/ui/Footer.tsx",
             lineNumber: 109,
+            columnNumber: 10
+        }, this);
+        $[11] = t6;
+        $[12] = t7;
+    } else {
+        t6 = $[11];
+        t7 = $[12];
+    }
+    let t8;
+    if ($[13] === Symbol.for("react.memo_cache_sentinel")) {
+        t8 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
+            fileName: "[project]/src/components/ui/Footer.tsx",
+            lineNumber: 118,
+            columnNumber: 10
+        }, this);
+        $[13] = t8;
+    } else {
+        t8 = $[13];
+    }
+    let t10;
+    let t9;
+    if ($[14] === Symbol.for("react.memo_cache_sentinel")) {
+        t9 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+            className: "text-3xl md:text-5xl font-black text-white leading-tight",
+            children: [
+                "The range of functionalities ",
+                t8,
+                "offered on the platform ",
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
+                    fileName: "[project]/src/components/ui/Footer.tsx",
+                    lineNumber: 126,
+                    columnNumber: 140
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                    className: "text-gray-400",
+                    children: "includes the ability to connect"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/ui/Footer.tsx",
+                    lineNumber: 126,
+                    columnNumber: 146
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/src/components/ui/Footer.tsx",
+            lineNumber: 126,
+            columnNumber: 10
+        }, this);
+        t10 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+            className: "text-gray-400 max-w-md mx-auto lg:mx-0 text-sm md:text-base leading-relaxed",
+            children: "With existing travel strategies that reduce risk and automatically curate the best soulful journeys for you."
+        }, void 0, false, {
+            fileName: "[project]/src/components/ui/Footer.tsx",
+            lineNumber: 127,
             columnNumber: 11
         }, this);
-        $[11] = t10;
+        $[14] = t10;
+        $[15] = t9;
     } else {
-        t10 = $[11];
+        t10 = $[14];
+        t9 = $[15];
     }
     let t11;
-    if ($[12] === Symbol.for("react.memo_cache_sentinel")) {
-        t11 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "space-y-12",
+    if ($[16] === Symbol.for("react.memo_cache_sentinel")) {
+        t11 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+            href: "/start-journey",
+            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$Button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
+                variant: "primary",
+                className: "!rounded-full !px-8 !py-4 h-auto shadow-lg shadow-[var(--accent-earth)]/20",
+                as: "div",
+                children: [
+                    "Get started ",
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
+                        className: "ml-2 w-4 h-4"
+                    }, void 0, false, {
+                        fileName: "[project]/src/components/ui/Footer.tsx",
+                        lineNumber: 136,
+                        columnNumber: 173
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/src/components/ui/Footer.tsx",
+                lineNumber: 136,
+                columnNumber: 39
+            }, this)
+        }, void 0, false, {
+            fileName: "[project]/src/components/ui/Footer.tsx",
+            lineNumber: 136,
+            columnNumber: 11
+        }, this);
+        $[16] = t11;
+    } else {
+        t11 = $[16];
+    }
+    let t12;
+    if ($[17] === Symbol.for("react.memo_cache_sentinel")) {
+        t12 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "space-y-6 text-center lg:text-left",
             children: [
-                t2,
+                t9,
+                t10,
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "flex flex-wrap gap-12",
+                    className: "flex flex-wrap justify-center lg:justify-start gap-6 pt-4",
                     children: [
-                        t7,
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        t11,
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                            href: "/gallery",
+                            className: "flex items-center gap-2 text-white font-bold hover:text-[var(--accent-earth)] transition-colors",
                             children: [
-                                t8,
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
-                                    className: "space-y-4 text-[var(--text-secondary)]",
-                                    children: [
-                                        t9,
-                                        t10,
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                            className: "flex items-center gap-3",
-                                            children: [
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "w-8 h-8 rounded-full bg-[var(--accent-earth)]/10 flex items-center justify-center text-[var(--accent-earth)]",
-                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$map$2d$pin$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MapPin$3e$__["MapPin"], {
-                                                        className: "w-4 h-4"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/src/components/ui/Footer.tsx",
-                                                        lineNumber: 116,
-                                                        columnNumber: 325
-                                                    }, this)
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/components/ui/Footer.tsx",
-                                                    lineNumber: 116,
-                                                    columnNumber: 199
-                                                }, this),
-                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                    className: "font-medium",
-                                                    children: "Cyber City, New Delhi"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/components/ui/Footer.tsx",
-                                                    lineNumber: 116,
-                                                    columnNumber: 361
-                                                }, this)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "[project]/src/components/ui/Footer.tsx",
-                                            lineNumber: 116,
-                                            columnNumber: 159
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "w-10 h-10 rounded-full border border-white/20 flex items-center justify-center",
+                                    children: "▶"
+                                }, void 0, false, {
                                     fileName: "[project]/src/components/ui/Footer.tsx",
-                                    lineNumber: 116,
-                                    columnNumber: 95
-                                }, this)
+                                    lineNumber: 143,
+                                    columnNumber: 282
+                                }, this),
+                                "Watch how it works"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/ui/Footer.tsx",
-                            lineNumber: 116,
-                            columnNumber: 86
+                            lineNumber: 143,
+                            columnNumber: 152
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/ui/Footer.tsx",
-                    lineNumber: 116,
-                    columnNumber: 43
+                    lineNumber: 143,
+                    columnNumber: 72
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/ui/Footer.tsx",
-            lineNumber: 116,
+            lineNumber: 143,
             columnNumber: 11
         }, this);
-        $[12] = t11;
+        $[17] = t12;
     } else {
-        t11 = $[12];
-    }
-    let t12;
-    if ($[13] === Symbol.for("react.memo_cache_sentinel")) {
-        t12 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "absolute inset-0 bg-gradient-to-br from-[var(--accent-earth)]/20 to-[var(--accent-teal)]/20 rounded-[3rem] blur-2xl -z-10 transform -rotate-3"
-        }, void 0, false, {
-            fileName: "[project]/src/components/ui/Footer.tsx",
-            lineNumber: 123,
-            columnNumber: 11
-        }, this);
-        $[13] = t12;
-    } else {
-        t12 = $[13];
+        t12 = $[17];
     }
     let t13;
-    if ($[14] === Symbol.for("react.memo_cache_sentinel")) {
-        t13 = {
-            y: -5,
-            transition: {
-                duration: 0.3
-            }
-        };
-        $[14] = t13;
-    } else {
-        t13 = $[14];
-    }
-    let t14;
-    let t15;
-    let t16;
-    if ($[15] === Symbol.for("react.memo_cache_sentinel")) {
-        t14 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "absolute -top-6 -right-6 w-20 h-20 bg-[var(--accent-teal)] rounded-full flex items-center justify-center text-white shadow-lg transform rotate-12",
-            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                className: "text-2xl font-black",
-                children: "👋"
-            }, void 0, false, {
-                fileName: "[project]/src/components/ui/Footer.tsx",
-                lineNumber: 144,
-                columnNumber: 174
-            }, this)
-        }, void 0, false, {
-            fileName: "[project]/src/components/ui/Footer.tsx",
-            lineNumber: 144,
-            columnNumber: 11
-        }, this);
-        t15 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-            className: "font-black text-3xl mb-2",
-            children: "Get in Touch"
-        }, void 0, false, {
-            fileName: "[project]/src/components/ui/Footer.tsx",
-            lineNumber: 145,
-            columnNumber: 11
-        }, this);
-        t16 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-            className: "text-[var(--text-secondary)] mb-8",
-            children: "We'd love to hear from you. Drop us a line!"
-        }, void 0, false, {
-            fileName: "[project]/src/components/ui/Footer.tsx",
-            lineNumber: 146,
-            columnNumber: 11
-        }, this);
-        $[15] = t14;
-        $[16] = t15;
-        $[17] = t16;
-    } else {
-        t14 = $[15];
-        t15 = $[16];
-        t16 = $[17];
-    }
-    let t17;
     if ($[18] !== formData) {
-        t17 = ({
+        t13 = ({
             "Footer[<input>.onChange]": (e_0)=>setFormData({
                     ...formData,
                     name: e_0.target.value
                 })
         })["Footer[<input>.onChange]"];
         $[18] = formData;
-        $[19] = t17;
+        $[19] = t13;
     } else {
-        t17 = $[19];
+        t13 = $[19];
     }
-    let t18;
-    if ($[20] !== formData.name || $[21] !== t17) {
-        t18 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+    let t14;
+    if ($[20] !== formData.name || $[21] !== t13) {
+        t14 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
             type: "text",
             required: true,
-            placeholder: "Your Name",
+            placeholder: "Name",
             value: formData.name,
-            onChange: t17,
-            className: "w-full px-5 py-3 rounded-xl border border-gray-200 focus:border-[var(--accent-earth)] focus:outline-none bg-gray-50 transition-colors"
+            onChange: t13,
+            className: "w-full bg-white/5 border border-white/10 rounded-xl px-5 py-3 text-white focus:border-[var(--accent-earth)] outline-none transition-colors text-sm"
         }, void 0, false, {
             fileName: "[project]/src/components/ui/Footer.tsx",
-            lineNumber: 170,
+            lineNumber: 163,
             columnNumber: 11
         }, this);
         $[20] = formData.name;
-        $[21] = t17;
-        $[22] = t18;
+        $[21] = t13;
+        $[22] = t14;
     } else {
-        t18 = $[22];
+        t14 = $[22];
     }
-    let t19;
+    let t15;
     if ($[23] !== formData) {
-        t19 = ({
+        t15 = ({
             "Footer[<input>.onChange]": (e_1)=>setFormData({
                     ...formData,
                     phone: e_1.target.value
                 })
         })["Footer[<input>.onChange]"];
         $[23] = formData;
-        $[24] = t19;
+        $[24] = t15;
     } else {
-        t19 = $[24];
+        t15 = $[24];
     }
-    let t20;
-    if ($[25] !== formData.phone || $[26] !== t19) {
-        t20 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+    let t16;
+    if ($[25] !== formData.phone || $[26] !== t15) {
+        t16 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
             type: "tel",
             required: true,
-            placeholder: "Phone Number",
+            placeholder: "Phone",
             value: formData.phone,
-            onChange: t19,
-            className: "w-full px-5 py-3 rounded-xl border border-gray-200 focus:border-[var(--accent-earth)] focus:outline-none bg-gray-50 transition-colors"
+            onChange: t15,
+            className: "w-full bg-white/5 border border-white/10 rounded-xl px-5 py-3 text-white focus:border-[var(--accent-earth)] outline-none transition-colors text-sm"
         }, void 0, false, {
             fileName: "[project]/src/components/ui/Footer.tsx",
-            lineNumber: 192,
+            lineNumber: 185,
             columnNumber: 11
         }, this);
         $[25] = formData.phone;
-        $[26] = t19;
-        $[27] = t20;
+        $[26] = t15;
+        $[27] = t16;
     } else {
-        t20 = $[27];
+        t16 = $[27];
     }
-    let t21;
-    if ($[28] !== t18 || $[29] !== t20) {
-        t21 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "grid grid-cols-1 sm:grid-cols-2 gap-4",
+    let t17;
+    if ($[28] !== t14 || $[29] !== t16) {
+        t17 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "grid grid-cols-1 md:grid-cols-2 gap-4",
             children: [
-                t18,
-                t20
+                t14,
+                t16
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/ui/Footer.tsx",
-            lineNumber: 201,
+            lineNumber: 194,
             columnNumber: 11
         }, this);
-        $[28] = t18;
-        $[29] = t20;
-        $[30] = t21;
+        $[28] = t14;
+        $[29] = t16;
+        $[30] = t17;
     } else {
-        t21 = $[30];
+        t17 = $[30];
     }
-    let t22;
+    let t18;
     if ($[31] !== formData) {
-        t22 = ({
+        t18 = ({
             "Footer[<input>.onChange]": (e_2)=>setFormData({
                     ...formData,
                     email: e_2.target.value
                 })
         })["Footer[<input>.onChange]"];
         $[31] = formData;
-        $[32] = t22;
+        $[32] = t18;
     } else {
-        t22 = $[32];
+        t18 = $[32];
     }
-    let t23;
-    if ($[33] !== formData.email || $[34] !== t22) {
-        t23 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+    let t19;
+    if ($[33] !== formData.email || $[34] !== t18) {
+        t19 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
             type: "email",
             required: true,
             placeholder: "Email Address",
             value: formData.email,
-            onChange: t22,
-            className: "w-full px-5 py-3 rounded-xl border border-gray-200 focus:border-[var(--accent-earth)] focus:outline-none bg-gray-50 transition-colors"
+            onChange: t18,
+            className: "w-full bg-white/5 border border-white/10 rounded-xl px-5 py-3 text-white focus:border-[var(--accent-earth)] outline-none transition-colors text-sm"
         }, void 0, false, {
             fileName: "[project]/src/components/ui/Footer.tsx",
-            lineNumber: 223,
+            lineNumber: 216,
             columnNumber: 11
         }, this);
         $[33] = formData.email;
-        $[34] = t22;
-        $[35] = t23;
+        $[34] = t18;
+        $[35] = t19;
     } else {
-        t23 = $[35];
+        t19 = $[35];
     }
-    let t24;
+    let t20;
     if ($[36] !== formData) {
-        t24 = ({
+        t20 = ({
             "Footer[<textarea>.onChange]": (e_3)=>setFormData({
                     ...formData,
                     message: e_3.target.value
                 })
         })["Footer[<textarea>.onChange]"];
         $[36] = formData;
-        $[37] = t24;
+        $[37] = t20;
     } else {
-        t24 = $[37];
+        t20 = $[37];
     }
-    let t25;
-    if ($[38] !== formData.message || $[39] !== t24) {
-        t25 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
-            required: true,
-            placeholder: "How can we help you plan your trip?",
-            rows: 3,
+    let t21;
+    if ($[38] !== formData.message || $[39] !== t20) {
+        t21 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
+            placeholder: "Tell us about your next adventure...",
+            rows: 2,
             value: formData.message,
-            onChange: t24,
-            className: "w-full px-5 py-3 rounded-xl border border-gray-200 focus:border-[var(--accent-earth)] focus:outline-none bg-gray-50 transition-colors resize-none"
+            onChange: t20,
+            className: "w-full bg-white/5 border border-white/10 rounded-xl px-5 py-3 text-white focus:border-[var(--accent-earth)] outline-none transition-colors resize-none text-sm"
         }, void 0, false, {
             fileName: "[project]/src/components/ui/Footer.tsx",
-            lineNumber: 245,
+            lineNumber: 238,
             columnNumber: 11
         }, this);
         $[38] = formData.message;
-        $[39] = t24;
-        $[40] = t25;
+        $[39] = t20;
+        $[40] = t21;
     } else {
-        t25 = $[40];
+        t21 = $[40];
     }
-    let t26;
-    if ($[41] !== loading || $[42] !== submitted) {
-        t26 = submitted ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
-            initial: {
-                scale: 0.9,
-                opacity: 0
-            },
-            animate: {
-                scale: 1,
-                opacity: 1
-            },
-            className: "w-full p-3 bg-green-50 text-green-600 rounded-xl flex items-center justify-center gap-2 font-bold border border-green-200",
+    const t22 = status === "sending";
+    const t23 = status === "sending" ? "Sending..." : status === "success" ? "Message Sent!" : "Send Message";
+    let t24;
+    if ($[41] !== t22 || $[42] !== t23) {
+        t24 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$Button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
+            type: "submit",
+            variant: "primary",
+            className: "w-full py-4 !rounded-xl",
+            disabled: t22,
+            children: t23
+        }, void 0, false, {
+            fileName: "[project]/src/components/ui/Footer.tsx",
+            lineNumber: 249,
+            columnNumber: 11
+        }, this);
+        $[41] = t22;
+        $[42] = t23;
+        $[43] = t24;
+    } else {
+        t24 = $[43];
+    }
+    let t25;
+    if ($[44] !== handleSubmit || $[45] !== t17 || $[46] !== t19 || $[47] !== t21 || $[48] !== t24) {
+        t25 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
+            initial: t3,
+            whileInView: t4,
+            viewport: t5,
+            className: "relative -mt-64 mb-32 bg-[#0A0C12] rounded-[3rem] p-8 md:p-16 lg:p-20 overflow-hidden shadow-2xl",
             children: [
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2d$big$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__CheckCircle$3e$__["CheckCircle"], {
-                    className: "w-5 h-5"
-                }, void 0, false, {
+                t6,
+                t7,
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "grid grid-cols-1 lg:grid-cols-2 gap-12 items-center",
+                    children: [
+                        t12,
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "bg-white/5 backdrop-blur-xl rounded-[2rem] p-8 border border-white/10",
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
+                                onSubmit: handleSubmit,
+                                className: "space-y-4",
+                                children: [
+                                    t17,
+                                    t19,
+                                    t21,
+                                    t24
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/src/components/ui/Footer.tsx",
+                                lineNumber: 258,
+                                columnNumber: 345
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/ui/Footer.tsx",
+                            lineNumber: 258,
+                            columnNumber: 258
+                        }, this)
+                    ]
+                }, void 0, true, {
                     fileName: "[project]/src/components/ui/Footer.tsx",
-                    lineNumber: 260,
-                    columnNumber: 142
-                }, this),
-                " Message Sent!"
+                    lineNumber: 258,
+                    columnNumber: 184
+                }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/ui/Footer.tsx",
-            lineNumber: 254,
-            columnNumber: 23
-        }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$Button$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Button"], {
-            type: "submit",
-            variant: "primary",
-            className: "w-full py-4 flex items-center justify-center gap-2 rounded-xl group",
-            disabled: loading,
-            children: loading ? "Sending..." : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
-                children: [
-                    "Send Message",
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].span, {
-                        animate: {
-                            x: [
-                                0,
-                                5,
-                                0
-                            ]
-                        },
-                        transition: {
-                            repeat: Infinity,
-                            duration: 1.5,
-                            ease: "easeInOut"
-                        },
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$send$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Send$3e$__["Send"], {
-                            className: "w-4 h-4"
+            lineNumber: 258,
+            columnNumber: 11
+        }, this);
+        $[44] = handleSubmit;
+        $[45] = t17;
+        $[46] = t19;
+        $[47] = t21;
+        $[48] = t24;
+        $[49] = t25;
+    } else {
+        t25 = $[49];
+    }
+    let t26;
+    if ($[50] === Symbol.for("react.memo_cache_sentinel")) {
+        t26 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "space-y-6",
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                    href: "/",
+                    className: "font-black text-2xl tracking-tighter uppercase",
+                    children: [
+                        "GHUMO",
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                            className: "text-[var(--accent-earth)]",
+                            children: "."
                         }, void 0, false, {
                             fileName: "[project]/src/components/ui/Footer.tsx",
-                            lineNumber: 266,
-                            columnNumber: 12
+                            lineNumber: 270,
+                            columnNumber: 117
                         }, this)
-                    }, void 0, false, {
-                        fileName: "[project]/src/components/ui/Footer.tsx",
-                        lineNumber: 260,
-                        columnNumber: 386
-                    }, this)
-                ]
-            }, void 0, true)
-        }, void 0, false, {
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/components/ui/Footer.tsx",
+                    lineNumber: 270,
+                    columnNumber: 38
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                    className: "text-sm text-[var(--text-secondary)] font-medium leading-relaxed max-w-[240px]",
+                    children: "We curate experiences that stay with you long after you return home."
+                }, void 0, false, {
+                    fileName: "[project]/src/components/ui/Footer.tsx",
+                    lineNumber: 270,
+                    columnNumber: 177
+                }, this)
+            ]
+        }, void 0, true, {
             fileName: "[project]/src/components/ui/Footer.tsx",
-            lineNumber: 260,
-            columnNumber: 207
+            lineNumber: 270,
+            columnNumber: 11
         }, this);
-        $[41] = loading;
-        $[42] = submitted;
-        $[43] = t26;
+        $[50] = t26;
     } else {
-        t26 = $[43];
+        t26 = $[50];
     }
     let t27;
-    if ($[44] !== t21 || $[45] !== t23 || $[46] !== t25 || $[47] !== t26) {
-        t27 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20",
+    if ($[51] === Symbol.for("react.memo_cache_sentinel")) {
+        t27 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
+            className: "font-bold text-sm uppercase tracking-widest text-black/40",
+            children: "Discover"
+        }, void 0, false, {
+            fileName: "[project]/src/components/ui/Footer.tsx",
+            lineNumber: 277,
+            columnNumber: 11
+        }, this);
+        $[51] = t27;
+    } else {
+        t27 = $[51];
+    }
+    let t28;
+    if ($[52] === Symbol.for("react.memo_cache_sentinel")) {
+        t28 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "space-y-6",
             children: [
-                t11,
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "relative",
+                t27,
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
+                    className: "space-y-4 text-sm font-bold",
                     children: [
-                        t12,
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
-                            className: "bg-white rounded-[2.5rem] p-10 shadow-xl relative border border-gray-100",
-                            whileHover: t13,
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                href: "/destinations",
+                                className: "hover:text-[var(--accent-earth)] transition-colors",
+                                children: "Destinations"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/ui/Footer.tsx",
+                                lineNumber: 284,
+                                columnNumber: 91
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/ui/Footer.tsx",
+                            lineNumber: 284,
+                            columnNumber: 87
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                href: "/packages",
+                                className: "hover:text-[var(--accent-earth)] transition-colors",
+                                children: "Curated Packages"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/ui/Footer.tsx",
+                                lineNumber: 284,
+                                columnNumber: 209
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/ui/Footer.tsx",
+                            lineNumber: 284,
+                            columnNumber: 205
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                href: "/gallery",
+                                className: "hover:text-[var(--accent-earth)] transition-colors",
+                                children: "Visual Gallery"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/ui/Footer.tsx",
+                                lineNumber: 284,
+                                columnNumber: 327
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/ui/Footer.tsx",
+                            lineNumber: 284,
+                            columnNumber: 323
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                href: "/blog",
+                                className: "hover:text-[var(--accent-earth)] transition-colors",
+                                children: "Travel Stories"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/ui/Footer.tsx",
+                                lineNumber: 284,
+                                columnNumber: 442
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/ui/Footer.tsx",
+                            lineNumber: 284,
+                            columnNumber: 438
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/components/ui/Footer.tsx",
+                    lineNumber: 284,
+                    columnNumber: 43
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/src/components/ui/Footer.tsx",
+            lineNumber: 284,
+            columnNumber: 11
+        }, this);
+        $[52] = t28;
+    } else {
+        t28 = $[52];
+    }
+    let t29;
+    if ($[53] === Symbol.for("react.memo_cache_sentinel")) {
+        t29 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
+            className: "font-bold text-sm uppercase tracking-widest text-black/40",
+            children: "Company"
+        }, void 0, false, {
+            fileName: "[project]/src/components/ui/Footer.tsx",
+            lineNumber: 291,
+            columnNumber: 11
+        }, this);
+        $[53] = t29;
+    } else {
+        t29 = $[53];
+    }
+    let t30;
+    if ($[54] === Symbol.for("react.memo_cache_sentinel")) {
+        t30 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "space-y-6",
+            children: [
+                t29,
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
+                    className: "space-y-4 text-sm font-bold",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                href: "/about",
+                                className: "hover:text-[var(--accent-earth)] transition-colors",
+                                children: "Visionaries"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/ui/Footer.tsx",
+                                lineNumber: 298,
+                                columnNumber: 91
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/ui/Footer.tsx",
+                            lineNumber: 298,
+                            columnNumber: 87
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                href: "/contact",
+                                className: "hover:text-[var(--accent-earth)] transition-colors",
+                                children: "Support Center"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/ui/Footer.tsx",
+                                lineNumber: 298,
+                                columnNumber: 201
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/ui/Footer.tsx",
+                            lineNumber: 298,
+                            columnNumber: 197
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                href: "/privacy",
+                                className: "hover:text-[var(--accent-earth)] transition-colors",
+                                children: "Privacy Policy"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/ui/Footer.tsx",
+                                lineNumber: 298,
+                                columnNumber: 316
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/ui/Footer.tsx",
+                            lineNumber: 298,
+                            columnNumber: 312
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                href: "/terms",
+                                className: "hover:text-[var(--accent-earth)] transition-colors",
+                                children: "Terms of Use"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/ui/Footer.tsx",
+                                lineNumber: 298,
+                                columnNumber: 431
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "[project]/src/components/ui/Footer.tsx",
+                            lineNumber: 298,
+                            columnNumber: 427
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/components/ui/Footer.tsx",
+                    lineNumber: 298,
+                    columnNumber: 43
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/src/components/ui/Footer.tsx",
+            lineNumber: 298,
+            columnNumber: 11
+        }, this);
+        $[54] = t30;
+    } else {
+        t30 = $[54];
+    }
+    let t31;
+    if ($[55] === Symbol.for("react.memo_cache_sentinel")) {
+        t31 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
+            className: "font-bold text-sm uppercase tracking-widest text-black/40",
+            children: "Social"
+        }, void 0, false, {
+            fileName: "[project]/src/components/ui/Footer.tsx",
+            lineNumber: 305,
+            columnNumber: 11
+        }, this);
+        $[55] = t31;
+    } else {
+        t31 = $[55];
+    }
+    let t32;
+    if ($[56] === Symbol.for("react.memo_cache_sentinel")) {
+        t32 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20",
+            children: [
+                t26,
+                t28,
+                t30,
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "space-y-6",
+                    children: [
+                        t31,
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
+                            className: "space-y-4 text-sm font-bold",
                             children: [
-                                t14,
-                                t15,
-                                t16,
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
-                                    onSubmit: handleSubmit,
-                                    className: "space-y-4",
-                                    children: [
-                                        t21,
-                                        t23,
-                                        t25,
-                                        t26
-                                    ]
-                                }, void 0, true, {
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                        href: "#",
+                                        className: "hover:text-[var(--accent-earth)] transition-colors",
+                                        children: "X (Twitter)"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/ui/Footer.tsx",
+                                        lineNumber: 312,
+                                        columnNumber: 183
+                                    }, this)
+                                }, void 0, false, {
                                     fileName: "[project]/src/components/ui/Footer.tsx",
-                                    lineNumber: 275,
-                                    columnNumber: 238
+                                    lineNumber: 312,
+                                    columnNumber: 179
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                        href: "#",
+                                        className: "hover:text-[var(--accent-earth)] transition-colors",
+                                        children: "Instagram"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/ui/Footer.tsx",
+                                        lineNumber: 312,
+                                        columnNumber: 282
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/ui/Footer.tsx",
+                                    lineNumber: 312,
+                                    columnNumber: 278
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                        href: "#",
+                                        className: "hover:text-[var(--accent-earth)] transition-colors",
+                                        children: "LinkedIn"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/ui/Footer.tsx",
+                                        lineNumber: 312,
+                                        columnNumber: 379
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/ui/Footer.tsx",
+                                    lineNumber: 312,
+                                    columnNumber: 375
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                        href: "#",
+                                        className: "hover:text-[var(--accent-earth)] transition-colors",
+                                        children: "YouTube"
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/ui/Footer.tsx",
+                                        lineNumber: 312,
+                                        columnNumber: 475
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/ui/Footer.tsx",
+                                    lineNumber: 312,
+                                    columnNumber: 471
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/ui/Footer.tsx",
-                            lineNumber: 275,
-                            columnNumber: 109
+                            lineNumber: 312,
+                            columnNumber: 135
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/ui/Footer.tsx",
-                    lineNumber: 275,
-                    columnNumber: 78
+                    lineNumber: 312,
+                    columnNumber: 103
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/ui/Footer.tsx",
-            lineNumber: 275,
+            lineNumber: 312,
             columnNumber: 11
         }, this);
-        $[44] = t21;
-        $[45] = t23;
-        $[46] = t25;
-        $[47] = t26;
-        $[48] = t27;
+        $[56] = t32;
     } else {
-        t27 = $[48];
+        t32 = $[56];
     }
-    let t28;
-    if ($[49] === Symbol.for("react.memo_cache_sentinel")) {
-        t28 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-            className: "text-[var(--text-muted)] text-sm font-medium",
+    let t33;
+    if ($[57] === Symbol.for("react.memo_cache_sentinel")) {
+        t33 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "flex items-center gap-2 px-4 py-2 bg-green-50 rounded-full border border-green-100",
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "w-2 h-2 rounded-full bg-green-500 animate-pulse"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/ui/Footer.tsx",
+                    lineNumber: 319,
+                    columnNumber: 111
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                    className: "text-[10px] font-black uppercase tracking-widest text-green-600",
+                    children: "All systems operational"
+                }, void 0, false, {
+                    fileName: "[project]/src/components/ui/Footer.tsx",
+                    lineNumber: 319,
+                    columnNumber: 178
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/src/components/ui/Footer.tsx",
+            lineNumber: 319,
+            columnNumber: 11
+        }, this);
+        $[57] = t33;
+    } else {
+        t33 = $[57];
+    }
+    let t34;
+    if ($[58] === Symbol.for("react.memo_cache_sentinel")) {
+        t34 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+            className: "text-[10px] font-bold text-black/40 uppercase tracking-widest",
             children: [
                 "© ",
                 new Date().getFullYear(),
-                " Ghumo Holidays. All rights reserved."
+                " GHUMO. All rights reserved."
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/ui/Footer.tsx",
-            lineNumber: 286,
+            lineNumber: 326,
             columnNumber: 11
         }, this);
-        $[49] = t28;
+        $[58] = t34;
     } else {
-        t28 = $[49];
+        t34 = $[58];
     }
-    let t29;
-    if ($[50] === Symbol.for("react.memo_cache_sentinel")) {
-        t29 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "border-t border-gray-200 pt-8 flex flex-col md:flex-row items-center justify-between gap-6",
+    let t35;
+    if ($[59] === Symbol.for("react.memo_cache_sentinel")) {
+        t35 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+            className: "pt-8 border-t border-black/5 flex flex-col md:row items-center justify-between gap-6",
             children: [
-                t28,
+                t33,
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "flex gap-3",
+                    className: "flex flex-col md:flex-row items-center gap-6",
                     children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                            href: "https://wa.me/919999808162",
-                            target: "_blank",
-                            rel: "noopener noreferrer",
-                            className: "w-12 h-12 rounded-full bg-[#25D366]/10 flex items-center justify-center text-[#25D366] hover:bg-[#25D366] hover:text-white transition-colors",
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                                xmlns: "http://www.w3.org/2000/svg",
-                                width: "22",
-                                height: "22",
-                                viewBox: "0 0 24 24",
-                                fill: "currentColor",
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                                    d: "M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+                        t34,
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "flex gap-4",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                    href: "/privacy",
+                                    className: "text-[10px] font-bold text-black/40 uppercase tracking-widest hover:text-black transition-colors",
+                                    children: "Privacy Policy"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/ui/Footer.tsx",
-                                    lineNumber: 293,
-                                    columnNumber: 487
+                                    lineNumber: 333,
+                                    columnNumber: 213
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                    href: "/terms",
+                                    className: "text-[10px] font-bold text-black/40 uppercase tracking-widest hover:text-black transition-colors",
+                                    children: "Terms of Use"
+                                }, void 0, false, {
+                                    fileName: "[project]/src/components/ui/Footer.tsx",
+                                    lineNumber: 333,
+                                    columnNumber: 365
                                 }, this)
-                            }, void 0, false, {
-                                fileName: "[project]/src/components/ui/Footer.tsx",
-                                lineNumber: 293,
-                                columnNumber: 384
-                            }, this)
-                        }, void 0, false, {
+                            ]
+                        }, void 0, true, {
                             fileName: "[project]/src/components/ui/Footer.tsx",
-                            lineNumber: 293,
-                            columnNumber: 152
-                        }, this),
-                        [
-                            {
-                                name: "Instagram",
-                                icon: "\uD83D\uDCF1"
-                            },
-                            {
-                                name: "LinkedIn",
-                                icon: "\uD83D\uDCBC"
-                            },
-                            {
-                                name: "YouTube",
-                                icon: "\u25B6\uFE0F"
-                            }
-                        ].map(_FooterAnonymous)
+                            lineNumber: 333,
+                            columnNumber: 185
+                        }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/ui/Footer.tsx",
-                    lineNumber: 293,
-                    columnNumber: 124
+                    lineNumber: 333,
+                    columnNumber: 118
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/ui/Footer.tsx",
-            lineNumber: 293,
+            lineNumber: 333,
             columnNumber: 11
         }, this);
-        $[50] = t29;
+        $[59] = t35;
     } else {
-        t29 = $[50];
+        t35 = $[59];
     }
-    let t30;
-    if ($[51] !== t27) {
-        t30 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("footer", {
-            className: "bg-[var(--bg-primary)] border-t border-gray-200 pt-20 pb-10 overflow-hidden",
-            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "max-w-[1400px] mx-auto px-6 lg:px-20",
-                children: [
-                    t27,
-                    t29
-                ]
-            }, void 0, true, {
-                fileName: "[project]/src/components/ui/Footer.tsx",
-                lineNumber: 309,
-                columnNumber: 107
-            }, this)
-        }, void 0, false, {
+    let t36;
+    if ($[60] !== t25) {
+        t36 = /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("footer", {
+            className: "relative bg-[#F8F9FA] pt-48 pb-12 overflow-hidden",
+            children: [
+                t2,
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "max-w-[1400px] mx-auto px-6 lg:px-20 relative z-10",
+                    children: [
+                        t25,
+                        t32,
+                        t35
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/components/ui/Footer.tsx",
+                    lineNumber: 340,
+                    columnNumber: 85
+                }, this)
+            ]
+        }, void 0, true, {
             fileName: "[project]/src/components/ui/Footer.tsx",
-            lineNumber: 309,
+            lineNumber: 340,
             columnNumber: 11
         }, this);
-        $[51] = t27;
-        $[52] = t30;
+        $[60] = t25;
+        $[61] = t36;
     } else {
-        t30 = $[52];
+        t36 = $[61];
     }
-    return t30;
+    return t36;
 }
-_s(Footer, "E/A30lOUFXNIhCbX98FwBLpHIWs=");
+_s(Footer, "EZq1Vc/b4oW8mKVkAjue1L5kQ1I=");
 _c = Footer;
-function _FooterAnonymous(social) {
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-        href: "#",
-        className: "w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center text-[var(--text-secondary)] hover:bg-[var(--accent-earth)] hover:text-white transition-colors",
-        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-            className: "text-xl",
-            children: social.icon
-        }, void 0, false, {
-            fileName: "[project]/src/components/ui/Footer.tsx",
-            lineNumber: 318,
-            columnNumber: 215
-        }, this)
-    }, social.name, false, {
-        fileName: "[project]/src/components/ui/Footer.tsx",
-        lineNumber: 318,
-        columnNumber: 10
-    }, this);
-}
 var _c;
 __turbopack_context__.k.register(_c, "Footer");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {

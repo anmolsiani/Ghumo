@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { fetchStateImages } from '@/lib/unsplash'
+import { DESTINATION_IMAGES } from '@/data/destinationsData'
 import { ArrowRight } from 'lucide-react'
 
 const STATES = [
@@ -16,19 +16,11 @@ const STATES = [
 ];
 
 export default async function DestinationsPage() {
-  // Fetch one representative image for each state concurrently
-  const stateData = await Promise.all(
-    STATES.map(async (state) => {
-      let image = "https://images.unsplash.com/photo-1506461883276-594a12b11cf3?auto=format&fit=crop&w=800&q=80"
-      try {
-        const unsplashImages = await fetchStateImages(state.id, undefined, 1)
-        if (unsplashImages.length > 0) image = unsplashImages[0].url
-      } catch (e) {
-        console.error("Failed to fetch image for", state.id)
-      }
-      return { ...state, image }
-    })
-  )
+  const stateData = STATES.map((state) => {
+    // @ts-ignore
+    const imgs = DESTINATION_IMAGES[state.id] || []
+    return { ...state, image: imgs[0] || "https://images.unsplash.com/photo-1506461883276-594a12b11cf3?auto=format&fit=crop&w=800&q=80" }
+  })
 
   return (
     <div className="bg-[var(--bg-primary)] min-h-screen pt-40 pb-32">

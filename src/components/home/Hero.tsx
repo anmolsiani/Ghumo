@@ -46,16 +46,16 @@ export function Hero() {
   }, [])
 
   return (
-    <section ref={containerRef} className="relative w-full h-screen overflow-hidden bg-gradient-to-br from-[#FAFAFA] to-[#F0F0F0] flex items-center justify-center pt-24 perspective-container">
+    <section ref={containerRef} className="relative w-full min-h-[100svh] overflow-hidden bg-gradient-to-br from-[#FAFAFA] to-[#F0F0F0] flex items-center justify-center pt-32 pb-20 perspective-container">
       {/* Background Decorative Elements */}
       <div className="absolute top-1/4 left-1/10 w-64 h-64 bg-[#8B7355]/5 rounded-full blur-3xl" data-speed="0.3"></div>
       <div className="absolute bottom-1/4 right-1/10 w-96 h-96 bg-[#2C5F5D]/5 rounded-full blur-3xl" data-speed="0.6"></div>
 
-      <div className="max-w-[1400px] w-full mx-auto px-6 lg:px-20 grid grid-cols-1 lg:grid-cols-[45%_55%] gap-20 items-center z-10 preserve-3d">
+      <div className="max-w-[1400px] w-full mx-auto px-4 sm:px-10 lg:px-20 grid grid-cols-1 lg:grid-cols-[45%_55%] gap-12 lg:gap-20 items-center z-10 preserve-3d">
         
         {/* Left: Headline Content */}
         <Reveal direction="left" delay={0.2}>
-          <div className="hero-text space-y-8" data-speed="1.2">
+          <div className="hero-text space-y-8 will-change-transform" data-speed="1.2">
             <div className="inline-block px-4 py-2 bg-white/50 backdrop-blur-md border border-white/30 rounded-full shadow-sm">
               <span className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--accent-earth)]">Premium Travel 2026</span>
             </div>
@@ -66,15 +66,15 @@ export function Hero() {
             </h1>
             
             <h3 className="text-[var(--text-base)] text-[var(--text-secondary)] max-w-lg leading-relaxed font-medium">
-              We don't just plan trips — we curate soulful odysseys that transcend the ordinary. Every journey is a masterpiece of discovery across 8 states and 43 exclusive packages.
+              We don't just plan trips — we curate soulful odysseys that transcend the ordinary. Every journey is a masterpiece of discovery across all over India & more with 43 exclusive packages.
             </h3>
             
-            <div className="flex flex-wrap gap-4 pt-4">
-              <Link href="/start-journey">
-                <Button variant="primary" magnetic withArrow as="div">Start Your Journey</Button>
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <Link href="/start-journey" className="w-full sm:w-auto">
+                <Button variant="primary" magnetic withArrow className="w-full justify-center" as="div">Start Your Journey</Button>
               </Link>
-              <Link href="/packages">
-                <Button variant="secondary" as="div">View Catalog</Button>
+              <Link href="/packages" className="w-full sm:w-auto">
+                <Button variant="secondary" className="w-full justify-center" as="div">View Catalog</Button>
               </Link>
             </div>
 
@@ -101,11 +101,11 @@ export function Hero() {
         
         {/* Right: Product Showcase (Reference Image 1 style) */}
         <Reveal direction="right" delay={0.5}>
-          <div ref={imageRef} className="relative aspect-square lg:aspect-[4/3] w-full preserve-3d" data-speed="1.5">
+          <div ref={imageRef} className="relative aspect-square lg:aspect-[4/3] w-full preserve-3d will-change-transform" data-speed="1.5">
             <div className="absolute inset-0 bg-gradient-to-t from-gray-100/50 to-transparent rounded-[2rem] -z-10 transform rotate-3"></div>
             
             {/* Main Hero Image */}
-            <div className="relative w-full h-full rounded-[2rem] overflow-hidden shadow-2xl transition-transform duration-500 hover:rotate-x-12 hover:rotate-y-12">
+            <div className="relative w-full h-full rounded-[2rem] overflow-hidden shadow-2xl transition-transform duration-500 hover:rotate-x-12 hover:rotate-y-12 will-change-transform">
               <Image 
                   src="https://images.unsplash.com/photo-1506461883276-594a12b11cf3?auto=format&fit=crop&w=1200&q=80" 
                   fill
@@ -120,8 +120,8 @@ export function Hero() {
             <div className="absolute -bottom-8 -left-8 glass p-6 rounded-2xl flex items-center gap-4 animate-float" style={{ transform: 'translateZ(var(--z-depth-lg))' }}>
               <div className="w-12 h-12 rounded-full bg-[var(--accent-earth)] flex items-center justify-center text-xl">🏔️</div>
               <div>
-                <h4 className="font-bold text-sm">8 States</h4>
-                <p className="text-xs text-[var(--text-secondary)]">43 Curated Packages</p>
+                <h4 className="font-bold text-sm">All Over India</h4>
+                <p className="text-xs text-[var(--text-secondary)]">& More</p>
               </div>
             </div>
 
@@ -138,7 +138,7 @@ export function Hero() {
       </div>
       
       {/* Scroll Indicator */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 opacity-50">
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 opacity-50 will-change-transform">
         <h4 className="text-[10px] uppercase tracking-[0.3em] font-bold">Scroll to Explore</h4>
         <div className="w-[1px] h-16 bg-gradient-to-b from-black to-transparent"></div>
       </div>

@@ -13,7 +13,7 @@ export const packagesData = [
     isFeatured: true,
     highlights: ["Volvo Transport", "Hotel Included", "Sightseeing"],
     itinerary: [],
-    images: ["https://images.unsplash.com/photo-1605649487212-4d4ce77fd431?auto=format&fit=crop&w=1200&q=80"],
+    images: ["https://images.pexels.com/photos/1562/italian-landscape-mountains-nature.jpg?auto=compress&cs=tinysrgb&w=1200"],
   },
   {
     id: "HP-02",
@@ -28,7 +28,7 @@ export const packagesData = [
     isFeatured: false,
     highlights: ["Hotel Included", "Food Included", "Sightseeing"],
     itinerary: [],
-    images: ["https://images.unsplash.com/photo-1593181629936-11c609b8db9b?auto=format&fit=crop&w=1200&q=80"],
+    images: ["https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=1200"],
   },
   {
     id: "HP-03",
@@ -43,7 +43,7 @@ export const packagesData = [
     isFeatured: true,
     highlights: ["Golden Temple Visit", "Manali Sightseeing", "Transport Included"],
     itinerary: [],
-    images: ["https://images.unsplash.com/photo-1514222026856-116ebf4b0ab4?auto=format&fit=crop&w=1200&q=80"],
+    images: ["https://images.pexels.com/photos/1591375/pexels-photo-1591375.jpeg?auto=compress&cs=tinysrgb&w=1200"],
   },
   {
     id: "HP-04",
@@ -58,7 +58,7 @@ export const packagesData = [
     isFeatured: false,
     highlights: ["Dalhousie Stay", "Dharamshala Visit", "Meals Included"],
     itinerary: [],
-    images: ["https://images.unsplash.com/photo-1598305071913-3994e7861afa?auto=format&fit=crop&w=1200&q=80"],
+    images: ["https://images.pexels.com/photos/933054/pexels-photo-933054.jpeg?auto=compress&cs=tinysrgb&w=1200"],
   },
   {
     id: "HP-05",
@@ -73,7 +73,7 @@ export const packagesData = [
     isFeatured: true,
     highlights: ["Romantic Setup", "Premium Stays", "Private Transport"],
     itinerary: [],
-    images: ["https://images.unsplash.com/photo-1581793746485-04698e79a4e8?auto=format&fit=crop&w=1200&q=80"],
+    images: ["https://images.pexels.com/photos/1658967/pexels-photo-1658967.jpeg?auto=compress&cs=tinysrgb&w=1200"],
   },
   {
     id: "HP-06",
@@ -88,7 +88,7 @@ export const packagesData = [
     isFeatured: false,
     highlights: ["Taj Mahal Visit", "Golden Temple", "Manali Snow"],
     itinerary: [],
-    images: ["https://images.unsplash.com/photo-1564507592208-0282b0eace69?auto=format&fit=crop&w=1200&q=80"],
+    images: ["https://images.pexels.com/photos/1562/italian-landscape-mountains-nature.jpg?auto=compress&cs=tinysrgb&w=1200"],
   },
   {
     id: "HP-07",
@@ -103,7 +103,7 @@ export const packagesData = [
     isFeatured: false,
     highlights: ["Agra Sightseeing", "Shimla Mall Road", "Manali Valleys"],
     itinerary: [],
-    images: ["https://images.unsplash.com/photo-1593181629936-11c609b8db9b?auto=format&fit=crop&w=1200&q=80"],
+    images: ["https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=1200"],
   },
   {
     id: "HP-08",
@@ -118,7 +118,7 @@ export const packagesData = [
     isFeatured: true,
     highlights: ["Complete Himachal", "Premium Hotels", "Dedicated Guide"],
     itinerary: [],
-    images: ["https://images.unsplash.com/photo-1605649487212-4d4ce77fd431?auto=format&fit=crop&w=1200&q=80"],
+    images: ["https://images.pexels.com/photos/1591375/pexels-photo-1591375.jpeg?auto=compress&cs=tinysrgb&w=1200"],
   },
 
   // GOA
@@ -135,7 +135,7 @@ export const packagesData = [
     isFeatured: true,
     highlights: ["Beach Drops", "Hotel Included", "Food Included"],
     itinerary: [],
-    images: ["https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=1200&q=80"],
+    images: ["https://images.pexels.com/photos/1450353/pexels-photo-1450353.jpeg?auto=compress&cs=tinysrgb&w=1200"],
   },
   {
     id: "GA-02",
@@ -150,7 +150,7 @@ export const packagesData = [
     isFeatured: true,
     highlights: ["Dudhsagar Trek", "North & South Goa", "Transport"],
     itinerary: [],
-    images: ["https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1200&q=80"],
+    images: ["https://images.pexels.com/photos/1032650/pexels-photo-1032650.jpeg?auto=compress&cs=tinysrgb&w=1200"],
   },
   {
     id: "GA-03",
@@ -165,7 +165,7 @@ export const packagesData = [
     isFeatured: false,
     highlights: ["Mandovi Cruise", "Live Music", "Gala Dinner"],
     itinerary: [],
-    images: ["https://images.unsplash.com/photo-1587922546307-776227941871?auto=format&fit=crop&w=1200&q=80"],
+    images: ["https://images.pexels.com/photos/1007657/pexels-photo-1007657.jpeg?auto=compress&cs=tinysrgb&w=1200"],
   },
   {
     id: "GA-04",
@@ -180,7 +180,7 @@ export const packagesData = [
     isFeatured: true,
     highlights: ["Boat Party", "DJ Music", "Water Sports"],
     itinerary: [],
-    images: ["https://images.unsplash.com/photo-1555021200-dcb74c43ba09?auto=format&fit=crop&w=1200&q=80"],
+    images: ["https://images.pexels.com/photos/1174732/pexels-photo-1174732.jpeg?auto=compress&cs=tinysrgb&w=1200"],
   },
   {
     id: "GA-05",
@@ -195,7 +195,7 @@ export const packagesData = [
     isFeatured: false,
     highlights: ["Leisure Days", "Beach Hopping", "Scooty Rentals"],
     itinerary: [],
-    images: ["https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=1200&q=80"],
+    images: ["https://images.pexels.com/photos/1287460/pexels-photo-1287460.jpeg?auto=compress&cs=tinysrgb&w=1200"],
   },
 
   // LEH LADAKH
@@ -212,7 +212,7 @@ export const packagesData = [
     isFeatured: true,
     highlights: ["Pangong Lake", "Khardung La", "Nubra Stay"],
     itinerary: [],
-    images: ["https://images.unsplash.com/photo-1580136611388-644782bb19ac?auto=format&fit=crop&w=1200&q=80"],
+    images: ["https://images.pexels.com/photos/1647962/pexels-photo-1647962.jpeg?auto=compress&cs=tinysrgb&w=1200"],
   },
   {
     id: "LL-02",
@@ -227,7 +227,7 @@ export const packagesData = [
     isFeatured: false,
     highlights: ["Turtuk Village", "Double Hump Camels", "Monasteries"],
     itinerary: [],
-    images: ["https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=1200&q=80"],
+    images: ["https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg?auto=compress&cs=tinysrgb&w=1200"],
   },
   {
     id: "LL-03",
@@ -242,7 +242,7 @@ export const packagesData = [
     isFeatured: true,
     highlights: ["Bike Available", "High Passes", "Ultimate Adventure"],
     itinerary: [],
-    images: ["https://images.unsplash.com/photo-1580136611388-644782bb19ac?auto=format&fit=crop&w=1200&q=80"],
+    images: ["https://images.pexels.com/photos/3225531/pexels-photo-3225531.jpeg?auto=compress&cs=tinysrgb&w=1200"],
   },
 
   // DARJEELING & SIKKIM
@@ -259,7 +259,7 @@ export const packagesData = [
     isFeatured: true,
     highlights: ["Yumthang Valley", "Tsomgo Lake", "Local Cuisine"],
     itinerary: [],
-    images: ["https://images.unsplash.com/photo-1544634076-a90160ddf44a?auto=format&fit=crop&w=1200&q=80"],
+    images: ["https://images.pexels.com/photos/2132180/pexels-photo-2132180.jpeg?auto=compress&cs=tinysrgb&w=1200"],
   },
   {
     id: "DS-02",
@@ -274,7 +274,7 @@ export const packagesData = [
     isFeatured: true,
     highlights: ["Tiger Hill", "Tea Estates", "Monasteries"],
     itinerary: [],
-    images: ["https://images.unsplash.com/photo-1580302388048-fb264f69324e?auto=format&fit=crop&w=1200&q=80"],
+    images: ["https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1200"],
   },
   {
     id: "DS-03",
@@ -289,7 +289,7 @@ export const packagesData = [
     isFeatured: false,
     highlights: ["Complete East", "Premium Transport", "Luxury Stays"],
     itinerary: [],
-    images: ["https://images.unsplash.com/photo-1544634076-a90160ddf44a?auto=format&fit=crop&w=1200&q=80"],
+    images: ["https://images.pexels.com/photos/2662116/pexels-photo-2662116.jpeg?auto=compress&cs=tinysrgb&w=1200"],
   },
 
   // UTTARAKHAND
@@ -306,7 +306,7 @@ export const packagesData = [
     isFeatured: false,
     highlights: ["Kempty Falls", "Mall Road", "Hotel Included"],
     itinerary: [],
-    images: ["https://images.unsplash.com/photo-1596422846543-75c6ff416766?auto=format&fit=crop&w=1200&q=80"],
+    images: ["https://images.pexels.com/photos/1562/italian-landscape-mountains-nature.jpg?auto=compress&cs=tinysrgb&w=1200"],
   },
   {
     id: "UK-02",
@@ -321,7 +321,7 @@ export const packagesData = [
     isFeatured: true,
     highlights: ["Ganga Aarti", "River Rafting", "Ashram Visit"],
     itinerary: [],
-    images: ["https://images.unsplash.com/photo-1603502905325-15e86d0611e9?auto=format&fit=crop&w=1200&q=80"],
+    images: ["https://images.pexels.com/photos/1285625/pexels-photo-1285625.jpeg?auto=compress&cs=tinysrgb&w=1200"],
   },
   {
     id: "UK-03",
@@ -336,7 +336,7 @@ export const packagesData = [
     isFeatured: false,
     highlights: ["Complete Mix", "Private Cab", "Sightseeing"],
     itinerary: [],
-    images: ["https://images.unsplash.com/photo-1596422846543-75c6ff416766?auto=format&fit=crop&w=1200&q=80"],
+    images: ["https://images.pexels.com/photos/3408354/pexels-photo-3408354.jpeg?auto=compress&cs=tinysrgb&w=1200"],
   },
   {
     id: "UK-04",
@@ -351,7 +351,7 @@ export const packagesData = [
     isFeatured: true,
     highlights: ["Skiing", "Cable Car", "Nanda Devi Views"],
     itinerary: [],
-    images: ["https://images.unsplash.com/photo-1626713919102-1ff71eb6afb3?auto=format&fit=crop&w=1200&q=80"],
+    images: ["https://images.pexels.com/photos/2387532/pexels-photo-2387532.jpeg?auto=compress&cs=tinysrgb&w=1200"],
   },
   {
     id: "UK-05",
@@ -366,7 +366,7 @@ export const packagesData = [
     isFeatured: false,
     highlights: ["Eco Park", "Robbers Cave", "Complete Comfort"],
     itinerary: [],
-    images: ["https://images.unsplash.com/photo-1603502905325-15e86d0611e9?auto=format&fit=crop&w=1200&q=80"],
+    images: ["https://images.pexels.com/photos/1562/italian-landscape-mountains-nature.jpg?auto=compress&cs=tinysrgb&w=1200"],
   },
   {
     id: "UK-06",
@@ -381,7 +381,7 @@ export const packagesData = [
     isFeatured: false,
     highlights: ["Naini Lake", "Ganga Aarti", "Mall Road"],
     itinerary: [],
-    images: ["https://images.unsplash.com/photo-1587311820689-d4f1cdbc21d6?auto=format&fit=crop&w=1200&q=80"],
+    images: ["https://images.pexels.com/photos/1562/italian-landscape-mountains-nature.jpg?auto=compress&cs=tinysrgb&w=1200"],
   },
   {
     id: "UK-07",
@@ -396,7 +396,7 @@ export const packagesData = [
     isFeatured: true,
     highlights: ["Boating", "Zoo Visit", "Tiffin Top"],
     itinerary: [],
-    images: ["https://images.unsplash.com/photo-1598440590685-6101ce9196b6?auto=format&fit=crop&w=1200&q=80"],
+    images: ["https://images.pexels.com/photos/1285625/pexels-photo-1285625.jpeg?auto=compress&cs=tinysrgb&w=1200"],
   },
   {
     id: "UK-08",
@@ -411,7 +411,7 @@ export const packagesData = [
     isFeatured: true,
     highlights: ["Safari", "Himalayan Views", "Pine Forests"],
     itinerary: [],
-    images: ["https://images.unsplash.com/photo-1598440590685-6101ce9196b6?auto=format&fit=crop&w=1200&q=80"],
+    images: ["https://images.pexels.com/photos/3408354/pexels-photo-3408354.jpeg?auto=compress&cs=tinysrgb&w=1200"],
   },
   {
     id: "UK-09",
@@ -426,7 +426,7 @@ export const packagesData = [
     isFeatured: true,
     highlights: ["All 4 Dhams", "Helicopter Options", "VIP Darshan"],
     itinerary: [],
-    images: ["https://images.unsplash.com/photo-1603502905325-15e86d0611e9?auto=format&fit=crop&w=1200&q=80"],
+    images: ["https://images.pexels.com/photos/2387532/pexels-photo-2387532.jpeg?auto=compress&cs=tinysrgb&w=1200"],
   },
 
   // KERALA
@@ -443,7 +443,7 @@ export const packagesData = [
     isFeatured: true,
     highlights: ["Tea Gardens", "Waterfalls", "Spice Plantations"],
     itinerary: [],
-    images: ["https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1200&q=80"],
+    images: ["https://images.pexels.com/photos/962464/pexels-photo-962464.jpeg?auto=compress&cs=tinysrgb&w=1200"],
   },
   {
     id: "KL-02",
@@ -458,7 +458,7 @@ export const packagesData = [
     isFeatured: true,
     highlights: ["Houseboat Stay", "Backwaters", "Tea Estates"],
     itinerary: [],
-    images: ["https://images.unsplash.com/photo-1593693248882-96ab6fa7b12d?auto=format&fit=crop&w=1200&q=80"],
+    images: ["https://images.pexels.com/photos/3889742/pexels-photo-3889742.jpeg?auto=compress&cs=tinysrgb&w=1200"],
   },
   {
     id: "KL-03",
@@ -473,7 +473,7 @@ export const packagesData = [
     isFeatured: false,
     highlights: ["Custom Schedule", "Private Car", "Choose Hotels"],
     itinerary: [],
-    images: ["https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1200&q=80"],
+    images: ["https://images.pexels.com/photos/3152124/pexels-photo-3152124.jpeg?auto=compress&cs=tinysrgb&w=1200"],
   },
   {
     id: "KL-04",
@@ -488,7 +488,7 @@ export const packagesData = [
     isFeatured: true,
     highlights: ["Vivekananda Rock", "Kovalam Beach", "Periyar Safari"],
     itinerary: [],
-    images: ["https://images.unsplash.com/photo-1593693248882-96ab6fa7b12d?auto=format&fit=crop&w=1200&q=80"],
+    images: ["https://images.pexels.com/photos/2901209/pexels-photo-2901209.jpeg?auto=compress&cs=tinysrgb&w=1200"],
   },
   {
     id: "KL-05",
@@ -503,7 +503,7 @@ export const packagesData = [
     isFeatured: false,
     highlights: ["Meenakshi Temple", "Complete Kerala", "Luxury Resorts"],
     itinerary: [],
-    images: ["https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1200&q=80"],
+    images: ["https://images.pexels.com/photos/1174732/pexels-photo-1174732.jpeg?auto=compress&cs=tinysrgb&w=1200"],
   },
   {
     id: "KL-06",
@@ -518,7 +518,7 @@ export const packagesData = [
     isFeatured: false,
     highlights: ["Temples", "Architecture", "Culture"],
     itinerary: [],
-    images: ["https://images.unsplash.com/photo-1593693248882-96ab6fa7b12d?auto=format&fit=crop&w=1200&q=80"],
+    images: ["https://images.pexels.com/photos/962464/pexels-photo-962464.jpeg?auto=compress&cs=tinysrgb&w=1200"],
   },
 
   // RAJASTHAN
@@ -535,7 +535,7 @@ export const packagesData = [
     isFeatured: true,
     highlights: ["Amber Fort", "Chokhi Dhani Dinner", "City Palace"],
     itinerary: [],
-    images: ["https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=1200&q=80"],
+    images: ["https://images.pexels.com/photos/3581368/pexels-photo-3581368.jpeg?auto=compress&cs=tinysrgb&w=1200"],
   },
   {
     id: "RJ-02",
@@ -550,7 +550,7 @@ export const packagesData = [
     isFeatured: false,
     highlights: ["Ajmer Dargah", "Pushkar Lake", "Pink City"],
     itinerary: [],
-    images: ["https://images.unsplash.com/photo-1599661559495-9fc2fba176c1?auto=format&fit=crop&w=1200&q=80"],
+    images: ["https://images.pexels.com/photos/1583339/pexels-photo-1583339.jpeg?auto=compress&cs=tinysrgb&w=1200"],
   },
   {
     id: "RJ-03",
@@ -565,7 +565,7 @@ export const packagesData = [
     isFeatured: false,
     highlights: ["Mehrangarh Fort", "Umaid Bhawan", "Blue Streets"],
     itinerary: [],
-    images: ["https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=1200&q=80"],
+    images: ["https://images.pexels.com/photos/2341830/pexels-photo-2341830.jpeg?auto=compress&cs=tinysrgb&w=1200"],
   },
   {
     id: "RJ-04",
@@ -580,7 +580,7 @@ export const packagesData = [
     isFeatured: true,
     highlights: ["Nakki Lake", "Dilwara Temples", "Sunset Point"],
     itinerary: [],
-    images: ["https://images.unsplash.com/photo-1599661559495-9fc2fba176c1?auto=format&fit=crop&w=1200&q=80"],
+    images: ["https://images.pexels.com/photos/3581368/pexels-photo-3581368.jpeg?auto=compress&cs=tinysrgb&w=1200"],
   },
   {
     id: "RJ-05",
@@ -595,7 +595,7 @@ export const packagesData = [
     isFeatured: true,
     highlights: ["Tiger Safari", "Fort Visit", "Luxury Tents"],
     itinerary: [],
-    images: ["https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=1200&q=80"],
+    images: ["https://images.pexels.com/photos/2404843/pexels-photo-2404843.jpeg?auto=compress&cs=tinysrgb&w=1200"],
   },
   {
     id: "RJ-06",
@@ -610,7 +610,7 @@ export const packagesData = [
     isFeatured: true,
     highlights: ["Sand Dunes", "Camel Ride", "Golden Fort"],
     itinerary: [],
-    images: ["https://images.unsplash.com/photo-1599661559495-9fc2fba176c1?auto=format&fit=crop&w=1200&q=80"],
+    images: ["https://images.pexels.com/photos/1583339/pexels-photo-1583339.jpeg?auto=compress&cs=tinysrgb&w=1200"],
   },
 
   // KASHMIR
@@ -627,7 +627,7 @@ export const packagesData = [
     isFeatured: true,
     highlights: ["Shikara Ride", "Pahalgam Valleys", "Mughal Gardens"],
     itinerary: [],
-    images: ["https://images.unsplash.com/photo-1550215754-0eb7504a79df?auto=format&fit=crop&w=1200&q=80"],
+    images: ["https://images.pexels.com/photos/1586298/pexels-photo-1586298.jpeg?auto=compress&cs=tinysrgb&w=1200"],
   },
   {
     id: "KM-02",
@@ -642,7 +642,7 @@ export const packagesData = [
     isFeatured: true,
     highlights: ["Premium Houseboat", "Gulmarg Day Trip", "Gondola Ride"],
     itinerary: [],
-    images: ["https://images.unsplash.com/photo-1621217734493-2940bc2a2ee3?auto=format&fit=crop&w=1200&q=80"],
+    images: ["https://images.pexels.com/photos/3225517/pexels-photo-3225517.jpeg?auto=compress&cs=tinysrgb&w=1200"],
   },
   {
     id: "KM-03",
@@ -657,6 +657,6 @@ export const packagesData = [
     isFeatured: false,
     highlights: ["Sonmarg", "Yousmarg", "Complete Leisure"],
     itinerary: [],
-    images: ["https://images.unsplash.com/photo-1550215754-0eb7504a79df?auto=format&fit=crop&w=1200&q=80"],
+    images: ["https://images.pexels.com/photos/1007066/pexels-photo-1007066.jpeg?auto=compress&cs=tinysrgb&w=1200"],
   }
 ];

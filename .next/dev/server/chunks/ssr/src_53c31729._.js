@@ -26,7 +26,7 @@ const packagesData = [
         ],
         itinerary: [],
         images: [
-            "https://images.unsplash.com/photo-1605649487212-4d4ce77fd431?auto=format&fit=crop&w=1200&q=80"
+            "https://images.pexels.com/photos/1562/italian-landscape-mountains-nature.jpg?auto=compress&cs=tinysrgb&w=1200"
         ]
     },
     {
@@ -47,7 +47,7 @@ const packagesData = [
         ],
         itinerary: [],
         images: [
-            "https://images.unsplash.com/photo-1593181629936-11c609b8db9b?auto=format&fit=crop&w=1200&q=80"
+            "https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=1200"
         ]
     },
     {
@@ -68,7 +68,7 @@ const packagesData = [
         ],
         itinerary: [],
         images: [
-            "https://images.unsplash.com/photo-1514222026856-116ebf4b0ab4?auto=format&fit=crop&w=1200&q=80"
+            "https://images.pexels.com/photos/1591375/pexels-photo-1591375.jpeg?auto=compress&cs=tinysrgb&w=1200"
         ]
     },
     {
@@ -89,7 +89,7 @@ const packagesData = [
         ],
         itinerary: [],
         images: [
-            "https://images.unsplash.com/photo-1598305071913-3994e7861afa?auto=format&fit=crop&w=1200&q=80"
+            "https://images.pexels.com/photos/933054/pexels-photo-933054.jpeg?auto=compress&cs=tinysrgb&w=1200"
         ]
     },
     {
@@ -110,7 +110,7 @@ const packagesData = [
         ],
         itinerary: [],
         images: [
-            "https://images.unsplash.com/photo-1581793746485-04698e79a4e8?auto=format&fit=crop&w=1200&q=80"
+            "https://images.pexels.com/photos/1658967/pexels-photo-1658967.jpeg?auto=compress&cs=tinysrgb&w=1200"
         ]
     },
     {
@@ -131,7 +131,7 @@ const packagesData = [
         ],
         itinerary: [],
         images: [
-            "https://images.unsplash.com/photo-1564507592208-0282b0eace69?auto=format&fit=crop&w=1200&q=80"
+            "https://images.pexels.com/photos/1562/italian-landscape-mountains-nature.jpg?auto=compress&cs=tinysrgb&w=1200"
         ]
     },
     {
@@ -152,7 +152,7 @@ const packagesData = [
         ],
         itinerary: [],
         images: [
-            "https://images.unsplash.com/photo-1593181629936-11c609b8db9b?auto=format&fit=crop&w=1200&q=80"
+            "https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&w=1200"
         ]
     },
     {
@@ -173,7 +173,7 @@ const packagesData = [
         ],
         itinerary: [],
         images: [
-            "https://images.unsplash.com/photo-1605649487212-4d4ce77fd431?auto=format&fit=crop&w=1200&q=80"
+            "https://images.pexels.com/photos/1591375/pexels-photo-1591375.jpeg?auto=compress&cs=tinysrgb&w=1200"
         ]
     },
     // GOA
@@ -195,7 +195,7 @@ const packagesData = [
         ],
         itinerary: [],
         images: [
-            "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=1200&q=80"
+            "https://images.pexels.com/photos/1450353/pexels-photo-1450353.jpeg?auto=compress&cs=tinysrgb&w=1200"
         ]
     },
     {
@@ -216,7 +216,7 @@ const packagesData = [
         ],
         itinerary: [],
         images: [
-            "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1200&q=80"
+            "https://images.pexels.com/photos/1032650/pexels-photo-1032650.jpeg?auto=compress&cs=tinysrgb&w=1200"
         ]
     },
     {
@@ -237,7 +237,7 @@ const packagesData = [
         ],
         itinerary: [],
         images: [
-            "https://images.unsplash.com/photo-1587922546307-776227941871?auto=format&fit=crop&w=1200&q=80"
+            "https://images.pexels.com/photos/1007657/pexels-photo-1007657.jpeg?auto=compress&cs=tinysrgb&w=1200"
         ]
     },
     {
@@ -258,7 +258,7 @@ const packagesData = [
         ],
         itinerary: [],
         images: [
-            "https://images.unsplash.com/photo-1555021200-dcb74c43ba09?auto=format&fit=crop&w=1200&q=80"
+            "https://images.pexels.com/photos/1174732/pexels-photo-1174732.jpeg?auto=compress&cs=tinysrgb&w=1200"
         ]
     },
     {
@@ -279,7 +279,7 @@ const packagesData = [
         ],
         itinerary: [],
         images: [
-            "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=1200&q=80"
+            "https://images.pexels.com/photos/1287460/pexels-photo-1287460.jpeg?auto=compress&cs=tinysrgb&w=1200"
         ]
     },
     // LEH LADAKH
@@ -301,7 +301,7 @@ const packagesData = [
         ],
         itinerary: [],
         images: [
-            "https://images.unsplash.com/photo-1580136611388-644782bb19ac?auto=format&fit=crop&w=1200&q=80"
+            "https://images.pexels.com/photos/1647962/pexels-photo-1647962.jpeg?auto=compress&cs=tinysrgb&w=1200"
         ]
     },
     {
@@ -322,7 +322,7 @@ const packagesData = [
         ],
         itinerary: [],
         images: [
-            "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=1200&q=80"
+            "https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg?auto=compress&cs=tinysrgb&w=1200"
         ]
     },
     {
@@ -343,7 +343,7 @@ const packagesData = [
         ],
         itinerary: [],
         images: [
-            "https://images.unsplash.com/photo-1580136611388-644782bb19ac?auto=format&fit=crop&w=1200&q=80"
+            "https://images.pexels.com/photos/3225531/pexels-photo-3225531.jpeg?auto=compress&cs=tinysrgb&w=1200"
         ]
     },
     // DARJEELING & SIKKIM
@@ -365,7 +365,7 @@ const packagesData = [
         ],
         itinerary: [],
         images: [
-            "https://images.unsplash.com/photo-1544634076-a90160ddf44a?auto=format&fit=crop&w=1200&q=80"
+            "https://images.pexels.com/photos/2132180/pexels-photo-2132180.jpeg?auto=compress&cs=tinysrgb&w=1200"
         ]
     },
     {
@@ -386,7 +386,7 @@ const packagesData = [
         ],
         itinerary: [],
         images: [
-            "https://images.unsplash.com/photo-1580302388048-fb264f69324e?auto=format&fit=crop&w=1200&q=80"
+            "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1200"
         ]
     },
     {
@@ -407,7 +407,7 @@ const packagesData = [
         ],
         itinerary: [],
         images: [
-            "https://images.unsplash.com/photo-1544634076-a90160ddf44a?auto=format&fit=crop&w=1200&q=80"
+            "https://images.pexels.com/photos/2662116/pexels-photo-2662116.jpeg?auto=compress&cs=tinysrgb&w=1200"
         ]
     },
     // UTTARAKHAND
@@ -429,7 +429,7 @@ const packagesData = [
         ],
         itinerary: [],
         images: [
-            "https://images.unsplash.com/photo-1596422846543-75c6ff416766?auto=format&fit=crop&w=1200&q=80"
+            "https://images.pexels.com/photos/1562/italian-landscape-mountains-nature.jpg?auto=compress&cs=tinysrgb&w=1200"
         ]
     },
     {
@@ -450,7 +450,7 @@ const packagesData = [
         ],
         itinerary: [],
         images: [
-            "https://images.unsplash.com/photo-1603502905325-15e86d0611e9?auto=format&fit=crop&w=1200&q=80"
+            "https://images.pexels.com/photos/1285625/pexels-photo-1285625.jpeg?auto=compress&cs=tinysrgb&w=1200"
         ]
     },
     {
@@ -471,7 +471,7 @@ const packagesData = [
         ],
         itinerary: [],
         images: [
-            "https://images.unsplash.com/photo-1596422846543-75c6ff416766?auto=format&fit=crop&w=1200&q=80"
+            "https://images.pexels.com/photos/3408354/pexels-photo-3408354.jpeg?auto=compress&cs=tinysrgb&w=1200"
         ]
     },
     {
@@ -492,7 +492,7 @@ const packagesData = [
         ],
         itinerary: [],
         images: [
-            "https://images.unsplash.com/photo-1626713919102-1ff71eb6afb3?auto=format&fit=crop&w=1200&q=80"
+            "https://images.pexels.com/photos/2387532/pexels-photo-2387532.jpeg?auto=compress&cs=tinysrgb&w=1200"
         ]
     },
     {
@@ -513,7 +513,7 @@ const packagesData = [
         ],
         itinerary: [],
         images: [
-            "https://images.unsplash.com/photo-1603502905325-15e86d0611e9?auto=format&fit=crop&w=1200&q=80"
+            "https://images.pexels.com/photos/1562/italian-landscape-mountains-nature.jpg?auto=compress&cs=tinysrgb&w=1200"
         ]
     },
     {
@@ -534,7 +534,7 @@ const packagesData = [
         ],
         itinerary: [],
         images: [
-            "https://images.unsplash.com/photo-1587311820689-d4f1cdbc21d6?auto=format&fit=crop&w=1200&q=80"
+            "https://images.pexels.com/photos/1562/italian-landscape-mountains-nature.jpg?auto=compress&cs=tinysrgb&w=1200"
         ]
     },
     {
@@ -555,7 +555,7 @@ const packagesData = [
         ],
         itinerary: [],
         images: [
-            "https://images.unsplash.com/photo-1598440590685-6101ce9196b6?auto=format&fit=crop&w=1200&q=80"
+            "https://images.pexels.com/photos/1285625/pexels-photo-1285625.jpeg?auto=compress&cs=tinysrgb&w=1200"
         ]
     },
     {
@@ -576,7 +576,7 @@ const packagesData = [
         ],
         itinerary: [],
         images: [
-            "https://images.unsplash.com/photo-1598440590685-6101ce9196b6?auto=format&fit=crop&w=1200&q=80"
+            "https://images.pexels.com/photos/3408354/pexels-photo-3408354.jpeg?auto=compress&cs=tinysrgb&w=1200"
         ]
     },
     {
@@ -597,7 +597,7 @@ const packagesData = [
         ],
         itinerary: [],
         images: [
-            "https://images.unsplash.com/photo-1603502905325-15e86d0611e9?auto=format&fit=crop&w=1200&q=80"
+            "https://images.pexels.com/photos/2387532/pexels-photo-2387532.jpeg?auto=compress&cs=tinysrgb&w=1200"
         ]
     },
     // KERALA
@@ -619,7 +619,7 @@ const packagesData = [
         ],
         itinerary: [],
         images: [
-            "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1200&q=80"
+            "https://images.pexels.com/photos/962464/pexels-photo-962464.jpeg?auto=compress&cs=tinysrgb&w=1200"
         ]
     },
     {
@@ -640,7 +640,7 @@ const packagesData = [
         ],
         itinerary: [],
         images: [
-            "https://images.unsplash.com/photo-1593693248882-96ab6fa7b12d?auto=format&fit=crop&w=1200&q=80"
+            "https://images.pexels.com/photos/3889742/pexels-photo-3889742.jpeg?auto=compress&cs=tinysrgb&w=1200"
         ]
     },
     {
@@ -661,7 +661,7 @@ const packagesData = [
         ],
         itinerary: [],
         images: [
-            "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1200&q=80"
+            "https://images.pexels.com/photos/3152124/pexels-photo-3152124.jpeg?auto=compress&cs=tinysrgb&w=1200"
         ]
     },
     {
@@ -682,7 +682,7 @@ const packagesData = [
         ],
         itinerary: [],
         images: [
-            "https://images.unsplash.com/photo-1593693248882-96ab6fa7b12d?auto=format&fit=crop&w=1200&q=80"
+            "https://images.pexels.com/photos/2901209/pexels-photo-2901209.jpeg?auto=compress&cs=tinysrgb&w=1200"
         ]
     },
     {
@@ -703,7 +703,7 @@ const packagesData = [
         ],
         itinerary: [],
         images: [
-            "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1200&q=80"
+            "https://images.pexels.com/photos/1174732/pexels-photo-1174732.jpeg?auto=compress&cs=tinysrgb&w=1200"
         ]
     },
     {
@@ -724,7 +724,7 @@ const packagesData = [
         ],
         itinerary: [],
         images: [
-            "https://images.unsplash.com/photo-1593693248882-96ab6fa7b12d?auto=format&fit=crop&w=1200&q=80"
+            "https://images.pexels.com/photos/962464/pexels-photo-962464.jpeg?auto=compress&cs=tinysrgb&w=1200"
         ]
     },
     // RAJASTHAN
@@ -746,7 +746,7 @@ const packagesData = [
         ],
         itinerary: [],
         images: [
-            "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=1200&q=80"
+            "https://images.pexels.com/photos/3581368/pexels-photo-3581368.jpeg?auto=compress&cs=tinysrgb&w=1200"
         ]
     },
     {
@@ -767,7 +767,7 @@ const packagesData = [
         ],
         itinerary: [],
         images: [
-            "https://images.unsplash.com/photo-1599661559495-9fc2fba176c1?auto=format&fit=crop&w=1200&q=80"
+            "https://images.pexels.com/photos/1583339/pexels-photo-1583339.jpeg?auto=compress&cs=tinysrgb&w=1200"
         ]
     },
     {
@@ -788,7 +788,7 @@ const packagesData = [
         ],
         itinerary: [],
         images: [
-            "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=1200&q=80"
+            "https://images.pexels.com/photos/2341830/pexels-photo-2341830.jpeg?auto=compress&cs=tinysrgb&w=1200"
         ]
     },
     {
@@ -809,7 +809,7 @@ const packagesData = [
         ],
         itinerary: [],
         images: [
-            "https://images.unsplash.com/photo-1599661559495-9fc2fba176c1?auto=format&fit=crop&w=1200&q=80"
+            "https://images.pexels.com/photos/3581368/pexels-photo-3581368.jpeg?auto=compress&cs=tinysrgb&w=1200"
         ]
     },
     {
@@ -830,7 +830,7 @@ const packagesData = [
         ],
         itinerary: [],
         images: [
-            "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=1200&q=80"
+            "https://images.pexels.com/photos/2404843/pexels-photo-2404843.jpeg?auto=compress&cs=tinysrgb&w=1200"
         ]
     },
     {
@@ -851,7 +851,7 @@ const packagesData = [
         ],
         itinerary: [],
         images: [
-            "https://images.unsplash.com/photo-1599661559495-9fc2fba176c1?auto=format&fit=crop&w=1200&q=80"
+            "https://images.pexels.com/photos/1583339/pexels-photo-1583339.jpeg?auto=compress&cs=tinysrgb&w=1200"
         ]
     },
     // KASHMIR
@@ -873,7 +873,7 @@ const packagesData = [
         ],
         itinerary: [],
         images: [
-            "https://images.unsplash.com/photo-1550215754-0eb7504a79df?auto=format&fit=crop&w=1200&q=80"
+            "https://images.pexels.com/photos/1586298/pexels-photo-1586298.jpeg?auto=compress&cs=tinysrgb&w=1200"
         ]
     },
     {
@@ -894,7 +894,7 @@ const packagesData = [
         ],
         itinerary: [],
         images: [
-            "https://images.unsplash.com/photo-1621217734493-2940bc2a2ee3?auto=format&fit=crop&w=1200&q=80"
+            "https://images.pexels.com/photos/3225517/pexels-photo-3225517.jpeg?auto=compress&cs=tinysrgb&w=1200"
         ]
     },
     {
@@ -915,7 +915,7 @@ const packagesData = [
         ],
         itinerary: [],
         images: [
-            "https://images.unsplash.com/photo-1550215754-0eb7504a79df?auto=format&fit=crop&w=1200&q=80"
+            "https://images.pexels.com/photos/1007066/pexels-photo-1007066.jpeg?auto=compress&cs=tinysrgb&w=1200"
         ]
     }
 ];

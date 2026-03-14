@@ -6,9 +6,20 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Upload, X, MapPin, User, Camera, Sparkles, Plus } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { GalleryCarousel } from '@/components/home/GalleryCarousel'
+import { MIXED_GALLERY_IMAGES } from '@/data/destinationsData'
+import { MasonryGallery } from '@/components/gallery/MasonryGallery'
 
 export default function GalleryPage() {
   const [images, setImages] = useState<any[]>([])
+  
+  // Mixed images formatted for display
+  const curatedImages = MIXED_GALLERY_IMAGES.map((url, i) => ({
+    _id: `mixed-${i}`,
+    url,
+    caption: 'Discover India',
+    location: 'Iconic Destination',
+    username: 'Ghumo Holidays'
+  }))
   const [showUpload, setShowUpload] = useState(false)
   const [uploading, setUploading] = useState(false)
   const [formData, setFormData] = useState({
@@ -52,6 +63,8 @@ export default function GalleryPage() {
       setUploading(false)
     }
   }
+
+  const allImages = [...curatedImages, ...images]
 
   return (
     <div className="bg-[var(--bg-primary)] min-h-screen pt-32 pb-32 perspective-container">
@@ -101,65 +114,17 @@ export default function GalleryPage() {
 
       {/* ── Infinite Scroll Carousel ── */}
       <div className="py-6 overflow-hidden">
-        <GalleryCarousel images={images} />
+        <GalleryCarousel images={allImages} />
       </div>
 
       <div className="max-w-[1400px] mx-auto px-6 lg:px-20 preserve-3d">
         {/* Section divider */}
         <div className="flex items-center gap-6 mb-16">
-          <h2 className="text-3xl font-black shrink-0 tracking-tighter">COMMUNITY MOMENTS</h2>
+          <h2 className="text-3xl font-black shrink-0 tracking-tighter">OUR JOURNEY</h2>
           <div className="h-[2px] flex-1 bg-gradient-to-r from-black/10 to-transparent" />
         </div>
 
-        {images.length === 0 ? (
-          <div className="text-center py-24 space-y-4">
-            <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto">
-              <Camera className="w-10 h-10 text-gray-300" />
-            </div>
-            <h3 className="text-2xl font-black text-gray-400">No Uploads Yet</h3>
-            <h4 className="text-gray-400 font-medium">Be the first to share a moment!</h4>
-          </div>
-        ) : (
-         <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8 preserve-3d">
-          {images.map((img, i) => (
-            <motion.div 
-              key={img._id || i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
-              whileHover={{ 
-                rotateX: 5, 
-                rotateY: 5, 
-                z: 50,
-                transition: { duration: 0.3 } 
-              }}
-              className="relative break-inside-avoid rounded-[2.5rem] overflow-hidden shadow-2xl group cursor-pointer preserve-3d border border-white/20"
-            >
-               <div className="relative aspect-[4/5] sm:aspect-auto">
-                 <img
-                   src={img.url} 
-                   className="w-full object-cover transition-transform duration-700 group-hover:scale-110" 
-                   alt={img.caption} 
-                 />
-               </div>
-               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-10">
-                  <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-500 space-y-3" style={{ transform: 'translateZ(30px)' }}>
-                    <div className="flex items-center gap-2 text-[var(--accent-earth)]">
-                      <MapPin className="w-4 h-4" />
-                      <span className="text-xs font-bold uppercase tracking-widest">{img.location}</span>
-                    </div>
-                    <h4 className="text-white text-2xl font-black">{img.caption}</h4>
-                    <div className="flex items-center gap-2 text-white/60">
-                      <User className="w-4 h-4" />
-                      <span className="text-sm">Shared by {img.username}</span>
-                    </div>
-                  </div>
-               </div>
-            </motion.div>
-          ))}
-         </div>
-        )}
+        <MasonryGallery images={allImages} />
       </div>
 
       {/* Upload Modal */}

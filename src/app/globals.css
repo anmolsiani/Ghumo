@@ -96,13 +96,48 @@
 @layer utilities {
   .glass {
     background: var(--glass-bg);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--glass-border);
     box-shadow: var(--glass-shadow);
   }
   
   .text-balance {
     text-wrap: balance;
+  }
+
+  .animate-scroll-x {
+    animation: scroll-x 40s linear infinite;
+  }
+
+  .animate-scroll-x-reverse {
+    animation: scroll-x-reverse 40s linear infinite;
+  }
+
+  .pause {
+    animation-play-state: paused;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .perspective-container {
+    perspective: var(--perspective);
+  }
+
+  .gpu {
+    backface-visibility: hidden;
+    transform: translateZ(0);
+  }
+
+  @keyframes scroll-x {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50% - 1rem)); }
+  }
+
+  @keyframes scroll-x-reverse {
+    0% { transform: translateX(calc(-50% - 1rem)); }
+    100% { transform: translateX(0); }
   }
 }

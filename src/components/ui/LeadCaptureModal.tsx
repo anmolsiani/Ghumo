@@ -6,6 +6,8 @@ import {
   X, User, Mail, Phone, Users, Calendar, MessageSquare, Sparkles, CheckCircle2
 } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
+import emailjs from '@emailjs/browser'
+import { useCartStore } from '@/store/cartStore'
 
 interface LeadCaptureModalProps {
   isOpen: boolean
@@ -31,6 +33,7 @@ export function LeadCaptureModal({ isOpen, onClose, onSuccess, cartTotal }: Lead
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false)
   const [error, setError] = useState('')
+  const { items, total } = useCartStore()
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value })
@@ -41,14 +44,74 @@ export function LeadCaptureModal({ isOpen, onClose, onSuccess, cartTotal }: Lead
     setLoading(true)
     setError('')
 
+    const travN = parseInt(form.travelers) || 1;
+    const cartItems = items.map(i => ({
+      name: i.title,
+      price: i.price,
+      location: i.state,
+      duration: '—',
+      id: i.id
+    }))
+
+    const getItem = (i: number, key: string) =>
+      cartItems[i] ? (cartItems[i] as any)[key] || '—' : '—';
+
+    const getSub = (i: number) => {
+      if (!cartItems[i]) return '—';
+      const price = parseFloat(cartItems[i].price.toString()) || 0;
+      return '₹' + (price * travN).toLocaleString('en-IN');
+    };
+
+    const params = {
+      from_name:       form.name,
+      from_email:      form.email,
+      phone:           form.phone,
+      travellers:      form.travelers || '—',
+      travel_date:     form.travelDate || '—',
+      message:         form.specialRequests || 'Lead from Popup Modal',
+      submission_date: new Date().toLocaleString('en-IN'),
+      reference_id:    'GH-' + Date.now().toString().slice(-8),
+      cart_count:      cartItems.length,
+
+      item1_name:      getItem(0, 'name'),
+      item1_price:     '₹' + (cartItems[0]?.price || 0),
+      item1_location:  getItem(0, 'location'),
+      item1_duration:  getItem(0, 'duration'),
+      item1_id:        getItem(0, 'id'),
+      item1_subtotal:  getSub(0),
+
+      item2_name:      getItem(1, 'name'),
+      item2_price:     '₹' + (cartItems[1]?.price || 0),
+      item2_location:  getItem(1, 'location'),
+      item2_duration:  getItem(1, 'duration'),
+      item2_id:        getItem(1, 'id'),
+      item2_subtotal:  getSub(1),
+
+      item3_name:      getItem(2, 'name'),
+      item3_price:     '₹' + (cartItems[2]?.price || 0),
+      item3_location:  getItem(2, 'location'),
+      item3_duration:  getItem(2, 'duration'),
+      item3_id:        getItem(2, 'id'),
+      item3_visible:   cartItems.length >= 3 ? 'flex' : 'none',
+
+      grand_total:     '₹' + (cartTotal || total).toLocaleString('en-IN'),
+    };
+
     try {
-      const res = await fetch('/api/leads', {
+      // 1. Send EmailJS
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        params,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      );
+
+      // 2. API call
+      await fetch('/api/leads', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...form, cartTotal }),
+        body: JSON.stringify({ ...form, cartTotal: cartTotal || total }),
       })
-
-      if (!res.ok) throw new Error('Submission failed. Please try again.')
 
       setSuccess(true)
       setTimeout(() => {
